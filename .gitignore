@@ -20,6 +20,8 @@
 Thumbs.db
 
 # Ignored document formats
-*.md
 *.odt
 *.docx
+
+# Local planning and guidance files
+orientacoes/
