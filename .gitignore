@@ -18,3 +18,7 @@
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Markdown planning and checklist files
+*.md
+
