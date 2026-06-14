@@ -19,6 +19,7 @@
 .DS_Store
 Thumbs.db
 
-# Markdown planning and checklist files
+# Ignored document formats
 *.md
-
+*.odt
+*.docx
