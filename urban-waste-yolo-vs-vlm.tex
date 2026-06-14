@@ -1,63 +1,78 @@
-\documentclass[12pt]{article}
+\documentclass[kdmile,a4paper]{kdmile}
 
-\usepackage{sbc-template}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[brazil]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{array}
-\usepackage{url}
-\usepackage{microtype}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage{graphicx,url}
 
-\hypersetup{
-  colorlinks=true,
-  linkcolor=black,
-  citecolor=black,
-  urlcolor=blue
-}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newdef{definition}[theorem]{Definition}
+\newdef{remark}[theorem]{Remark}
 
-% Ajuste de espaçamento dos títulos para economizar espaço vertical
-\titlespacing*{\section}{0pt}{6pt plus 1pt minus 1pt}{2pt plus 1pt minus 1pt}
-\titlespacing*{\subsection}{0pt}{5pt plus 1pt minus 1pt}{2pt plus 0.5pt}
-
-% Otimização do espaçamento de elementos flutuantes (tabelas)
-\setlength{\floatsep}{4pt plus 1pt minus 1pt}
-\setlength{\textfloatsep}{5pt plus 1pt minus 2pt}
-\setlength{\intextsep}{4pt plus 1pt minus 1pt}
-
+\markboth{J. T. A. Júnior and C. O. Caminha Neto}
+{Specialized Detector or Vision-Language Model?}
 \title{Specialized Detector or Vision-Language Model? Evaluating YOLOv11m and Gemma 3 27B-IT for Urban Waste Monitoring}
 
 \author{Jaime Teixeira de Araújo Júnior\inst{1}, Carlos de Oliveira Caminha Neto\inst{1}}
 
-\address{Universidade Federal do Ceará -- Fortaleza -- CE -- Brasil
+\institute{Universidade Federal do Ceará -- Fortaleza -- CE -- Brasil\\
   \email{jaimejrs@alu.ufc.br, carlos.o.c.neto@gmail.com}
 }
 
-\begin{document}
-
-\maketitle
-
 \begin{abstract}
 Urban waste monitoring on public roads is a relevant challenge for municipal management because it requires large-scale inspection under limited operational resources. This study evaluates two distinct artificial intelligence strategies for identifying visible waste in real images of Brazilian streets: YOLOv11m, fine-tuned as a specialized object detector, and Gemma 3 27B-IT, employed as a zero-shot vision-language model. YOLOv11m was trained with 6,736 images, including 15.6\% background samples, while both models were evaluated on an external and balanced test set containing 560 Brazilian street images. Predictive performance, error profiles, statistical significance, latency, and throughput were analyzed. Gemma 3 27B-IT achieved higher accuracy, recall, specificity, and F1-score, obtaining an F1-score of 0.9238 against 0.7040 for YOLOv11m. The difference was statistically significant according to McNemar's test. Conversely, under the HTTP service flow evaluated here, YOLOv11m processed approximately 119 images per second and presented an average latency 141.9 times lower than the vision-language model. The findings reveal a clear accuracy--latency trade-off: Gemma is more suitable for targeted analyses that prioritize predictive performance, whereas YOLO is more appropriate for large-scale screening, real-time processing, and applications requiring explicit visual localization. The results also indicate potential for hybrid systems combining fast detection and multimodal confirmation.
-
-\textbf{Keywords:} urban waste monitoring; object detection; vision-language models; YOLOv11m; public administration.
-
-\textbf{CCS Concepts:} Computing methodologies $\rightarrow$ Object detection; Computer vision; Machine learning; Applied computing $\rightarrow$ Environmental sciences; E-government.
 \end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10010147.10010257.10010258.10010259</concept_id>
+<concept_desc>Computing methodologies~Object detection</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010147.10010257.10010282</concept_id>
+<concept_desc>Computing methodologies~Computer vision</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010405.10010469.10010474</concept_id>
+<concept_desc>Applied computing~Environmental sciences</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Computing methodologies~Object detection}
+\ccsdesc[500]{Computing methodologies~Computer vision}
+\ccsdesc[300]{Applied computing~Environmental sciences}
+
+\keywords{object detection, public administration, urban waste monitoring, vision-language models, YOLOv11m}
+
+\begin{document}
+
+\begin{bottomstuff}
+\end{bottomstuff}
+
+\maketitle
 
 \section{Introdução}
 \label{sec:introducao}
 
-A gestão de resíduos sólidos urbanos envolve impactos ambientais, sanitários, financeiros e operacionais. No Brasil, a Política Nacional de Resíduos Sólidos atribui aos municípios papel central na organização da coleta e destinação dos resíduos (Brasil, 2010), cujos custos dependem diretamente da estrutura operacional adotada (Rodrigues, Magalhães Filho e Pereira, 2016).
+A gestão de resíduos sólidos urbanos envolve impactos ambientais, sanitários, financeiros e operacionais. No Brasil, a Política Nacional de Resíduos Sólidos atribui aos municípios papel central na organização da coleta e destinação dos resíduos \cite{Brasil2010}, cujos custos dependem diretamente da estrutura operacional adotada \cite{Rodrigues2016}.
 
 A produção de informações territorializadas sobre descarte irregular pode apoiar a priorização de áreas, o planejamento de rotas e a fiscalização. Entretanto, a inspeção manual de grandes volumes de imagens demanda tempo e recursos humanos. Técnicas de visão computacional oferecem a possibilidade de transformar registros visuais de ruas em alertas administrativos, mas sua utilidade depende não apenas da acurácia, como também da velocidade, da ocorrência de falsos alarmes, da rastreabilidade e da infraestrutura necessária para operação.
 
-Detectores de objetos da família YOLO são orientados à localização rápida de instâncias visuais e retornam caixas delimitadoras que facilitam a auditoria das predições (Redmon et al., 2016; Terven, Córdova-Esparza e Romero-González, 2023). Modelos visão-linguagem, por sua vez, associam imagens e instruções textuais, podendo executar tarefas em regime \emph{zero-shot}, sem ajuste específico no conjunto-alvo (Radford et al., 2021; Zhang et al., 2024). Essa flexibilidade reduz o esforço inicial de treinamento, mas pode exigir modelos maiores e maior custo de inferência.
+Detectores de objetos da família YOLO são orientados à localização rápida de instâncias visuais e retornam caixas delimitadoras que facilitam a auditoria das predições \cite{Redmon2016,Terven2023}. Modelos visão-linguagem, por sua vez, associam imagens e instruções textuais, podendo executar tarefas em regime \emph{zero-shot}, sem ajuste específico no conjunto-alvo \cite{Radford2021,Zhang2024}. Essa flexibilidade reduz o esforço inicial de treinamento, mas pode exigir modelos maiores e maior custo de inferência.
 
-Estudos anteriores aplicaram redes profundas à detecção de resíduos em ambientes urbanos e naturais (Córdova et al., 2022; Majchrowska et al., 2022). Também surgiram avaliações de modelos visão-linguagem para classificação de resíduos (Funk et al., 2025; Malla, Bazli e Arashpour, 2026). Contudo, permanece limitada a evidência sobre a comparação direta, no mesmo conjunto de imagens brasileiras, entre um detector especializado e um grande modelo visão-linguagem, considerando simultaneamente desempenho preditivo, significância estatística, latência e implicações administrativas.
+Estudos anteriores aplicaram redes profundas à detecção de resíduos em ambientes urbanos e naturais \cite{Cordova2022,Majchrowska2022}. Também surgiram avaliações de modelos visão-linguagem para classificação de resíduos \cite{Funk2025,Malla2026}. Contudo, permanece limitada a evidência sobre a comparação direta, no mesmo conjunto de imagens brasileiras, entre um detector especializado e um grande modelo visão-linguagem, considerando simultaneamente desempenho preditivo, significância estatística, latência e implicações administrativas.
 
 Este trabalho investiga as seguintes perguntas de pesquisa:
 \begin{itemize}
@@ -76,16 +91,16 @@ As principais contribuições são: uma avaliação controlada em 560 imagens br
 \subsection{Detecção automatizada de resíduos}
 \label{sec:deteccao-residuos}
 
-A detecção de objetos busca identificar e localizar instâncias por meio de caixas delimitadoras. A família YOLO consolidou essa tarefa em uma etapa única de regressão, favorecendo aplicações de baixa latência e alto volume (Redmon et al., 2016; Terven, Córdova-Esparza e Romero-González, 2023; Khanam e Hussain, 2024).
+A detecção de objetos busca identificar e localizar instâncias por meio de caixas delimitadoras. A família YOLO consolidou essa tarefa em uma etapa única de regressão, favorecendo aplicações de baixa latência e alto volume \cite{Redmon2016,Terven2023,Khanam2024}.
 
-No domínio dos resíduos, o TACO reúne imagens reais com lixo deformado, fragmentado, transparente ou parcialmente oculto (Proença e Simões, 2020). Majchrowska et al. (2022) e Córdova et al. (2022) demonstram a viabilidade da detecção automatizada, mas também reportam dificuldades com objetos pequenos, oclusão, iluminação e deslocamento de domínio. Assim, detectores treinados em bases internacionais podem exigir adaptação para ruas brasileiras.
+No domínio dos resíduos, o TACO reúne imagens reais com lixo deformado, fragmentado, transparente ou parcialmente oculto \cite{Proenca2020}. Estudos anteriores demonstram a viabilidade da detecção automatizada, mas também reportam dificuldades com objetos pequenos, oclusão, iluminação e deslocamento de domínio \cite{Majchrowska2022,Cordova2022}. Assim, detectores treinados em bases internacionais podem exigir adaptação para ruas brasileiras.
 
 \subsection{Modelos visão-linguagem}
 \label{sec:modelos-visao-linguagem}
 
-Modelos visão-linguagem aprendem relações entre representações visuais e linguagem natural. A supervisão multimodal possibilita reconhecimento orientado por descrições textuais e execução de tarefas sem exemplos específicos do domínio-alvo (Radford et al., 2021; Li et al., 2023).
+Modelos visão-linguagem aprendem relações entre representações visuais e linguagem natural. A supervisão multimodal possibilita reconhecimento orientado por descrições textuais e execução de tarefas sem exemplos específicos do domínio-alvo \cite{Radford2021,Li2023}.
 
-O Gemma 3 é uma família multimodal capaz de receber imagens e texto e produzir respostas orientadas por instruções (Gemma Team, 2025). Embora modelos desse tipo ofereçam flexibilidade, pesquisas apontam desafios de estabilidade, alinhamento, \emph{grounding} visual, custo computacional e alucinações (Li et al., 2025). Funk et al. (2025) avaliaram VLMs na classificação de resíduos em regime \emph{few-shot}, e Malla, Bazli e Arashpour (2026) estudaram destilação para classificação eficiente. Diferentemente deles, este estudo avalia descarte em vias públicas brasileiras \emph{in-the-wild}, não triagem em instalações de recuperação de materiais ou classificação \emph{few-shot}, comparando diretamente um VLM generalista e um detector especializado sob métricas operacionais.
+O Gemma 3 é uma família multimodal capaz de receber imagens e texto e produzir respostas orientadas por instruções \cite{GemmaTeam2025}. Embora modelos desse tipo ofereçam flexibilidade, pesquisas apontam desafios de estabilidade, alinhamento, \emph{grounding} visual, custo computacional e alucinações \cite{Li2025}. Estudos recentes avaliaram VLMs na classificação de resíduos em regime \emph{few-shot} e destilação para classificação eficiente \cite{Funk2025,Malla2026}. Diferentemente deles, este estudo avalia descarte em vias públicas brasileiras \emph{in-the-wild}, não triagem em instalações de recuperação de materiais ou classificação \emph{few-shot}, comparando diretamente um VLM generalista e um detector especializado sob métricas operacionais.
 
 \section{Metodologia}
 \label{sec:metodologia}
@@ -150,7 +165,7 @@ O melhor \emph{checkpoint} do YOLO foi selecionado via validação (limiar de de
 
 Para a inferência do Gemma 3, o prompt em inglês definiu a tarefa: \emph{``You are a public street monitoring analyst. Your task is to answer one single question: IS THERE TRASH or discarded WASTE in this street image? Consider as trash: garbage bags, bottles, cans, cardboard, packaging, plastics, glass, or any discarded waste on a public street or sidewalk. Do NOT consider as trash: closed trash bins/containers in normal use, vehicles, people, vegetation, street furniture in good condition, or normal pavement. Respond STRICTLY in valid JSON, with no markdown and no text outside the JSON. Use exactly these field names: \{"tem\_lixo": true, "descricao\_breve": "...", "confianca": 0.0\}. If there is no visible trash, return tem\_lixo: false.''}. 
 
-Para lidar com possíveis alucinações de formatação ou texto excedente gerado pelo VLM, implementou-se um mecanismo robusto de captura de chaves (\emph{brackets matching}) para isolar a estrutura JSON e posterior validação de esquema (\emph{jsonschema}). Caso o parsing falhasse por completo ou ocorresse timeout na requisição HTTP, a imagem seria conservadoramente rotulada como classe negativa (sem resíduos). No experimento de teste, contudo, todas as 560 inferências foram analisadas e estruturadas com sucesso pelo parser.
+Para lidar com saídas fora do formato esperado, implementou-se um parser robusto que isola a estrutura JSON por captura de chaves (\emph{brackets matching}) e valida o resultado com \emph{jsonschema}. Caso o parsing falhasse por completo ou ocorresse timeout na requisição HTTP, a imagem seria conservadoramente rotulada como classe negativa (sem resíduos). No experimento de teste, contudo, todas as 560 inferências foram analisadas e estruturadas com sucesso pelo parser.
 
 \subsection{Avaliação}
 \label{sec:avaliacao}
@@ -190,7 +205,7 @@ Kappa de Cohen & 0,4140 & 0,8360 & +0,4220 \\
 
 O Gemma apresentou vantagem em todas as métricas preditivas. A diferença mais expressiva ocorreu na sensibilidade: o modelo identificou 279 das 280 imagens positivas (apenas 1 falso negativo), enquanto o YOLO identificou 195 (85 falsos negativos). A matriz de confusão também mostra que o modelo visão-linguagem apresentou maior capacidade de rejeitar cenas negativas (Tabela~\ref{tab:confusao}). Em uma aplicação pública, falsos negativos representam descarte não identificado, enquanto falsos positivos geram custos desnecessários de deslocamento de equipes e revisões manuais.
 
-Os intervalos de confiança de 95\% da acurácia foram $[0,668; 0,743]$ (YOLO) e $[0,892; 0,938]$ (Gemma). O teste de McNemar confirmou significância estatística ($\chi^2 = 74,40$, $p \approx 6,4 \times 10^{-18}$), com o Gemma acertando 151 imagens exclusivamente contra 33 do YOLO, respondendo à \textbf{RQ1}.
+Os intervalos de confiança de 95\% da acurácia foram 0,668--0,743 para YOLO e 0,892--0,938 para Gemma. O teste de McNemar confirmou significância estatística ($\chi^2 = 74,40$, $p \approx 6,4 \times 10^{-18}$), com o Gemma acertando 151 imagens exclusivamente contra 33 do YOLO, respondendo à \textbf{RQ1}.
 
 \begin{table}[htbp]
 \centering
@@ -278,7 +293,7 @@ Os modelos acertaram conjuntamente 363 imagens (64,8\% do teste). Apenas o Gemma
 \subsection{Implicações para a gestão pública}
 \label{sec:implicacoes-gestao}
 
-Os resultados sugerem três usos principais: em monitoramento contínuo ou de alto volume, o YOLOv11m é preferível pela baixa latência, alto \emph{throughput} e disponibilidade de caixas delimitadoras; em auditorias ou análises pontuais, o Gemma 3 27B-IT é mais indicado quando a qualidade preditiva prevalece sobre o tempo de resposta; e, em triagens seguidas de confirmação, uma arquitetura híbrida pode combinar a velocidade do detector com a sensibilidade do VLM em casos selecionados. Em todos os cenários, a adoção deve incluir revisão humana, registro de alertas, auditoria de decisões, monitoramento de desempenho e reavaliação periódica frente a mudanças no ambiente urbano (Zuiderwijk, Chen e Salem, 2021; Mišić, van Est e Kool, 2025).
+Os resultados sugerem três usos principais: em monitoramento contínuo ou de alto volume, o YOLOv11m é preferível pela baixa latência, alto \emph{throughput} e disponibilidade de caixas delimitadoras; em auditorias ou análises pontuais, o Gemma 3 27B-IT é mais indicado quando a qualidade preditiva prevalece sobre o tempo de resposta; e, em triagens seguidas de confirmação, uma arquitetura híbrida pode combinar a velocidade do detector com a sensibilidade do VLM em casos selecionados. Em todos os cenários, a adoção deve incluir revisão humana, registro de alertas, auditoria de decisões, monitoramento de desempenho e reavaliação periódica frente a mudanças no ambiente urbano \cite{Zuiderwijk2021,Misic2025}.
 
 \section{Ameaças à Validade}
 \label{sec:ameacas-validade}
@@ -310,57 +325,14 @@ Os códigos, configurações e artefatos de reprodução estão organizados no r
 \end{center}
 A disponibilização pública das imagens deverá respeitar as licenças das bases originais, os termos das plataformas de visualização urbana e os procedimentos de anonimização.
 
-\section*{Agradecimentos}
-
+\begin{acks}
 Os autores agradecem à Universidade Federal do Ceará e aos responsáveis pelas bases públicas utilizadas.
+\end{acks}
 
-\section*{Referências}
+\bibliographystyle{kdmile}
+\bibliography{urban-waste-yolo-vs-vlm}
 
-\frenchspacing
-\footnotesize
-\begin{list}{}{
-  \setlength{\leftmargin}{0.5cm}
-  \setlength{\rightmargin}{0cm}
-  \setlength{\itemindent}{-0.5cm}
-  \setlength{\itemsep}{0pt}
-  \setlength{\parsep}{0pt}
-  \setlength{\topsep}{0pt}
-}
-
-\item BRASIL. Lei nº 12.305, de 2 de agosto de 2010. Institui a Política Nacional de Resíduos Sólidos. Brasília, 2010.
-
-\item CÓRDOVA, M. et al. Litter detection with deep learning: a comparative study. \emph{Sensors}, v. 22, n. 2, artigo 548, 2022. doi:\url{10.3390/s22020548}.
-
-\item FUNK, J. et al. A comparative evaluation of vision language models for waste classification in few-shot settings. In: \emph{World Congress on Electrical Engineering and Computer Systems and Science}, 2025. doi:\url{10.11159/mvml25.113}.
-
-\item GEMMA TEAM. \emph{Gemma 3 Technical Report}. 2025. doi:\url{10.48550/arXiv.2503.19786}.
-
-\item KHANAM, R.; HUSSAIN, M. YOLOv11: an overview of the key architectural enhancements. \emph{arXiv}, 2024. doi:\url{10.48550/arXiv.2410.17725}.
-
-\item LI, J. et al. BLIP-2: bootstrapping language-image pre-training with frozen image encoders and large language models. In: \emph{International Conference on Machine Learning}, 2023. p. 19730--19742.
-
-\item LI, Z. et al. A survey of state-of-the-art large vision-language models: alignment, benchmarks, evaluations and challenges. \emph{arXiv}, 2025.
-
-\item MAJCHROWSKA, S. et al. Deep learning-based waste detection in natural and urban environments. \emph{Waste Management}, v. 138, p. 274--284, 2022.
-
-\item MALLA, H. J.; BAZLI, M.; ARASHPOUR, M. Prompt-stable knowledge distillation of vision-language models for efficient waste classification in material recovery facilities. \emph{Resources, Conservation and Recycling}, v. 230, artigo 108885, 2026. doi:\url{10.1016/j.resconrec.2026.108885}.
-
-\item MIŠIĆ, J.; VAN EST, R.; KOOL, L. Good governance of public sector AI: a combined value framework for good order and a good society. \emph{AI and Ethics}, v. 5, p. 4875--4889, 2025. doi:\url{https://doi.org/10.1007/s43681-025-00751-3}.
-
-\item PROENÇA, P. F.; SIMÕES, P. TACO: Trash Annotations in Context for Litter Detection. \emph{arXiv}, 2020.
-
-\item RADFORD, A. et al. Learning transferable visual models from natural language supervision. In: \emph{International Conference on Machine Learning}, 2021. p. 8748--8763.
-
-\item REDMON, J. et al. You only look once: unified, real-time object detection. In: \emph{IEEE Conference on Computer Vision and Pattern Recognition}, 2016. p. 779--788.
-
-\item RODRIGUES, W.; MAGALHÃES FILHO, L. N. L.; PEREIRA, R. S. Análise dos determinantes dos custos de resíduos sólidos urbanos nas capitais estaduais brasileiras. \emph{urbe. Revista Brasileira de Gestão Urbana}, v. 8, n. 1, p. 130--141, 2016. doi:\url{10.1590/2175-3369.008.001.AO02}.
-
-\item TERVEN, J.; CÓRDOVA-ESPARZA, D. M.; ROMERO-GONZÁLEZ, J. A. A comprehensive review of YOLO architectures in computer vision. \emph{Machine Learning and Knowledge Extraction}, v. 5, n. 4, p. 1680--1716, 2023. doi:\url{10.3390/make5040083}.
-
-\item ZHANG, J. et al. Vision-language models for vision tasks: a survey. \emph{arXiv}, 2024.
-
-\item ZUIDERWIJK, A.; CHEN, Y.-C.; SALEM, F. Implications of the use of artificial intelligence in public governance: a systematic literature review and a research agenda. \emph{Government Information Quarterly}, v. 38, n. 3, artigo 101577, 2021. doi:\url{10.1016/j.giq.2021.101577}.
-
-\end{list}
+\begin{received}
+\end{received}
 
 \end{document}
