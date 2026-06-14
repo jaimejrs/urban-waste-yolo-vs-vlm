@@ -20,13 +20,13 @@
 }
 
 % Ajuste de espaçamento dos títulos para economizar espaço vertical
-\titlespacing*{\section}{0pt}{8pt plus 2pt minus 2pt}{3pt plus 1pt minus 1pt}
-\titlespacing*{\subsection}{0pt}{6pt plus 2pt minus 1pt}{2pt plus 1pt}
+\titlespacing*{\section}{0pt}{6pt plus 1pt minus 1pt}{2pt plus 1pt minus 1pt}
+\titlespacing*{\subsection}{0pt}{5pt plus 1pt minus 1pt}{2pt plus 0.5pt}
 
 % Otimização do espaçamento de elementos flutuantes (tabelas)
-\setlength{\floatsep}{6pt plus 2pt minus 2pt}
-\setlength{\textfloatsep}{8pt plus 2pt minus 3pt}
-\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{4pt plus 1pt minus 1pt}
+\setlength{\textfloatsep}{5pt plus 1pt minus 2pt}
+\setlength{\intextsep}{4pt plus 1pt minus 1pt}
 
 \title{Specialized Detector or Vision-Language Model? Evaluating YOLOv11m and Gemma 3 27B-IT for Urban Waste Monitoring}
 
@@ -61,6 +61,9 @@ Estudos anteriores aplicaram redes profundas à detecção de resíduos em ambie
 
 Este trabalho investiga as seguintes perguntas de pesquisa:
 \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{2pt}
     \item \textbf{RQ1:} Como se comparam, em desempenho preditivo, um detector especializado com \emph{fine-tuning} e um VLM generalista em \emph{zero-shot} em imagens reais de vias públicas brasileiras?
     \item \textbf{RQ2:} Qual é o trade-off entre desempenho preditivo, eficiência computacional e adequação aos diferentes cenários de monitoramento urbano?
 \end{itemize}
@@ -143,7 +146,11 @@ Temperatura & Não aplicável & 0 \\
 \end{tabular}
 \end{table}
 
-O melhor \emph{checkpoint} do YOLO foi selecionado via validação (limiar de detecção $\ge 0,25$). O Gemma 3 27B-IT (quantização Q5\_K\_M) foi executado no LM Studio com temperatura zero, respondendo via JSON estruturado.
+O melhor \emph{checkpoint} do YOLO foi selecionado via validação (limiar de detecção $\ge 0,25$). O Gemma 3 27B-IT (quantização Q5\_K\_M) foi executado no LM Studio com temperatura zero, respondendo via JSON estruturado. 
+
+Para a inferência do Gemma 3, o prompt em inglês definiu a tarefa: \emph{``You are a public street monitoring analyst. Your task is to answer one single question: IS THERE TRASH or discarded WASTE in this street image? Consider as trash: garbage bags, bottles, cans, cardboard, packaging, plastics, glass, or any discarded waste on a public street or sidewalk. Do NOT consider as trash: closed trash bins/containers in normal use, vehicles, people, vegetation, street furniture in good condition, or normal pavement. Respond STRICTLY in valid JSON, with no markdown and no text outside the JSON. Use exactly these field names: \{"tem\_lixo": true, "descricao\_breve": "...", "confianca": 0.0\}. If there is no visible trash, return tem\_lixo: false.''}. 
+
+Para lidar com possíveis alucinações de formatação ou texto excedente gerado pelo VLM, implementou-se um mecanismo robusto de captura de chaves (\emph{brackets matching}) para isolar a estrutura JSON e posterior validação de esquema (\emph{jsonschema}). Caso o parsing falhasse por completo ou ocorresse timeout na requisição HTTP, a imagem seria conservadoramente rotulada como classe negativa (sem resíduos). No experimento de teste, contudo, todas as 560 inferências foram analisadas e estruturadas com sucesso pelo parser.
 
 \subsection{Avaliação}
 \label{sec:avaliacao}
@@ -255,9 +262,9 @@ A latência média do Gemma foi aproximadamente 141,9 vezes maior. O YOLO, porta
 \begin{figure}[htbp]
 \centering
 \IfFileExists{outputs/figures/fig_tradeoff_f1_latencia.png}{%
-  \includegraphics[width=0.64\linewidth]{outputs/figures/fig_tradeoff_f1_latencia.png}%
+  \includegraphics[width=0.48\linewidth]{outputs/figures/fig_tradeoff_f1_latencia.png}%
 }{%
-  \fbox{\parbox{0.62\linewidth}{\centering Figura de trade-off não encontrada. Execute o notebook para gerar o PNG.}}%
+  \fbox{\parbox{0.46\linewidth}{\centering Figura de trade-off não encontrada. Execute o notebook para gerar o PNG.}}%
 }
 \caption{Trade-off entre F1-score e latência média end-to-end. Pontos mais próximos do canto superior esquerdo indicam maior desempenho com menor custo temporal.}
 \label{fig:tradeoff-f1-latencia}
@@ -310,6 +317,7 @@ Os autores agradecem à Universidade Federal do Ceará e aos responsáveis pelas
 \section*{Referências}
 
 \frenchspacing
+\footnotesize
 \begin{list}{}{
   \setlength{\leftmargin}{0.5cm}
   \setlength{\rightmargin}{0cm}
@@ -337,7 +345,7 @@ Os autores agradecem à Universidade Federal do Ceará e aos responsáveis pelas
 
 \item MALLA, H. J.; BAZLI, M.; ARASHPOUR, M. Prompt-stable knowledge distillation of vision-language models for efficient waste classification in material recovery facilities. \emph{Resources, Conservation and Recycling}, v. 230, artigo 108885, 2026. doi:\url{10.1016/j.resconrec.2026.108885}.
 
-\item MIŠIĆ, J.; VAN EST, R.; KOOL, L. Good governance of public sector AI: a combined value framework for good order and a good society. \emph{AI and Ethics}, v. 5, p. 4875--4889, 2025. doi:\url{10.1007/s43681-025-00751-3}.
+\item MIŠIĆ, J.; VAN EST, R.; KOOL, L. Good governance of public sector AI: a combined value framework for good order and a good society. \emph{AI and Ethics}, v. 5, p. 4875--4889, 2025. doi:\url{https://doi.org/10.1007/s43681-025-00751-3}.
 
 \item PROENÇA, P. F.; SIMÕES, P. TACO: Trash Annotations in Context for Litter Detection. \emph{arXiv}, 2020.
 

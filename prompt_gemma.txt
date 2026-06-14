@@ -1,0 +1,87 @@
+# Gemma 3 27B-IT Zero-Shot Prompt & Output Specification
+
+This file contains the exact prompt, JSON schema, and robust parsing logic used to execute the zero-shot Gemma 3 27B-IT experiments for the paper.
+
+---
+
+## 1. Verbatim Prompt (PROMPT_VLM)
+
+```text
+You are a public street monitoring analyst.
+Your task is to answer one single question: IS THERE TRASH or discarded WASTE in this street image?
+
+Consider as trash: garbage bags, bottles, cans, cardboard, packaging, plastics,
+glass, or any discarded waste on a public street or sidewalk.
+
+Do NOT consider as trash: closed trash bins/containers in normal use, vehicles, people,
+vegetation, street furniture in good condition, or normal pavement.
+
+Respond STRICTLY in valid JSON, with no markdown and no text outside the JSON.
+Use exactly these field names:
+{"tem_lixo": true, "descricao_breve": "...", "confianca": 0.0}
+
+If there is no visible trash, return tem_lixo: false.
+```
+
+---
+
+## 2. Expected Output JSON Schema (SCHEMA_VLM)
+
+```json
+{
+  "type": "object",
+  "required": ["tem_lixo"],
+  "properties": {
+    "tem_lixo": {
+      "type": "boolean"
+    },
+    "descricao_breve": {
+      "type": "string"
+    },
+    "confianca": {
+      "type": "number"
+    }
+  }
+}
+```
+
+---
+
+## 3. Robust JSON Parsing & Exception Handling (Python)
+
+If the model output contains conversational text surrounding the JSON block or is enclosed in Markdown code fences (e.g., ```json ... ```), the following robust parser isolates and extracts the JSON object. 
+
+If parsing fails or a request timeout occurs, the image is conservatively classified as having no trash (`tem_lixo: false`).
+
+```python
+import json
+
+def parse_json_robusto(raw: str) -> dict:
+    if not raw:
+        return {"parse_error": True}
+    try:
+        # Attempt direct JSON load
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        # Fallback: search for first '{' and last '}' to extract raw JSON
+        i, j = raw.find("{"), raw.rfind("}") + 1
+        if 0 <= i < j:
+            try:
+                return json.loads(raw[i:j])
+            except json.JSONDecodeError:
+                pass
+    return {"parse_error": True}
+
+def vlm_decisao(p: dict) -> int:
+    # If a parsing error or network error occurred, treat as negative (no trash)
+    if p.get("parse_error") or p.get("erro"):
+        return 0
+    return int(bool(p.get("tem_lixo")))
+```
+
+---
+
+## 4. Run Parameters
+- **Temperature:** 0.0
+- **Seed:** 42 (when supported by server)
+- **Quantization:** Q5_K_M (via LM Studio OpenAI-compatible API)
