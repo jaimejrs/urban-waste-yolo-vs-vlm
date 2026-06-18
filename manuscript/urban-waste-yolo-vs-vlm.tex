@@ -2,12 +2,13 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[brazil]{babel}
+\usepackage[brazilian]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{graphicx,url}
+\graphicspath{{figures/}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{conjecture}[theorem]{Conjecture}
@@ -17,19 +18,19 @@
 \newdef{definition}[theorem]{Definition}
 \newdef{remark}[theorem]{Remark}
 
-\markboth{J. T. A. Júnior and C. O. Caminha Neto}
+\markboth{Araújo Júnior and Caminha Neto}
 {Specialized Detector or Vision-Language Model?}
 \title{Specialized Detector or Vision-Language Model? Evaluating YOLOv11m and Gemma 4 31B-QAT for Urban Waste Monitoring}
 
-\author{Jaime Teixeira de Araújo Júnior\inst{1}, Carlos de Oliveira Caminha Neto\inst{1}}
+\author{Jaime Teixeira de Araújo Júnior$^{1}$, Carlos de Oliveira Caminha Neto$^{1}$}
 
-\institute{Universidade Federal do Ceará -- Fortaleza -- CE -- Brasil\\
-  \email{jaimejrs@alu.ufc.br, carlos.o.c.neto@gmail.com}
-}
+\institute{$^{1}$ Universidade Federal do Ceará (UFC)\\
+Fortaleza, CE, Brasil\\
+\texttt{\{jaimejrs@alu.ufc.br, carlos.o.c.neto@gmail.com\}}}
 
 
 \begin{abstract}
-Urban waste monitoring on public roads is a relevant challenge for municipal management because it requires large-scale inspection under limited operational resources. This study evaluates two distinct artificial intelligence strategies for identifying visible waste in real images of Brazilian streets: YOLOv11m, fine-tuned as a specialized object detector, and Gemma 4 31B-QAT, employed as a zero-shot vision-language model. YOLOv11m was trained with 6,557 images, including negative background samples, while both models were evaluated on an external and balanced test set containing 560 Brazilian street images. Predictive performance, error profiles, statistical significance, latency, and throughput were analyzed. Gemma 4 31B-QAT achieved higher accuracy, recall, specificity, and F1-score, obtaining an F1-score of 0.9838 against 0.7600 for YOLOv11m. The difference was statistically significant according to McNemar's test. Conversely, under the HTTP service flow evaluated here, YOLOv11m processed approximately 106 images per second and presented an average latency 137.6 times lower than the vision-language model. The findings reveal a clear accuracy--latency trade-off: Gemma is more suitable for targeted analyses that prioritize predictive performance, whereas YOLO is more appropriate for large-scale screening, real-time processing, and applications requiring explicit visual localization. The results also indicate potential for hybrid systems combining fast detection and multimodal confirmation.
+Urban waste monitoring on public roads requires large-scale inspection under limited operational resources. This study compares YOLOv11m, fine-tuned as a specialized detector, and Gemma 4 31B-QAT, used as a zero-shot vision-language model, for identifying and localizing visible waste in Brazilian street images. YOLOv11m was trained with 6,557 images, and both models were evaluated on an external balanced test set with 560 images. We analyzed binary identification, box localization, paired errors, statistical significance, latency, and throughput. Gemma achieved higher F1-score for binary identification (0.9838 against 0.7600) and higher localization success at IoU 0.5 (0.3893 against 0.2714), but both models had low box-level F1-scores. Conversely, YOLOv11m processed 106.5 images per second, while Gemma's average latency was 141.9 times higher. The results reveal an accuracy--latency--localization trade-off: Gemma is more suitable for targeted analyses that prioritize predictive performance, whereas YOLO is more appropriate for large-scale screening and fast native bounding boxes. Hybrid systems combining fast detection, multimodal confirmation, and human audit are a promising direction.
 \end{abstract}
 
 \begin{CCSXML}
@@ -71,20 +72,20 @@ A gestão de resíduos sólidos urbanos envolve impactos ambientais, sanitários
 
 A produção de informações territorializadas sobre descarte irregular pode apoiar a priorização de áreas, o planejamento de rotas e a fiscalização. Entretanto, a inspeção manual de grandes volumes de imagens demanda tempo e recursos humanos. Técnicas de visão computacional oferecem a possibilidade de transformar registros visuais de ruas em alertas administrativos, mas sua utilidade depende não apenas da acurácia, como também da velocidade, da ocorrência de falsos alarmes, da rastreabilidade e da infraestrutura necessária para operação.
 
-Detectores de objetos da família YOLO são orientados à localização rápida de instâncias visuais e retornam caixas delimitadoras que facilitam a auditoria das predições \cite{Redmon2016,Terven2023}. Modelos visão-linguagem, por sua vez, associam imagens e instruções textuais, podendo executar tarefas em regime \emph{zero-shot}, sem ajuste específico no conjunto-alvo \cite{Radford2021,Zhang2024}. Essa flexibilidade reduz o esforço inicial de treinamento, mas pode exigir modelos maiores e maior custo de inferência.
+Detectores de objetos da família YOLO são orientados à localização rápida de instâncias visuais e retornam caixas delimitadoras que facilitam a auditoria das predições \cite{Redmon2016,Terven2023}. Modelos visão-linguagem, por sua vez, associam imagens e instruções textuais, podendo executar tarefas em regime \emph{zero-shot}, sem ajuste específico no conjunto-alvo \cite{Radford2021}. Essa flexibilidade reduz o esforço inicial de treinamento, mas pode exigir modelos maiores e maior custo de inferência.
 
-Estudos anteriores aplicaram redes profundas à detecção de resíduos em ambientes urbanos e naturais \cite{Cordova2022,Majchrowska2022}. Também surgiram avaliações de modelos visão-linguagem para classificação de resíduos \cite{Funk2025,Malla2026}. Contudo, permanece limitada a evidência sobre a comparação direta, no mesmo conjunto de imagens brasileiras, entre um detector especializado e um grande modelo visão-linguagem, considerando simultaneamente desempenho preditivo, significância estatística, latência e implicações administrativas.
+Estudos anteriores aplicaram redes profundas à detecção de resíduos em ambientes urbanos e naturais \cite{Cordova2022,Majchrowska2022}. Também surgiram avaliações de modelos visão-linguagem para resíduos, comparação com modelos supervisionados, detecção aberta e monitoramento urbano \cite{Ranjbar2025,Mewada2025,Funk2026,Abid2025,Torneiro2025}. Contudo, permanece limitada a evidência sobre a comparação direta, no mesmo conjunto de imagens brasileiras, entre um detector especializado e um grande modelo visão-linguagem, considerando simultaneamente identificação de resíduos, localização espacial, latência e implicações administrativas.
 
 Este trabalho investiga as seguintes perguntas de pesquisa:
 \begin{itemize}
     \setlength{\itemsep}{0pt}
     \setlength{\parsep}{0pt}
     \setlength{\topsep}{2pt}
-    \item \textbf{RQ1:} Como se comparam, em desempenho preditivo, um detector especializado com \emph{fine-tuning} e um VLM generalista em \emph{zero-shot} em imagens reais de vias públicas brasileiras?
-    \item \textbf{RQ2:} Qual é o trade-off entre desempenho preditivo, eficiência computacional e adequação aos diferentes cenários de monitoramento urbano?
+    \item \textbf{RQ1:} Como se comparam, na identificação e localização de resíduos, um detector especializado com \emph{fine-tuning} e um VLM generalista em \emph{zero-shot} em imagens reais de vias públicas brasileiras?
+    \item \textbf{RQ2:} Qual é o trade-off entre desempenho de identificação/localização, eficiência computacional e adequação aos diferentes cenários de monitoramento urbano?
 \end{itemize}
 
-As principais contribuições são: uma avaliação controlada em 560 imagens brasileiras externas ao treinamento; a comparação entre um detector ajustado por \emph{fine-tuning} e um modelo visão-linguagem em regime \emph{zero-shot}; uma análise estatística pareada das predições; e a caracterização dos cenários em que cada paradigma apresenta maior viabilidade operacional.
+As principais contribuições são: uma avaliação controlada em 560 imagens brasileiras externas ao treinamento; a comparação entre um detector ajustado por \emph{fine-tuning} e um modelo visão-linguagem em regime \emph{zero-shot}; a análise pareada de identificação binária e localização por caixas; e a caracterização dos cenários em que cada paradigma apresenta maior viabilidade operacional.
 
 \section{Trabalhos Relacionados}
 \label{sec:trabalhos-relacionados}
@@ -92,16 +93,16 @@ As principais contribuições são: uma avaliação controlada em 560 imagens br
 \subsection{Detecção automatizada de resíduos}
 \label{sec:deteccao-residuos}
 
-A detecção de objetos busca identificar e localizar instâncias por meio de caixas delimitadoras. A família YOLO consolidou essa tarefa em uma etapa única de regressão, favorecendo aplicações de baixa latência e alto volume \cite{Redmon2016,Terven2023,Khanam2024}.
+A detecção de objetos busca identificar e localizar instâncias por meio de caixas delimitadoras. A família YOLO consolidou essa tarefa em uma etapa única de regressão, favorecendo aplicações de baixa latência e alto volume \cite{Redmon2016,Terven2023}.
 
 No domínio dos resíduos, o TACO reúne imagens reais com lixo deformado, fragmentado, transparente ou parcialmente oculto \cite{Proenca2020}. Estudos anteriores demonstram a viabilidade da detecção automatizada, mas também reportam dificuldades com objetos pequenos, oclusão, iluminação e deslocamento de domínio \cite{Majchrowska2022,Cordova2022}. Assim, detectores treinados em bases internacionais podem exigir adaptação para ruas brasileiras.
 
 \subsection{Modelos visão-linguagem}
 \label{sec:modelos-visao-linguagem}
 
-Modelos visão-linguagem aprendem relações entre representações visuais e linguagem natural. A supervisão multimodal possibilita reconhecimento orientado por descrições textuais e execução de tarefas sem exemplos específicos do domínio-alvo \cite{Radford2021,Li2023}.
+Modelos visão-linguagem aprendem relações entre representações visuais e linguagem natural. A supervisão multimodal possibilita reconhecimento orientado por descrições textuais e execução de tarefas sem exemplos específicos do domínio-alvo \cite{Radford2021,Li2023}. No contexto urbano, revisão recente aponta os VLMs como alternativa promissora para monitoramento visual de infraestrutura, incluindo resíduos, mas ressalta a necessidade de avaliações específicas por tarefa e cenário \cite{Torneiro2025}.
 
-O Gemma 4 é uma família multimodal aberta da Google DeepMind, com variante densa de 31B parâmetros, entrada de imagem e texto e suporte a uso local ou via servidores compatíveis com API OpenAI \cite{GemmaTeam2026}. Embora modelos desse tipo ofereçam flexibilidade, pesquisas apontam desafios de estabilidade, alinhamento, \emph{grounding} visual, custo computacional e alucinações \cite{Li2025}. Estudos recentes avaliaram VLMs na classificação de resíduos em regime \emph{few-shot} e destilação para classificação eficiente \cite{Funk2025,Malla2026}. Diferentemente deles, este estudo avalia descarte em vias públicas brasileiras \emph{in-the-wild}, não triagem em instalações de recuperação de materiais ou classificação \emph{few-shot}, comparando diretamente um VLM generalista e um detector especializado sob métricas operacionais.
+O Gemma 4 31B-QAT é uma variante multimodal de 31B parâmetros da família Gemma, com entrada de imagem e texto e suporte a uso local ou via servidores compatíveis com API OpenAI \cite{GemmaTeam2026}. No domínio dos resíduos, estudos recentes avaliaram classificação multimodal \emph{zero-shot} e \emph{few-shot}, comparação com modelos supervisionados, adaptação por \emph{Tip-Adapter}, destilação eficiente, limitações de VLLMs em cenas complexas e estabilidade frente a variações de prompt \cite{Ranjbar2025,Mewada2025,Funk2026,Malla2026,AliKhan2025}. Diferentemente desses trabalhos, este estudo avalia descarte em vias públicas brasileiras \emph{in-the-wild}, comparando diretamente um VLM generalista e um detector especializado sob métricas preditivas, estatísticas e operacionais.
 
 \section{Metodologia}
 \label{sec:metodologia}
@@ -109,7 +110,7 @@ O Gemma 4 é uma família multimodal aberta da Google DeepMind, com variante den
 \subsection{Tarefa e dados}
 \label{sec:tarefa-dados}
 
-A unidade de análise foi a imagem. Cada amostra foi classificada como \textbf{com resíduo visível} ou \textbf{sem resíduo visível}, avaliando uma tarefa inicial de triagem binária. O treinamento do YOLOv11m utilizou imagens positivas das bases TACO e bases Roboflow Garbage (agregadas na classe ``lixo'') e negativas da base Sidewalk Segmentation. Os conjuntos resultantes são detalhados na Tabela~\ref{tab:conjuntos}.
+A avaliação considerou duas camadas. Na primeira, cada imagem foi classificada como \textbf{com resíduo visível} ou \textbf{sem resíduo visível}, compondo uma tarefa de triagem binária. Na segunda, as caixas previstas foram comparadas às 794 caixas anotadas no teste para medir quão bem cada abordagem indicava onde o lixo aparecia. O treinamento do YOLOv11m utilizou imagens positivas das bases TACO e bases Roboflow Garbage (agregadas na classe ``lixo'') e negativas da base Sidewalk Segmentation. Os conjuntos resultantes são detalhados na Tabela~\ref{tab:conjuntos}.
 
 \begin{table}[htbp]
 \centering
@@ -146,8 +147,9 @@ O experimento comparou duas estratégias representativas de decisões reais de a
 \textbf{Configuração} & \textbf{YOLOv11m} & \textbf{Gemma 4 31B-QAT} \\
 \midrule
 Regime & \emph{Fine-tuning} supervisionado & \emph{Zero-shot} \\
-Saída principal & Caixas e confiança & Classe binária em JSON \\
-Pesos/configuração & \emph{yolo11m.pt} & Quantização Q5\_K\_M \\
+Saída principal & Caixas, confiança e classe por imagem & Classe binária e caixas em JSON \\
+Identificador/pesos & \emph{yolo11m.pt} & \texttt{google/gemma-4-31b-qat} \\
+Quantização de execução & Não aplicável & GGUF Q5\_K\_M \\
 Épocas & 100 & Não aplicável \\
 Resolução & 640 $\times$ 640 & Imagem original processada pelo servidor \\
 \emph{Batch size} & 12 & Inferência individual \\
@@ -155,75 +157,82 @@ Otimizador & AdamW & Não aplicável \\
 Taxa de aprendizado inicial & 0,001 & Não aplicável \\
 \emph{Early stopping} & Paciência 20 & Não aplicável \\
 \emph{Augmentation} & \emph{mosaic=1.0}, \emph{fliplr=0.5} & Não aplicável \\
-Limiar principal & 0,25 & Resposta binária \\
+Limiar principal & 0,25 & Resposta binária; caixas sem confiança \\
 Temperatura & Não aplicável & 0 \\
 \emph{Seed} & Configuração do experimento & 42 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-O melhor \emph{checkpoint} do YOLO foi selecionado via validação (limiar de detecção $\ge 0,25$). O Gemma 4 31B-QAT (quantização Q5\_K\_M) foi executado no LM Studio com temperatura zero, respondendo via JSON estruturado. 
+O melhor \emph{checkpoint} do YOLO foi selecionado via validação (limiar de detecção $\ge 0,25$). O rótulo ``Gemma 4 31B-QAT'' refere-se ao identificador \texttt{google/gemma-4-31b-qat} carregado no LM Studio. A notação Q5\_K\_M descreve apenas a quantização GGUF usada na execução local, não outro modelo; nenhum checkpoint \texttt{-it} foi usado nos experimentos.
 
-Para a inferência do Gemma 4, o prompt em inglês definiu a tarefa: \emph{``You are a public street monitoring analyst. Your task is to answer one single question: IS THERE TRASH or discarded WASTE in this street image? Consider as trash: garbage bags, bottles, cans, cardboard, packaging, plastics, glass, or any discarded waste on a public street or sidewalk. Do NOT consider as trash: closed trash bins/containers in normal use, vehicles, people, vegetation, street furniture in good condition, or normal pavement. Respond STRICTLY in valid JSON, with no markdown and no text outside the JSON. Use exactly these field names: \{"tem\_lixo": true, "descricao\_breve": "...", "confianca": 0.0\}. If there is no visible trash, return tem\_lixo: false.''}. 
+Para a inferência do Gemma 4, foram usados dois prompts: um para triagem binária de resíduos visíveis em vias públicas e outro para localização, solicitando até cinco caixas normalizadas no intervalo 0--1000. O texto completo do prompt binário está no arquivo \texttt{prompt\_gemma.txt}; os hashes SHA-256 truncados foram \texttt{591256762fe7185b} (classificação) e \texttt{ddec5b514bcd591a} (localização).
 
-Para lidar com saídas fora do formato esperado, implementou-se um parser robusto que isola a estrutura JSON por captura de chaves (\emph{brackets matching}) e valida o resultado com \emph{jsonschema}. Caso o parsing falhasse por completo ou ocorresse timeout na requisição HTTP, a imagem seria conservadoramente rotulada como classe negativa (sem resíduos). No experimento de teste, contudo, todas as 560 inferências foram analisadas e estruturadas com sucesso pelo parser.
+Para lidar com saídas fora do formato esperado, implementou-se um parser robusto que isola a estrutura JSON por captura de chaves (\emph{brackets matching}) e valida o resultado com \emph{jsonschema}. Caso o parsing falhasse por completo ou ocorresse timeout na requisição HTTP, a imagem seria conservadoramente rotulada como classe negativa (sem resíduos). No experimento de teste, contudo, as 560 respostas de classificação e de localização foram estruturadas com sucesso pelo parser.
 
 \subsection{Avaliação}
 \label{sec:avaliacao}
 
-Foram calculadas acurácia, precisão, sensibilidade, especificidade, F1-score, taxa de falsos positivos, kappa de Cohen, coeficiente de correlação de Matthews e matrizes de confusão. O mAP não foi empregado como métrica comparativa principal porque o Gemma produziu uma classificação por imagem, sem caixas delimitadoras. A comparação foi, portanto, realizada em nível binário de imagem para ambos os modelos.
+Para identificação binária, foram calculadas acurácia, precisão, sensibilidade, especificidade, F1-score, taxa de falsos positivos, kappa de Cohen, coeficiente de correlação de Matthews e matrizes de confusão. Para localização, caixas previstas e anotadas foram pareadas por IoU $\ge 0,5$, reportando precisão, \emph{recall} e F1 por caixas, sucesso em imagens positivas (ao menos uma caixa pareada) e melhor IoU médio por imagem positiva. O mAP não foi usado como métrica comparativa principal porque o Gemma retornou caixas sem confiança ranqueável e com limite de cinco caixas por imagem.
 
 Intervalos de confiança de 95\% foram estimados pelo método de Wilson e as discordâncias avaliadas pelo teste de McNemar. A latência e o \emph{throughput} foram medidos em uma GPU RTX 5090. No YOLO, o tempo incluiu a leitura local e inferência; no Gemma, o tempo decorrido entre a requisição HTTP e a resposta.
 
 \section{Resultados e Discussão}
 \label{sec:resultados}
 
-\subsection{Desempenho preditivo}
+\subsection{Desempenho na identificação e localização}
 \label{sec:desempenho-preditivo}
 
-A Tabela~\ref{tab:desempenho} apresenta as métricas obtidas no conjunto de 560 imagens.
+A Tabela~\ref{tab:desempenho} apresenta as métricas obtidas no conjunto de 560 imagens, separando a identificação binária por imagem da localização por caixas.
 
 \begin{table}[htbp]
 \centering
-\footnotesize
-\caption{Desempenho preditivo dos modelos}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.95}
+\caption{Desempenho na identificação e localização de resíduos}
 \label{tab:desempenho}
 \begin{tabular}{lccc}
 \toprule
 \textbf{Métrica} & \textbf{YOLOv11m} & \textbf{Gemma 4 31B-QAT} & \textbf{Diferença} \\
 \midrule
+\multicolumn{4}{l}{\textit{Identificação binária por imagem}} \\
 Acurácia & 0,7857 & 0,9839 & +0,1982 \\
 Precisão & 0,8636 & 0,9927 & +0,1290 \\
 Sensibilidade & 0,6786 & 0,9750 & +0,2964 \\
 Especificidade & 0,8929 & 0,9929 & +0,1000 \\
 F1-score & 0,7600 & 0,9838 & +0,2238 \\
 Taxa de falsos positivos & 0,1071 & 0,0071 & $-0,1000$ \\
-MCC & 0,5850 & 0,9680 & +0,3830 \\
-Kappa de Cohen & 0,5714 & 0,9679 & +0,3964 \\
+\addlinespace[2pt]
+\multicolumn{4}{l}{\textit{Localização por caixas (IoU $\ge 0,5$)}} \\
+TP/FP/FN caixas & 92/419/702 & 112/415/682 & +20/$-4$/$-20$ \\
+F1-score caixas & 0,1410 & 0,1696 & +0,0286 \\
+Sucesso em imagens positivas & 0,2714 & 0,3893 & +0,1179 \\
+IoU médio da melhor caixa & 0,2866 & 0,4403 & +0,1537 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-O Gemma apresentou vantagem em todas as métricas preditivas. A diferença mais expressiva ocorreu na sensibilidade: o modelo identificou 273 das 280 imagens positivas (7 falsos negativos), enquanto o YOLO identificou 190 (90 falsos negativos). A matriz de confusão também mostra que o modelo visão-linguagem apresentou maior capacidade de rejeitar cenas negativas (Tabela~\ref{tab:confusao}). Em uma aplicação pública, falsos negativos representam descarte não identificado, enquanto falsos positivos geram custos desnecessários de deslocamento de equipes e revisões manuais.
+Na identificação binária, o Gemma apresentou vantagem em todas as métricas. A diferença mais expressiva ocorreu na sensibilidade: o modelo identificou 273 das 280 imagens positivas, contra 190 do YOLO. As matrizes de confusão também mostram maior capacidade do VLM de rejeitar cenas negativas (Figura~\ref{fig:matrizes-confusao}). Em uma aplicação pública, falsos negativos representam descarte não identificado, enquanto falsos positivos geram custos de revisão.
 
-Os intervalos de confiança de 95\% da acurácia foram 0,750--0,818 para YOLO e 0,971--0,991 para Gemma. O teste de McNemar confirmou significância estatística ($p \approx 4,0 \times 10^{-27}$), com o Gemma acertando 118 imagens exclusivamente contra 7 do YOLO, respondendo à \textbf{RQ1}.
+Na localização, a vantagem do Gemma também apareceu, mas com baixa qualidade espacial fina em ambos os modelos. Das 794 caixas anotadas, o Gemma pareou 112 com IoU $\ge 0,5$ e o YOLO pareou 92; em imagens positivas, houve ao menos uma caixa correta em 109 casos para o VLM e 76 para o YOLO. A diferença pareada foi significativa para sucesso em imagens positivas ($p=0,0027$) e melhor IoU médio ($p \approx 4,8 \times 10^{-7}$). Assim, em resposta à \textbf{RQ1}, o Gemma foi superior para decidir se havia lixo e para apontar sua região aproximada, mas os F1-scores de caixas abaixo de 0,17 impedem uso como medição espacial autônoma.
 
-\begin{table}[htbp]
+Os intervalos de confiança de 95\% da acurácia foram 0,750--0,818 para YOLO e 0,971--0,991 para Gemma. O teste de McNemar confirmou significância estatística ($p \approx 4,0 \times 10^{-27}$), com o Gemma acertando 118 imagens exclusivamente contra 7 do YOLO.
+
+\begin{figure}[htbp]
 \centering
-\footnotesize
-\caption{Matrizes de confusão dos modelos experimentais}
-\label{tab:confusao}
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Modelo} & \textbf{VP} & \textbf{VN} & \textbf{FP} & \textbf{FN} \\
-\midrule
-YOLOv11m & 190 & 250 & 30 & 90 \\
-Gemma 4 31B-QAT & 273 & 278 & 2 & 7 \\
-\bottomrule
-\end{tabular}
-\par\smallskip\raggedright
-\scriptsize Nota: VP = Verdadeiros Positivos; VN = Verdadeiros Negativos; FP = Falsos Positivos; FN = Falsos Negativos.
-\end{table}
+\IfFileExists{figures/fig_matrizes_confusao_classificacao.png}{%
+  \includegraphics[width=0.86\linewidth]{figures/fig_matrizes_confusao_classificacao.png}%
+}{%
+  \IfFileExists{../outputs/figures/fig_matrizes_confusao_classificacao.png}{%
+    \includegraphics[width=0.86\linewidth]{../outputs/figures/fig_matrizes_confusao_classificacao.png}%
+  }{%
+    \fbox{\parbox{0.80\linewidth}{\centering Figura de matrizes de confusão não encontrada. Execute o notebook fonte para gerar o PNG.}}%
+  }%
+}
+\caption{Matrizes de confusão no conjunto de teste brasileiro. As linhas representam o rótulo verdadeiro e as colunas indicam a classe predita.}
+\label{fig:matrizes-confusao}
+\end{figure}
 
 \subsection{Sensibilidade ao limiar do YOLO}
 \label{sec:sensibilidade-limiar}
@@ -265,22 +274,26 @@ A vantagem preditiva do Gemma foi acompanhada por custo computacional significat
 \toprule
 \textbf{Métrica} & \textbf{YOLOv11m} & \textbf{Gemma 4 31B-QAT} \\
 \midrule
-Latência média & 9,4 ms & 1.291,9 ms \\
-Mediana & 7,2 ms & 1.258,5 ms \\
-Percentil 95 & 33,8 ms & 1.654,8 ms \\
-Throughput & 106 imagens/s & 0,774 imagem/s \\
+Latência média & 9,4 ms & 1.332,4 ms \\
+Mediana & 9,1 ms & 1.287,1 ms \\
+Percentil 95 & 10,8 ms & 1.681,2 ms \\
+Throughput & 106,5 imagens/s & 0,751 imagem/s \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-A latência média do Gemma foi aproximadamente 137,6 vezes maior. O YOLO, portanto, apresenta clara vantagem quando há transmissão contínua, alto volume ou necessidade de resposta próxima ao tempo real. A comparação de latência deve ser interpretada como uma avaliação dos fluxos implementados, não como uma comparação isolada do tempo interno das arquiteturas. O Gemma foi acessado por interface HTTP e servidor intermediário, enquanto o YOLO foi executado diretamente no ambiente local. Ainda assim, a diferença superior a duas ordens de magnitude é operacionalmente relevante. Em resposta à \textbf{RQ2}: o Gemma oferece maior qualidade preditiva, enquanto o YOLO oferece velocidade, menor custo por imagem e localização explícita dos objetos. A Figura~\ref{fig:tradeoff-f1-latencia} sintetiza esse compromisso.
+A latência média do Gemma foi aproximadamente 141,9 vezes maior. O YOLO, portanto, apresenta clara vantagem em transmissão contínua, alto volume ou resposta próxima ao tempo real. A comparação deve ser lida como avaliação dos fluxos implementados: Gemma via HTTP e servidor intermediário, YOLO diretamente no ambiente local. Em resposta à \textbf{RQ2}: o Gemma oferece melhor identificação e localização aproximada no teste, enquanto o YOLO oferece velocidade, menor custo por imagem e caixas nativas rápidas, embora com baixa cobertura espacial sem adaptação adicional. A Figura~\ref{fig:tradeoff-f1-latencia} sintetiza esse compromisso.
 
 \begin{figure}[htbp]
 \centering
-\IfFileExists{../outputs/figures/fig_tradeoff_f1_latencia.png}{%
-  \includegraphics[width=0.48\linewidth]{../outputs/figures/fig_tradeoff_f1_latencia.png}%
+\IfFileExists{figures/fig_tradeoff_f1_latencia.png}{%
+  \includegraphics[width=0.72\linewidth]{figures/fig_tradeoff_f1_latencia.png}%
 }{%
-  \fbox{\parbox{0.46\linewidth}{\centering Figura de trade-off não encontrada. Execute o notebook para gerar o PNG.}}%
+  \IfFileExists{../outputs/figures/fig_tradeoff_f1_latencia.png}{%
+    \includegraphics[width=0.72\linewidth]{../outputs/figures/fig_tradeoff_f1_latencia.png}%
+  }{%
+    \fbox{\parbox{0.68\linewidth}{\centering Figura de trade-off não encontrada. Execute o notebook fonte para gerar o PNG.}}%
+  }%
 }
 \caption{Trade-off entre F1-score e latência média end-to-end. Pontos mais próximos do canto superior esquerdo indicam maior desempenho com menor custo temporal.}
 \label{fig:tradeoff-f1-latencia}
@@ -289,46 +302,32 @@ A latência média do Gemma foi aproximadamente 137,6 vezes maior. O YOLO, porta
 \subsection{Análise dos erros e complementaridade}
 \label{sec:analise-erros}
 
-Os modelos acertaram conjuntamente 433 imagens (77,3\% do teste). Apenas o Gemma acertou 118 imagens; apenas o YOLO acertou 7; e ambos erraram 2. Nos falsos negativos do YOLO foram observados resíduos amassados, molhados, dispersos ou misturados ao pavimento, além de variações de iluminação, perspectiva e enquadramento. Algumas omissões ocorreram mesmo quando os resíduos eram visualmente relevantes, sugerindo possível deslocamento de domínio. Por outro lado, o Gemma apresentou 7 falsos negativos e 2 falsos positivos. Sua elevada sensibilidade indica capacidade de interpretar sinais contextuais da cena, mas essa mesma interpretação pode resultar em sobre-sinalização de objetos associados a descarte, mesmo na ausência de resíduos. Essas discordâncias sugerem complementaridade parcial: um sistema híbrido poderia empregar o YOLO na primeira etapa, processando rapidamente grandes volumes, e encaminhar imagens de baixa confiança ao Gemma. Tal estratégia deve ser avaliada em novos experimentos.
+Os modelos acertaram conjuntamente 433 imagens (77,3\% do teste). Apenas o Gemma acertou 118 imagens; apenas o YOLO acertou 7; e ambos erraram 2. Nos falsos negativos do YOLO foram observados resíduos amassados, molhados, dispersos ou misturados ao pavimento, além de variações de iluminação, perspectiva e enquadramento, sugerindo deslocamento de domínio. O Gemma teve 7 falsos negativos e 2 falsos positivos, indicando maior sensibilidade, mas possível sobre-sinalização contextual. Na localização, os erros se concentraram em caixas desalinhadas, objetos pequenos e múltiplos resíduos próximos. Essas discordâncias sugerem complementaridade parcial: um sistema híbrido poderia empregar o YOLO na primeira etapa e encaminhar imagens de baixa confiança ao Gemma.
 
 \subsection{Implicações para a gestão pública}
 \label{sec:implicacoes-gestao}
 
-Os resultados sugerem três usos principais: em monitoramento contínuo ou de alto volume, o YOLOv11m é preferível pela baixa latência, alto \emph{throughput} e disponibilidade de caixas delimitadoras; em auditorias ou análises pontuais, o Gemma 4 31B-QAT é mais indicado quando a qualidade preditiva prevalece sobre o tempo de resposta; e, em triagens seguidas de confirmação, uma arquitetura híbrida pode combinar a velocidade do detector com a sensibilidade do VLM em casos selecionados. Em todos os cenários, a adoção deve incluir revisão humana, registro de alertas, auditoria de decisões, monitoramento de desempenho e reavaliação periódica frente a mudanças no ambiente urbano \cite{Zuiderwijk2021,Misic2025}.
+Os resultados sugerem três usos principais: em monitoramento contínuo, o YOLOv11m é preferível pela baixa latência, alto \emph{throughput} e geração nativa de caixas, desde que recalibrado ao domínio local; em auditorias pontuais, o Gemma 4 31B-QAT é mais indicado quando a qualidade da identificação prevalece; e, em triagens com confirmação, uma arquitetura híbrida pode combinar velocidade e sensibilidade. Em todos os cenários, a adoção deve incluir revisão humana, auditoria de decisões, monitoramento de desempenho e reavaliação periódica \cite{Zuiderwijk2021}.
 
 \section{Ameaças à Validade}
 \label{sec:ameacas-validade}
 
-As principais ameaças à validade são:
-\begin{itemize}
-    \setlength{\itemsep}{0pt}
-    \setlength{\parsep}{0pt}
-    \setlength{\topsep}{2pt}
-    \item teste balanceado artificialmente (50\% positivo), diferente da prevalência real em vias públicas;
-    \item anotação por um único pesquisador, com possíveis ambiguidades de julgamento;
-    \item assimetria experimental entre YOLO com \emph{fine-tuning} e Gemma em \emph{zero-shot};
-    \item possível \emph{domain shift} entre TACO/bases Roboflow Garbage e imagens urbanas brasileiras;
-    \item latência do Gemma medida via LM Studio em Q5\_K\_M, sem avaliar concorrência, energia ou custos em produção.
-\end{itemize}
+As ameaças à validade externa decorrem principalmente do recorte do conjunto de teste. A avaliação usou uma amostra balanceada artificialmente, com 50\% de imagens positivas, útil para comparação controlada, mas distinta da prevalência esperada em monitoramento contínuo de vias públicas. Embora o teste utilize imagens brasileiras, ele ainda representa um subconjunto específico de cenas, horários, enquadramentos e condições urbanas; assim, os resultados devem ser interpretados como evidência comparativa no domínio avaliado, não como estimativa direta para qualquer cidade, câmera ou política operacional.
+
+Quanto à validade de construto, a tarefa principal foi reduzida a uma decisão binária sobre resíduos visíveis, simplificando volume, material e risco sanitário. A avaliação espacial por IoU 0,5 é diagnóstica: o VLM retorna caixas sem confiança e limitadas a cinco regiões, e a anotação por um único pesquisador pode introduzir ambiguidades em casos limítrofes.
+
+As ameaças à validade interna estão associadas à assimetria entre as estratégias avaliadas: YOLOv11m com \emph{fine-tuning} em bases públicas e Gemma 4 31B-QAT em \emph{zero-shot}. Portanto, a comparação reflete estratégias de implantação distintas, e não apenas diferenças arquiteturais. O possível \emph{domain shift} pode afetar especialmente o detector especializado. A validade de conclusão é mitigada por métricas pareadas, intervalos de confiança e teste de McNemar, mas a análise de eficiência deve ser lida como avaliação dos fluxos implementados: Gemma via LM Studio, artefato GGUF Q5\_K\_M e HTTP, sem experimentos de concorrência, energia ou custo em produção.
 
 \section{Conclusão}
 \label{sec:conclusao}
 
-Este trabalho comparou YOLOv11m e Gemma 4 31B-QAT no monitoramento binário de resíduos em 560 imagens reais de vias públicas brasileiras. Em resposta à \textbf{RQ1}, a estratégia zero-shot com Gemma apresentou melhor desempenho preditivo no conjunto avaliado: F1-score de 0,9838 contra 0,7600 do YOLO, com superioridade estatisticamente significativa. Essa leitura depende do desenho experimental, pois o YOLO foi ajustado com bases públicas majoritariamente externas ao domínio das ruas brasileiras, sujeitas a \emph{domain shift}. Em resposta à \textbf{RQ2}, o YOLO apresentou vantagem expressiva em eficiência: 9,4 ms por imagem contra 1.291,9 ms do Gemma, além de fornecer caixas delimitadoras para validação visual e sistemas georreferenciados.
+Este trabalho comparou YOLOv11m e Gemma 4 31B-QAT no monitoramento de resíduos em 560 imagens reais de vias públicas brasileiras. Em resposta à \textbf{RQ1}, o Gemma apresentou melhor identificação binária (F1-score de 0,9838 contra 0,7600) e melhor localização aproximada, com sucesso por imagem positiva de 0,3893 contra 0,2714 e IoU médio da melhor caixa de 0,4403 contra 0,2866. Ainda assim, os baixos F1-scores de caixas indicam que a localização fina permanece aberta. Em resposta à \textbf{RQ2}, o YOLO foi muito mais eficiente: 9,4 ms por imagem contra 1.332,4 ms do Gemma, além de fornecer caixas nativas para validação visual rápida.
 
-Os resultados não sustentam a adoção universal de um único modelo: o Gemma é mais adequado a análises pontuais orientadas à qualidade preditiva, enquanto o YOLO é mais apropriado a triagens em larga escala quando adaptado às condições locais. Trabalhos futuros devem ampliar a base municipal, usar múltiplos anotadores, testar modelos menores, quantificar custos energéticos e avaliar sistemas híbridos em que o detector faz a triagem e o VLM confirma casos selecionados.
+Os resultados não sustentam a adoção universal de um único modelo: o Gemma é mais adequado a análises pontuais orientadas à qualidade preditiva, enquanto o YOLO é mais apropriado a triagens em larga escala quando adaptado às condições locais. Trabalhos futuros devem ampliar a base municipal, usar múltiplos anotadores, refinar a avaliação de localização, testar modelos menores, quantificar custos energéticos e avaliar sistemas híbridos em que o detector faz a triagem e o VLM confirma casos selecionados.
 
 \section*{Disponibilidade de código e dados}
 
-Os códigos, configurações e artefatos de reprodução estão organizados no repositório oficial do projeto:
-\begin{center}
-\url{https://github.com/jaimejrs/urban-waste-yolo-vs-vlm}
-\end{center}
-A disponibilização pública das imagens deverá respeitar as licenças das bases originais, os termos das plataformas de visualização urbana e os procedimentos de anonimização.
-
-\begin{acks}
-Os autores agradecem à Universidade Federal do Ceará e aos responsáveis pelas bases públicas utilizadas.
-\end{acks}
+Os códigos, configurações, artefatos de reprodução e o notebook fonte dos resultados estão disponíveis em \url{https://github.com/jaimejrs/urban-waste-yolo-vs-vlm}. A disponibilização pública das imagens deverá respeitar as licenças das bases originais, os termos das plataformas de visualização urbana e os procedimentos de anonimização.
 
 \bibliographystyle{kdmile}
 \bibliography{urban-waste-yolo-vs-vlm}

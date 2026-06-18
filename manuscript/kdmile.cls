@@ -1066,10 +1066,10 @@ to\hsize{\if@nfeven\else\hfil\fi\box\@tempboxa\if@nfeven\hfil\fi}
 \def\sectionmark##1{}\def\subsectionmark##1{}}
 \def\@runningfoot{}
 %\def\runningfoot{\def\@runningfoot{\@journalName, Vol.\ \@kdmileVolume, No.\ \@kdmileNumber, \@kdmileMonth\ 20\@kdmileYear.}}
-\def\runningfoot{\def\@runningfoot{\@journalName, KDMiLe 2025.}}
+\def\runningfoot{\def\@runningfoot{\@journalName, KDMiLe 2026.}}
 \def\@firstfoot{}
 %\def\firstfoot{\def\@firstfoot{\@journalName, Vol.\ \@kdmileVolume, No.\ \@kdmileNumber, \@kdmileMonth\ 20\@kdmileYear, Pages \pages.}}
-\def\firstfoot{\def\@firstfoot{\@journalName, KDMiLe 2025.}}
+\def\firstfoot{\def\@firstfoot{\@journalName, KDMiLe 2026.}}
 \def\ps@titlepage{\let\@mkboth\@gobbletwo
 \def\@oddhead{}\def\@oddfoot{\hbox{}\hfill
 \tiny\@firstfoot}\def\@evenhead{}\def\@evenfoot{\tiny\@firstfoot\hfill\hbox{}}}
@@ -1325,7 +1325,7 @@ to\hsize{\if@nfeven\else\hfil\fi\box\@tempboxa\if@nfeven\hfil\fi}
 % new permission statement
 \long\def\permission{\par
 % linebreaks added to conform to the current style
-Copyright\copyright 2025 Permission to copy without fee all or part of the material printed in KDMiLe is granted provided that the copies are not made or distributed for commercial advantage, and that notice is given that copying is by permission of the Sociedade Brasileira de Computa\c{c}{\~a}o.
+Copyright\copyright 2026 Permission to copy without fee all or part of the material printed in KDMiLe is granted provided that the copies are not made or distributed for commercial advantage, and that notice is given that copying is by permission of the Sociedade Brasileira de Computa\c{c}{\~a}o.
 }
 
 % make sure \permission doesn't get trashed
