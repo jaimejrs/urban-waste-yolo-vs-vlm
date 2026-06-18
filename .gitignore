@@ -3,6 +3,8 @@ __pycache__/
 .ipynb_checkpoints/
 .cache/
 .venv/
+.agents/
+.codex/
 
 # LaTeX auxiliary files
 *.aux
@@ -28,6 +30,8 @@ Thumbs.db
 
 # Secrets/local configuration
 .env
+*.env
+!.env.example
 
 # Large local datasets and model outputs
 data/raw_*/
@@ -37,6 +41,12 @@ data/unified/labels/
 runs/
 models/
 *.pt
+*.pth
+*.onnx
+*.engine
+*.patch
+*.bundle
+local_artifacts/
 
 # Keep lightweight reproducibility artifacts
 !data/
