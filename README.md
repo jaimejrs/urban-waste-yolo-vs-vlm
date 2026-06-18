@@ -32,8 +32,6 @@ As imagens e pesos de modelo não são versionados. Para reconstruir os dados ou
 
 No conjunto de teste balanceado com 560 imagens, o Gemma 4 31B-QAT obteve F1 de 0,9838 na classificação binária, enquanto o YOLOv11m obteve F1 de 0,7600. Em contrapartida, o YOLO apresentou latência end-to-end média de 9,39 ms, contra 1.291,9 ms do Gemma no fluxo HTTP avaliado.
 
-A metodologia completa e os resultados detalhados estão em `METODOLOGIA_E_RESULTADOS.md`.
-
 ## Preparação de dados
 
 A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.py`. O script é chamado pelo notebook somente quando `RUN_RECONSTRUIR_UNIFIED=True`.
