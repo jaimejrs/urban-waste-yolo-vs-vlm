@@ -1,0 +1,9 @@
+{
+  "strategy": "grouped_by_source_original_stem",
+  "seed": 42,
+  "train_ratio": 0.85,
+  "train_groups": 2872,
+  "val_groups": 507,
+  "overlap_groups": 0,
+  "overlap_group_keys": []
+}

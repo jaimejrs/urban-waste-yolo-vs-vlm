@@ -1,0 +1,25 @@
+# Core notebook runtime
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.8
+tqdm>=4.66
+Pillow>=10.0
+opencv-python>=4.10
+python-dotenv>=1.0
+requests>=2.31
+openai>=1.30
+jsonschema>=4.0
+scikit-learn>=1.4
+
+# YOLO training/inference
+ultralytics>=8.3
+torch
+torchvision
+
+# Original notebook/data preparation extras
+roboflow>=1.1
+PyYAML>=6.0
+seaborn>=0.13
+statsmodels>=0.14
+pillow-heif>=0.16
+ImageHash>=4.3

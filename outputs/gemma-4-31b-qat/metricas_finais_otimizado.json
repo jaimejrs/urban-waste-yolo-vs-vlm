@@ -1,0 +1,310 @@
+{
+  "projeto": "YOLOv11m vs Gemma 4 31B-QAT - notebook otimizado",
+  "data_execucao": "2026-06-18 11:02",
+  "hardware": "CPU/indisponivel",
+  "seed": 42,
+  "modelo_vlm": "gemma-4-31b-qat",
+  "slug_vlm": "gemma-4-31b-qat",
+  "teste": {
+    "total": 560,
+    "com_lixo": 280,
+    "sem_lixo": 280
+  },
+  "cache": {
+    "vlm_classificacao": "560/0",
+    "vlm_localizacao": "560/0",
+    "validacao_estrita": false
+  },
+  "yolo": {
+    "limiar_principal": 0.25,
+    "acuracia": 0.7857,
+    "acuracia_ic95_inf": 0.7498,
+    "acuracia_ic95_sup": 0.8177,
+    "precisao": 0.8636,
+    "recall": 0.6786,
+    "especificidade": 0.8929,
+    "balanced_accuracy": 0.7857,
+    "mcc": 0.585,
+    "kappa": 0.5714,
+    "f1": 0.76,
+    "taxa_fp": 0.1071,
+    "matriz_confusao": [
+      [
+        250,
+        30
+      ],
+      [
+        90,
+        190
+      ]
+    ],
+    "tp": 190,
+    "tn": 250,
+    "fp": 30,
+    "fn": 90,
+    "latencia_inferencia_media_ms": 7.2,
+    "latencia_end_to_end_media_ms": 9.39
+  },
+  "vlm": {
+    "prompt_hash": "591256762fe7185b",
+    "prompt_localizacao_hash": "ddec5b514bcd591a",
+    "respostas_invalidas": 0,
+    "acuracia": 0.9839,
+    "acuracia_ic95_inf": 0.9697,
+    "acuracia_ic95_sup": 0.9915,
+    "precisao": 0.9927,
+    "recall": 0.975,
+    "especificidade": 0.9929,
+    "balanced_accuracy": 0.9839,
+    "mcc": 0.968,
+    "kappa": 0.9679,
+    "f1": 0.9838,
+    "taxa_fp": 0.0071,
+    "matriz_confusao": [
+      [
+        278,
+        2
+      ],
+      [
+        7,
+        273
+      ]
+    ],
+    "tp": 273,
+    "tn": 278,
+    "fp": 2,
+    "fn": 7,
+    "latencia_inferencia_media_ms": 1329.94,
+    "latencia_end_to_end_media_ms": 1332.39
+  },
+  "yolo_localizacao": {
+    "modelo": "YOLOv11m",
+    "iou_threshold": 0.5,
+    "imagens_avaliadas": 560,
+    "imagens_positivas_gt": 280,
+    "imagens_negativas_gt": 280,
+    "gt_boxes": 794,
+    "pred_boxes": 511,
+    "tp_boxes_iou_05": 92,
+    "fp_boxes_iou_05": 419,
+    "fn_boxes_iou_05": 702,
+    "precisao_box_iou_05": 0.18,
+    "recall_box_iou_05": 0.1159,
+    "f1_box_iou_05": 0.141,
+    "imagens_positivas_com_iou_05": 76,
+    "taxa_imagens_positivas_com_iou_05": 0.2714,
+    "iou_medio_melhor_por_imagem_positiva": 0.2866,
+    "taxa_imagens_negativas_com_predicao": 0.1071,
+    "sucessos_iou_05": 76,
+    "taxa_sucesso_iou_05": 0.2714,
+    "iou_medio": 0.2866,
+    "limiar_conf": 0.25
+  },
+  "vlm_localizacao": {
+    "modelo": "Gemma 4 31B-QAT",
+    "iou_threshold": 0.5,
+    "imagens_avaliadas": 560,
+    "imagens_positivas_gt": 280,
+    "imagens_negativas_gt": 280,
+    "gt_boxes": 794,
+    "pred_boxes": 527,
+    "tp_boxes_iou_05": 112,
+    "fp_boxes_iou_05": 415,
+    "fn_boxes_iou_05": 682,
+    "precisao_box_iou_05": 0.2125,
+    "recall_box_iou_05": 0.1411,
+    "f1_box_iou_05": 0.1696,
+    "imagens_positivas_com_iou_05": 109,
+    "taxa_imagens_positivas_com_iou_05": 0.3893,
+    "iou_medio_melhor_por_imagem_positiva": 0.4403,
+    "taxa_imagens_negativas_com_predicao": 0.0214,
+    "sucessos_iou_05": 109,
+    "taxa_sucesso_iou_05": 0.3893,
+    "iou_medio": 0.4403,
+    "prompt_hash": "ddec5b514bcd591a",
+    "modelo_id": "gemma-4-31b-qat"
+  },
+  "artefatos_analise": [
+    "outputs/gemma-4-31b-qat/analises/auditoria_phash_hashes.csv",
+    "outputs/gemma-4-31b-qat/analises/auditoria_phash_resumo.csv",
+    "outputs/gemma-4-31b-qat/analises/auditoria_phash_duplicatas_exatas.csv",
+    "outputs/gemma-4-31b-qat/analises/auditoria_phash_vazamento_train_val.csv",
+    "outputs/gemma-4-31b-qat/analises/auditoria_phash_vazamento_treino_teste.csv",
+    "outputs/gemma-4-31b-qat/analises/tabela_classificacao_pareada.csv",
+    "outputs/gemma-4-31b-qat/analises/tabela_metricas_classificacao.csv",
+    "outputs/gemma-4-31b-qat/analises/tabela_estatistica_classificacao.csv",
+    "outputs/figures/fig_classificacao_metricas_comparativas.png",
+    "outputs/figures/fig_matrizes_confusao_classificacao.png",
+    "outputs/figures/fig_sobreposicao_erros_classificacao.png",
+    "outputs/gemma-4-31b-qat/analises/tabela_tradeoff_f1_latencia.csv",
+    "outputs/figures/fig_tradeoff_f1_latencia.png",
+    "outputs/gemma-4-31b-qat/analises/amostras_classificacao_fp_fn_tp_tn.csv",
+    "outputs/gemma-4-31b-qat/analises/tabela_localizacao_pareada.csv",
+    "outputs/gemma-4-31b-qat/analises/tabela_metricas_localizacao.csv",
+    "outputs/gemma-4-31b-qat/analises/tabela_estatistica_localizacao.csv",
+    "outputs/figures/fig_localizacao_metricas_comparativas.png",
+    "outputs/figures/fig_distribuicao_iou_localizacao.png",
+    "outputs/figures/fig_caixas_tp_fp_fn_localizacao.png",
+    "outputs/gemma-4-31b-qat/analises/amostras_localizacao_fp_fn.csv"
+  ],
+  "auditoria_phash": {
+    "distancia_maxima_vazamento": 5,
+    "resumo": [
+      {
+        "grupo": "teste",
+        "n_imagens": 560,
+        "n_erros": 0,
+        "n_hashes": 560,
+        "n_hashes_duplicados_exatos": 0,
+        "n_imagens_em_hashes_duplicados": 0
+      },
+      {
+        "grupo": "train",
+        "n_imagens": 6557,
+        "n_erros": 0,
+        "n_hashes": 6344,
+        "n_hashes_duplicados_exatos": 191,
+        "n_imagens_em_hashes_duplicados": 404
+      },
+      {
+        "grupo": "val",
+        "n_imagens": 1141,
+        "n_erros": 0,
+        "n_hashes": 1133,
+        "n_hashes_duplicados_exatos": 8,
+        "n_imagens_em_hashes_duplicados": 16
+      }
+    ],
+    "duplicatas_exatas_grupos": 309,
+    "pares_train_val_suspeitos": 145,
+    "pares_train_teste_suspeitos": 0
+  },
+  "yolo_proveniencia": {
+    "yolo_run_name": "yolov11m_lixo_garbage_8uzha_garbage_mvzg3_taco_grouped_split",
+    "weights_path": "/tmp/urban-waste-yolo-vs-vlm-push/runs/detect/models/yolov11m_lixo_garbage_8uzha_garbage_mvzg3_taco_grouped_split/weights/best.pt",
+    "weights_exists": false,
+    "weights_sha256": null
+  },
+  "dados": {
+    "configuracao_datasets": {
+      "positivos": [],
+      "sidewalk_negativo": {
+        "workspace": null,
+        "project": null,
+        "version": null,
+        "papel": "negativo_treino"
+      },
+      "teste": {
+        "workspace": null,
+        "project": null,
+        "version": null,
+        "papel": "teste"
+      },
+      "taco": {
+        "repo_url": null,
+        "destino": "data/raw_taco",
+        "n_alvo": null,
+        "git_commit": null
+      }
+    },
+    "unified_summary": {
+      "train:garbage-8uzha": {
+        "images": 2895,
+        "positive_images": 2895,
+        "boxes": 3648
+      },
+      "train:garbage-mvzg3": {
+        "images": 739,
+        "positive_images": 739,
+        "boxes": 1145
+      },
+      "train:sidewalk-segmentation": {
+        "images": 1614,
+        "positive_images": 0,
+        "boxes": 0
+      },
+      "train:taco": {
+        "images": 1309,
+        "positive_images": 1309,
+        "boxes": 4204
+      },
+      "val:garbage-8uzha": {
+        "images": 506,
+        "positive_images": 506,
+        "boxes": 636
+      },
+      "val:garbage-mvzg3": {
+        "images": 130,
+        "positive_images": 130,
+        "boxes": 190
+      },
+      "val:sidewalk-segmentation": {
+        "images": 314,
+        "positive_images": 0,
+        "boxes": 0
+      },
+      "val:taco": {
+        "images": 191,
+        "positive_images": 191,
+        "boxes": 580
+      }
+    },
+    "unified_split_audit": {
+      "strategy": "grouped_by_source_original_stem",
+      "seed": 42,
+      "train_ratio": 0.85,
+      "train_groups": 2872,
+      "val_groups": 507,
+      "overlap_groups": 0,
+      "overlap_group_keys": []
+    },
+    "teste_summary": {
+      "images": 560,
+      "positive_images": 280,
+      "negative_images": 280,
+      "boxes": 794,
+      "source": "imagens-teste-lixo",
+      "version": 1
+    },
+    "unified_manifest": {
+      "existe": true,
+      "n_arquivos": 2,
+      "sha256_manifesto": "f95695dca81b20ced1c12448f529b9a3c26da3375634ff57ee0a385ede4fbd22"
+    },
+    "teste_manifest": {
+      "existe": true,
+      "n_arquivos": 561,
+      "sha256_manifesto": "0f7dee43a5cd88849aa5c67c0085763eee851073d85c48183b6f7b725f96c37d"
+    }
+  },
+  "ambiente": {
+    "python": "3.12.13",
+    "pacotes": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.3",
+      "torch": "2.11.0+cu128",
+      "ultralytics": "8.4.62",
+      "roboflow": "1.3.9",
+      "openai": "2.41.0",
+      "opencv_python": "4.13.0.92",
+      "Pillow": "12.2.0",
+      "pillow_heif": "1.3.0",
+      "imagehash": "4.3.2",
+      "jsonschema": "4.26.0",
+      "scikit_learn": "1.9.0",
+      "statsmodels": null,
+      "matplotlib": "3.10.9",
+      "PyYAML": "6.0.3"
+    },
+    "flags_execucao": {
+      "RUN_TREINO_YOLO": false,
+      "RUN_YOLO_INFERENCIA": false,
+      "RUN_VLM_CLASSIFICACAO": false,
+      "RUN_VLM_LOCALIZACAO": false,
+      "RUN_DOWNLOAD_DADOS": false,
+      "RUN_RECONSTRUIR_UNIFIED": false,
+      "RUN_RECONSTRUIR_TESTE": false,
+      "RUN_AUDITORIA_PHASH": false
+    }
+  }
+}

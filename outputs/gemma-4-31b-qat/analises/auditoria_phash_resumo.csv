@@ -1,0 +1,4 @@
+grupo,n_imagens,n_erros,n_hashes,n_hashes_duplicados_exatos,n_imagens_em_hashes_duplicados
+teste,560,0,560,0,0
+train,6557,0,6344,191,404
+val,1141,0,1133,8,16

@@ -1,0 +1,3 @@
+modelo,f1_classificacao,latencia_end_to_end_ms
+YOLOv11m,0.76,9.39
+Gemma 4 31B-QAT,0.9838,1332.39

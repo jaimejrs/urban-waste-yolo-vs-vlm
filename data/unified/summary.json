@@ -1,0 +1,42 @@
+{
+  "train:garbage-8uzha": {
+    "images": 2895,
+    "positive_images": 2895,
+    "boxes": 3648
+  },
+  "train:garbage-mvzg3": {
+    "images": 739,
+    "positive_images": 739,
+    "boxes": 1145
+  },
+  "train:sidewalk-segmentation": {
+    "images": 1614,
+    "positive_images": 0,
+    "boxes": 0
+  },
+  "train:taco": {
+    "images": 1309,
+    "positive_images": 1309,
+    "boxes": 4204
+  },
+  "val:garbage-8uzha": {
+    "images": 506,
+    "positive_images": 506,
+    "boxes": 636
+  },
+  "val:garbage-mvzg3": {
+    "images": 130,
+    "positive_images": 130,
+    "boxes": 190
+  },
+  "val:sidewalk-segmentation": {
+    "images": 314,
+    "positive_images": 0,
+    "boxes": 0
+  },
+  "val:taco": {
+    "images": 191,
+    "positive_images": 191,
+    "boxes": 580
+  }
+}

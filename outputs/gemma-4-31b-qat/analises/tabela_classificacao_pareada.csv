@@ -1,0 +1,561 @@
+image_id,gt,yolo_pred,vlm_pred,yolo_resultado,vlm_resultado,yolo_correto,vlm_correto,yolo_score_max,vlm_confianca,vlm_descricao,n_gt_boxes,n_yolo_boxes,n_vlm_boxes
+0001_png.rf.46fadddf83685aa742b67c843dcd1c12.jpg,1,1,1,TP,TP,True,True,0.7953,0.95,"There is a significant amount of scattered waste, including plastic bags and cardboard, on the sidewalk and curb.",1,1,5
+0002_png.rf.a29cc134fd5ef3de536d91625bc431b9.jpg,1,1,1,TP,TP,True,True,0.2842,0.95,"Various pieces of plastic waste, bottles, and discarded packaging scattered on the ground along the rock wall.",5,1,1
+0003_png.rf.75866d15bdb7ee8513e35f2536efffa8.jpg,1,1,1,TP,TP,True,True,0.2892,0.95,Large pile of discarded garbage bags and loose waste on the sidewalk/street corner.,2,1,1
+0004_png.rf.743cbfae4726326044854ae2ec8feb9b.jpg,1,1,1,TP,TP,True,True,0.812,0.95,There are garbage bags and discarded waste on the sidewalk near the base of the tree.,1,3,1
+0005_png.rf.615c600de1855d04bb5069ff5fac35c4.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is a pile of discarded waste and garbage bags on the sidewalk/street corner.,5,0,5
+0006_png.rf.aa9b3dfe000414e04c06935acedc93cb.jpg,1,1,1,TP,TP,True,True,0.398,0.9,There is some discarded waste/trash on the curb next to the wall.,1,1,1
+0007_png.rf.11c60b250afdb358ddcc21dcda66806f.jpg,1,0,1,FN,TP,False,True,0.1208,0.9,There are pieces of discarded waste and debris along the curb of the street.,1,0,3
+0008_png.rf.1b0cdc297b0b9b90b5fd7e5c895a6f86.jpg,1,1,0,TP,FN,True,False,0.671,0.95,No visible trash or discarded waste on the street or sidewalk.,1,4,1
+0009_png.rf.4a8bfe2066823788778e98198e7d8efa.jpg,1,0,1,FN,TP,False,True,0.0,0.09,"There is a pile of discarded materials, including bags and containers, next to a utility pole on the sidewalk.",2,0,1
+0010_png.rf.719dd5e146376e89b263e131ba6a7320.jpg,1,1,1,TP,TP,True,True,0.6803,0.9,There are some discarded items and debris on the sidewalk/curb area near the trees.,3,2,1
+0011_png.rf.3f147c35954ecdc2391e56d94a88d268.jpg,1,0,1,FN,TP,False,True,0.1145,0.95,Large pile of mixed waste and garbage bags on the sidewalk/curb area.,2,0,1
+0012_png.rf.4f9ff847bcd80db4cacb14a43f5d9b3f.jpg,1,1,1,TP,TP,True,True,0.4764,0.95,There are several bags of trash and discarded waste piled up on the sidewalk/curb area near the tree.,5,1,1
+0013_png.rf.db36005818c0efd1f497a2fea94e6080.jpg,1,1,1,TP,TP,True,True,0.8646,0.95,Several garbage bags and loose waste are scattered along the curb of the street.,5,3,5
+0014_png.rf.4433ff0a895c21f8cc2d148575086b39.jpg,1,1,1,TP,TP,True,True,0.4112,0.95,"Large amount of accumulated waste, including cardboard boxes, plastic bags, and other discarded materials on the sidewalk.",5,1,1
+0015_png.rf.9f7da6f9dd40b96189bbb1891c0fc115.jpg,1,1,1,TP,TP,True,True,0.3708,0.95,Acúmulo de sacos de lixo e resíduos diversos espalhados na base de uma árvore na calçada.,3,1,1
+0016_png.rf.4d617a02171d0981c828cae08c5b422f.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is a pile of discarded waste and garbage bags on the sidewalk next to the tree.,5,0,2
+0017_png.rf.0d1e47243d14e3071ba94161fdb6527d.jpg,1,1,1,TP,TP,True,True,0.8317,0.95,Several black garbage bags piled up on the sidewalk corner.,4,3,2
+0018_png.rf.9a03172ffcff88cfbac80ec12c5caf4a.jpg,1,1,1,TP,TP,True,True,0.594,0.09,"Acúmulo de entulho e resíduos diversos no chão, junto à parede com pichações.",5,1,1
+0019_png.rf.2c02c405038cf805004ee57d1cbb430d.jpg,1,1,0,TP,FN,True,False,0.7892,0.95,No visible trash or discarded waste on the street or sidewalk.,1,6,0
+0020_png.rf.e19936fff9886e4b9ef0526f020dba93.jpg,1,0,1,FN,TP,False,True,0.0599,0.9,There is a discarded plastic bag or waste material on the side of the road/sidewalk area.,4,0,1
+0021_png.rf.2e1a9c006b6db48a6424b57c93eb8936.jpg,1,1,1,TP,TP,True,True,0.5901,0.95,"Large amount of accumulated waste, including plastic bags, organic matter, and a tire, piled up against a wall and on the sidewalk.",5,2,5
+0022_png.rf.5aef81baddd502eb37b2cd21a6307af3.jpg,1,0,1,FN,TP,False,True,0.1452,0.0,Acúmulo de entulho e resíduos sólidos descartados na calçada.,4,0,3
+0023_png.rf.c27d579eb71072841fac0be568a4e07b.jpg,1,1,1,TP,TP,True,True,0.8409,0.95,Several black garbage bags piled up on the sidewalk/curb.,1,4,1
+0024_png.rf.b0993324bd57f8cc9d019d49a4eb90f8.jpg,1,1,1,TP,TP,True,True,0.4531,1.0,Large pile of garbage bags and loose waste accumulated on the sidewalk/grass verge.,1,2,1
+0025_png.rf.7b134340eea3de0629fdbb6a61ccb489.jpg,1,0,1,FN,TP,False,True,0.1345,0.95,There are several bags and discarded items piled up on the sidewalk next to a tree.,1,0,1
+0026_png.rf.d2e5e9928d59cd2c000401c92ccb9e7b.jpg,1,1,1,TP,TP,True,True,0.3253,0.09,There is a pile of garbage bags and loose waste on the sidewalk near the base of a utility pole.,2,1,1
+0027_png.rf.6434aa36af1db108b94938969a31d8a0.jpg,1,1,1,TP,TP,True,True,0.6906,0.09,Several black garbage bags and some white/clear plastic bags filled with waste are discarded on the sidewalk/curb area.,1,2,1
+0028_png.rf.9b31d9f1046c079fe57f144d1aa173af.jpg,1,1,1,TP,TP,True,True,0.7164,0.9,There is discarded waste and debris on the sidewalk and curb area near the utility box.,2,2,1
+0029_png.rf.1e301d52fbd6f87e15c2bf88ddf8cc9c.jpg,1,1,1,TP,TP,True,True,0.813,0.95,Discarded waste and debris scattered on the sidewalk/median area near the tree.,2,1,2
+0030_png.rf.51aaca55f0dc987741ee330c8fe1d930.jpg,1,1,1,TP,TP,True,True,0.5623,1.0,Large amount of garbage bags and loose waste scattered along the sidewalk and street edge.,4,6,1
+0031_png.rf.3d0f99c67a1eda60578e3b0d65d31465.jpg,1,1,1,TP,TP,True,True,0.8099,0.95,"There are several pieces of discarded waste, including bottles and packaging, on the sidewalk/curb area next to the white car.",4,2,5
+0032_png.rf.ef3438e853f7049321ccb76f2c30739e.jpg,1,1,1,TP,TP,True,True,0.3104,0.95,Large amount of accumulated waste and debris on the sidewalk and street edge near a tree.,3,1,1
+0033_png.rf.06dbcc53d3c8fdd4109b5d797136c0b4.jpg,1,1,1,TP,TP,True,True,0.8149,0.95,Large amount of construction debris and discarded waste scattered on the sidewalk and street edge.,10,1,2
+0034_png.rf.d75257b75fd55f547ed2000816db4573.jpg,1,1,1,TP,TP,True,True,0.8789,0.95,Black garbage bag on the sidewalk next to a tree.,4,1,1
+0035_png.rf.eea64570fd9fd3069a7ab825fdfabfa6.jpg,1,1,1,TP,TP,True,True,0.8443,0.95,Several black and white garbage bags piled on the grass strip between the sidewalk and the street.,4,4,5
+0036_png.rf.969beef6aca8caf54407045bbb434ba0.jpg,1,1,1,TP,TP,True,True,0.6031,0.95,There are several garbage bags and discarded waste items piled up on the side of the street/sidewalk area.,2,1,1
+0037_png.rf.63fd666d46ad74965e785ee56d5de17c.jpg,1,1,1,TP,TP,True,True,0.8182,0.95,Black garbage bags on the side of the street/sidewalk.,1,2,1
+0038_png.rf.048635f3765350fd2305f72ab18e503e.jpg,1,0,1,FN,TP,False,True,0.0,0.9,There is scattered white waste/debris on the sidewalk and street edge near the motorcycle.,3,0,1
+0039_png.rf.8cce46fbf06e719350b27a3968546660.jpg,1,0,1,FN,TP,False,True,0.0,0.95,Large amount of garbage bags and loose waste accumulated along the sidewalk and curb.,7,0,3
+0040_png.rf.4566c8c9dfea0e3f182586338ebd6183.jpg,1,1,1,TP,TP,True,True,0.8144,0.95,Several black garbage bags piled up on the sidewalk/street corner.,3,7,1
+0041_png.rf.1dd83aaf01160c33b5c82ce8f2b8a37a.jpg,1,1,1,TP,TP,True,True,0.8253,0.95,Several garbage bags and loose waste are piled up on the sidewalk/street area.,2,4,2
+0042_png.rf.294a9e546c99c9c31206ce7c329f3b2b.jpg,1,0,1,FN,TP,False,True,0.0988,0.95,There is a significant amount of accumulated discarded waste and garbage bags on the sidewalk/curb area.,4,0,1
+0043_png.rf.8e8a284e01ad3ec4cff1108dc59b02cc.jpg,1,1,1,TP,TP,True,True,0.6088,0.95,There are several garbage bags and loose waste items scattered on the sidewalk and the edge of the road.,4,2,4
+0044_png.rf.d33c15b30c20d39532374283741e0ce5.jpg,1,1,1,TP,TP,True,True,0.8201,0.95,Two black garbage bags left on the sidewalk/street edge.,1,2,1
+0045_png.rf.78a17743a01f7a60ee7b6264f04278a7.jpg,1,0,1,FN,TP,False,True,0.2377,0.9,"There is scattered debris and waste on the sidewalk and near the curb, particularly around the base of the lamp post and the base of the base of the lamp post and the base of the lamp post",15,0,5
+0046_png.rf.cdabb5d69c50cccd211caf06f9da5e3a.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There are several pieces of discarded waste and garbage bags at the base of the tree on the sidewalk/grass area.,2,0,1
+0047_png.rf.18348ede7757ac393433df966cbce0b0.jpg,1,1,1,TP,TP,True,True,0.8051,0.95,There are several discarded bags and pieces of waste on the sidewalk next to the tree.,5,2,1
+0048_png.rf.a2b259919a967a140a4fcaf6937c4817.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is discarded cardboard and waste on the sidewalk near the base of the tree.,2,0,2
+0049_png.rf.c11e5895be26d55bd1af85371556a1ac.jpg,1,1,1,TP,TP,True,True,0.5574,0.09,Acúmulo de sacos de lixo e resíduos diversos descartados na calçada/canteiro.,2,1,1
+0050_png.rf.0b3e4a8a3000dec5918f536ecf4479da.jpg,1,1,1,TP,TP,True,True,0.8828,0.95,"Various discarded waste materials, including plastic bags and debris, scattered on the sidewalk and against the wall.",5,1,5
+0051_png.rf.6dfe466b9b8315f497ce91684d08613d.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is visible discarded waste and debris on the sidewalk and street edge near the white utility box.,8,0,1
+0052_png.rf.5883d375fe45d193cc882f5d81cccfa0.jpg,1,1,1,TP,TP,True,True,0.8622,0.95,Several garbage bags and loose waste are piled on the sidewalk next to a tree and a car.,3,3,3
+0053_png.rf.6e14490d11c3887218351e2a31dfca57.jpg,1,1,1,TP,TP,True,True,0.7581,0.09,Discarded waste and cardboard on the sidewalk/curb area.,2,1,1
+0054_png.rf.a621e29f5d1f5fcd87e4b0fa624aa2be.jpg,1,0,1,FN,TP,False,True,0.2311,1.0,Large pile of discarded waste and garbage bags on the sidewalk/grass verge.,3,0,3
+0055_png.rf.4bae67389ba2b9348bd2fdee7a40a0d9.jpg,1,0,1,FN,TP,False,True,0.1568,0.95,Large pile of construction debris and discarded waste on the sidewalk/street corner.,5,0,1
+0056_png.rf.2f441ccf7ed9a370915579ed36e752e9.jpg,1,1,1,TP,TP,True,True,0.8313,0.95,Large amount of garbage bags and loose waste scattered around a trash container.,2,2,1
+0057_png.rf.c5711c87dcf24008250efa131fbabd75.jpg,1,1,1,TP,TP,True,True,0.5766,0.09,"Various discarded waste including cardboard boxes, plastic bags, and loose debris on the sidewalk and dirt area near a tree.",12,2,5
+0058_png.rf.2db17cb6d4f54daeb200e8387d062948.jpg,1,1,1,TP,TP,True,True,0.6964,0.9,There are several small pieces of discarded waste and bottles on the sidewalk next to the utility poles.,4,3,2
+0059_png.rf.fee2b6417ac39d1d02d32ea5d1a67e2d.jpg,1,1,1,TP,TP,True,True,0.809,0.95,"Acúmulo de entulho, galhos e sacos de lixo pretos descartados na calçada ao lado de um muro.",10,2,1
+0060_png.rf.ad0acc14e1a7d3a8458b57b961dc87f5.jpg,1,1,1,TP,TP,True,True,0.5133,0.95,There is a pile of garbage bags and loose waste on the sidewalk near the bus stop.,2,1,1
+0061_png.rf.d26ff2b361a1e3ee13da40bb984d1f1b.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Debris and construction waste scattered on the sidewalk and street edge.,4,0,1
+0062_png.rf.f19f8e3aa6456f1dfc66c36c3135d126.jpg,1,0,1,FN,TP,False,True,0.1303,0.9,There is accumulated waste and debris on the side of the street/sidewalk area.,3,0,1
+0063_png.rf.bdea974cb1a83d676a54aa9fbc69066d.jpg,1,1,1,TP,TP,True,True,0.5487,0.95,There are several black garbage bags and loose waste scattered on the sidewalk and around a trash container.,4,2,1
+0064_png.rf.34457208825aadf31997a6e59fd5b964.jpg,1,1,1,TP,TP,True,True,0.7252,0.95,Large amount of accumulated garbage bags and loose waste scattered along the curb and sidewalk.,11,1,5
+0065_png.rf.3356a448df1922c7310a2e26be864e9e.jpg,1,0,1,FN,TP,False,True,0.1892,0.95,"Large pile of mixed waste, including construction debris and plastic packaging, on the sidewalk and against a wall.",4,0,1
+0066_png.rf.03840d11d9349411095003e17ec97d2d.jpg,1,0,0,FN,FN,False,False,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",2,0,0
+0067_png.rf.99548bc87b25b0a9e806db7aa39aa66f.jpg,1,1,1,TP,TP,True,True,0.7831,0.95,There are several white garbage bags and loose debris on the sidewalk next to the tree.,3,3,1
+0068_png.rf.909799093fca68d5b8f2efd575f9010d.jpg,1,0,1,FN,TP,False,True,0.0,0.95,Large pile of discarded garbage bags and loose waste on the grass verge,2,0,1
+0069_png.rf.5b300eee3493d3c107cb381fecbf115b.jpg,1,0,1,FN,TP,False,True,0.1065,0.95,"Various discarded waste, including plastic bottles and packaging, scattered on the sidewalk and near the wall.",8,0,1
+0070_png.rf.103ebae7a77113f0571df63df814055c.jpg,1,1,1,TP,TP,True,True,0.8547,0.95,Several black garbage bags filled with waste are piled on the sidewalk/curb area.,3,4,3
+0071_png.rf.e044e1320222bde1d4fc564e666c06d0.jpg,1,1,1,TP,TP,True,True,0.7315,0.9,There is some discarded waste/debris on the dirt area between the sidewalk and the street.,2,1,1
+0072_png.rf.de2abe2064152b0699115dab8ceef610.jpg,1,1,1,TP,TP,True,True,0.7602,0.95,Large pile of garbage bags and loose waste accumulated on the sidewalk/grass verge.,7,1,2
+0073_png.rf.6f86be0a5c37d89321595c7c6ea64d59.jpg,1,1,1,TP,TP,True,True,0.6903,0.95,Several black garbage bags piled up on the sidewalk/curb area.,3,3,1
+0074_png.rf.f62f9c13e78a35e7e86387c679b4b316.jpg,1,0,1,FN,TP,False,True,0.0,0.95,"Various discarded waste, including plastic bags and loose debris, scattered along the sidewalk and street edge.",8,0,5
+0075_png.rf.2cf8c3db745bd9272a23412a161cdae2.jpg,1,1,1,TP,TP,True,True,0.7567,0.95,There are several discarded bags and pieces of debris scattered on the ground near the tree and along the curb.,5,3,2
+0076_png.rf.7bc5f38768867e331203d4b165772096.jpg,1,0,1,FN,TP,False,True,0.0,1.0,Large amount of discarded construction debris and general waste piled up on the sidewalk and street.,7,0,1
+0077_png.rf.1ef5ad92f34cebb65ae1975f439d4ce7.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Discarded cardboard and debris scattered along the sidewalk and wall.,4,0,5
+0078_png.rf.b68560326a7985b3e956c3e21033bd50.jpg,1,0,1,FN,TP,False,True,0.127,0.95,There is visible discarded waste and debris on the sidewalk and near the base of the utility pole.,3,0,5
+0079_png.rf.b06140890468574068f44b7f9ac22403.jpg,1,1,1,TP,TP,True,True,0.6481,0.95,There is a discarded black plastic bag and some white waste/debris on the sidewalk/curb area.,2,1,2
+0080_png.rf.55f1fbdbf97af457be90c792d817002e.jpg,1,1,1,TP,TP,True,True,0.8007,0.95,Several garbage bags and loose waste are piled on the side of the road/sidewalk area.,3,5,6
+0081_png.rf.81356620017ddd88f6050eb50170f641.jpg,1,1,1,TP,TP,True,True,0.7368,0.95,Several black garbage bags filled with waste are piled up on the sidewalk next to a trash container.,3,7,2
+0082_png.rf.e4284a51e359cbfb1434a8cfe59be823.jpg,1,1,1,TP,TP,True,True,0.2876,0.95,"Various pieces of discarded paper, plastic, and packaging waste scattered along the curb of the street.",2,1,1
+0083_png.rf.1648f6a2512e62b6aea3ba9f04f94c7b.jpg,1,1,1,TP,TP,True,True,0.8017,0.09,Blue plastic garbage bags on the sidewalk/grass verge.,2,2,1
+0084_png.rf.790b90ee950877b966c06003d7765689.jpg,1,1,1,TP,TP,True,True,0.877,0.95,Black garbage bags and loose waste scattered on the sidewalk and street.,3,3,4
+0085_png.rf.be1e304e8f56c4b865c307319d10dfb9.jpg,1,1,1,TP,TP,True,True,0.6784,0.95,"There are several discarded items, including bags and packaging, on the sidewalk near the utility box.",4,3,1
+0086_png.rf.54d1da0d5be141128a1c6bcdca96c139.jpg,1,1,1,TP,TP,True,True,0.7391,0.09,Acúmulo de sacos plásticos e resíduos diversos descartados na guia da calçada.,3,3,1
+0087_png.rf.d9447631e3cacc469c5474102ef7b28c.jpg,1,1,1,TP,TP,True,True,0.6391,1.0,Large pile of garbage bags and loose waste on the sidewalk/street edge.,7,4,5
+0088_png.rf.26bad349a474ea2d2e4dbd92e9f5f263.jpg,1,0,1,FN,TP,False,True,0.0,0.9,There are white bags or discarded waste materials on the side of the road/sidewalk area.,3,0,1
+0089_png.rf.b639159a091ecddc1e30271db611813d.jpg,1,1,1,TP,TP,True,True,0.7114,0.09,"Acúmulo de sacos plásticos e resíduos diversos descartados na calçada, junto ao muro.",3,1,5
+0090_png.rf.8ee8e6f98f2db84b8f93cf1eccb590a9.jpg,1,0,1,FN,TP,False,True,0.2124,0.95,There are several pieces of discarded waste and plastic bags on the sidewalk and near the base of the pole.,3,0,1
+0091_png.rf.c640027682ae87668e8403a982ba304b.jpg,1,1,1,TP,TP,True,True,0.8907,0.09,A black garbage bag is sitting on the sidewalk.,1,1,1
+0092_png.rf.6b230947fc40d9713d0e60a2df3da855.jpg,1,1,1,TP,TP,True,True,0.4341,0.09,There are white garbage bags on the sidewalk/curb area near the pole.,1,1,1
+0093_png.rf.a26ed63b6ed9e7892d3bd17887b4733f.jpg,1,0,1,FN,TP,False,True,0.1851,0.9,There is a white plastic bag or piece of waste on the sidewalk/curb area near the pole.,2,0,1
+0094_png.rf.ecc23214dd6bc0876103b13dcd258aee.jpg,1,1,0,TP,FN,True,False,0.7276,0.0,No visible trash or discarded waste on the street or sidewalk.,1,1,0
+0095_png.rf.727e155653323e63ce0e6619afa91db0.jpg,1,1,1,TP,TP,True,True,0.867,0.95,Various garbage bags and loose waste scattered on the sidewalk and street corner.,3,3,3
+0096_png.rf.cbadb441bec2fb9ba7303c4c08588dd2.jpg,1,1,1,TP,TP,True,True,0.7397,0.9,There is scattered waste and debris on the grassy area between the sidewalk and the street.,4,2,1
+0097_png.rf.e1a9fb41729ab25921f30b4abb9e1531.jpg,1,0,1,FN,TP,False,True,0.0,0.95,Large amount of scattered garbage and waste bags on the sidewalk/curb area.,7,0,1
+0098_png.rf.f1a57622c8a325949caefd8b9848f821.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Discarded cardboard boxes and plastic waste on the sidewalk next to a wall.,4,0,1
+0099_png.rf.d402f2cb445c37386668edca47b7bb55.jpg,1,1,1,TP,TP,True,True,0.7382,1.0,Large amount of discarded garbage bags and loose waste scattered on the sidewalk and against a wall.,2,1,2
+0100_png.rf.291b24eb8d064013e5a62f28a170c344.jpg,1,1,1,TP,TP,True,True,0.8543,0.95,Several black garbage bags and loose waste scattered on the sidewalk and curb.,4,4,2
+0101_png.rf.2597ba103449bdb41ff2abdc30169620.jpg,1,1,1,TP,TP,True,True,0.8575,0.9,There is a small amount of discarded waste/plastic on the ground near the base of the pole in the foreground.,1,1,1
+0102_png.rf.7e928e2742aac558e38ba2b004367321.jpg,1,0,1,FN,TP,False,True,0.1936,0.95,Large pile of discarded bags and waste accumulated against a wall.,2,0,1
+0103_png.rf.f872c8e9273790dd1d263ea8306ab681.jpg,1,1,1,TP,TP,True,True,0.7777,0.95,"A pile of mixed waste, including plastics and packaging, accumulated on the sidewalk against a wall.",1,3,1
+0104_png.rf.87de58f2839c95ebae064a85d682613c.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Large amount of scattered garbage bags and loose waste along the sidewalk and fence.,5,0,1
+0105_png.rf.ced2360b6fe18147537b9eb9551e5fe2.jpg,1,1,0,TP,FN,True,False,0.7628,0.95,No visible trash or discarded waste on the street or sidewalk.,1,1,1
+0106_png.rf.119567f880a6c3586ff64e0de1fd6f91.jpg,1,1,1,TP,TP,True,True,0.3333,0.09,There is discarded waste and debris around the base of the blue trash bins.,1,1,1
+0107_png.rf.3ba6933879100d6a3f08182251e7b882.jpg,1,0,1,FN,TP,False,True,0.054,0.95,There are several piles of garbage bags and loose waste scattered along the curb and sidewalk area.,2,0,2
+0108_png.rf.9bf8cea959cf12b07d239ff3c920c1a1.jpg,1,0,1,FN,TP,False,True,0.1174,0.95,Acúmulo de sacos de lixo e detritos diversos no canteiro/calçada,3,0,1
+0109_png.rf.81f5a4554ea149a43a5460cfb7c9d18b.jpg,1,1,1,TP,TP,True,True,0.5733,0.95,"Several black garbage bags filled with waste, piled up on the sidewalk/street corner.",1,4,1
+0110_png.rf.13dae6c6ce2d900b9d1e019dc124e52d.jpg,1,1,1,TP,TP,True,True,0.8154,0.95,Cardboard boxes and other debris scattered on the sidewalk/curb area.,2,3,1
+0111_png.rf.1b823d783de3bbd1ddd0b4687f85defb.jpg,1,1,1,TP,TP,True,True,0.3465,0.95,Large pile of discarded bags and waste on the sidewalk/dirt area next to a pole.,4,1,3
+0112_png.rf.2f6d0840f854187208337d6896cb32dd.jpg,1,0,1,FN,TP,False,True,0.1309,0.95,Several garbage bags and loose waste piled up on the sidewalk/curb area.,4,0,1
+0113_png.rf.1381408778467c3960e5b4014febb5f3.jpg,1,1,1,TP,TP,True,True,0.4575,0.95,Various garbage bags and loose waste scattered on the grass verge between the sidewalk and the street.,8,1,5
+0114_png.rf.d587ff205f2af5ac398ccbcde9326c3b.jpg,1,1,1,TP,TP,True,True,0.8022,0.95,Several garbage bags are piled up on the sidewalk/curb area.,4,6,1
+0115_png.rf.7fd4d1398fc8274006dbf19cebea2402.jpg,1,0,1,FN,TP,False,True,0.0,0.9,Small pieces of debris and litter scattered on the ground near the base of the pole.,1,0,1
+0116_png.rf.caa27a4db754e6129510481bd3b6d031.jpg,1,1,1,TP,TP,True,True,0.8688,0.95,Several black garbage bags are piled up on the sidewalk/curb area.,7,7,1
+0117_png.rf.85f79b5eb7d13f7f91f710838f8757bb.jpg,1,1,1,TP,TP,True,True,0.8178,0.95,Black garbage bags placed on the sidewalk next to a tree.,2,2,1
+0118_png.rf.cd90b3e119f44c2029134efae80a4342.jpg,1,1,1,TP,TP,True,True,0.289,0.9,There is discarded waste/trash on the side of the road near the curb.,3,1,1
+0119_png.rf.dc1bb5c0d952dd276aca45fb4ca2693d.jpg,1,0,1,FN,TP,False,True,0.0,0.95,"Acúmulo de pequenos detritos e papéis descartados no chão, junto à base da estrutura metálica e na calçada.",3,0,1
+0120_png.rf.941fea780b184269f9bc861f4c1900c9.jpg,1,0,0,FN,FN,False,False,0.0615,0.95,No visible trash or discarded waste on the street or sidewalk.,3,0,0
+0121_png.rf.62d07b07e46b540ecf8b8cbb40e9fd1b.jpg,1,1,1,TP,TP,True,True,0.3427,0.95,Large pile of construction debris and discarded waste on the sidewalk/street edge.,10,1,1
+0122_png.rf.7b403a39466a16994d45207f23b51536.jpg,1,0,1,FN,TP,False,True,0.0655,0.95,"There is a significant amount of discarded waste, including white plastic bags and other debris, accumulated along the curb and the grassy area near the pole.",4,0,1
+0123_png.rf.089ebd0e525e65fb90d70a0b8c59455d.jpg,1,1,1,TP,TP,True,True,0.8461,0.95,Several black and white garbage bags piled on the sidewalk/median strip.,4,3,5
+0124_png.rf.01e00310a296cd700c05777ce80193a7.jpg,1,0,1,FN,TP,False,True,0.0,0.95,"There is a significant amount of construction debris, broken bricks, and scattered plastic waste on the ground.",4,0,1
+0125_png.rf.530d5d2be2da686e5f227d552bdfc04b.jpg,1,0,1,FN,TP,False,True,0.0,1.0,"Large pile of discarded waste, including bags, cardboard, and miscellaneous debris on the sidewalk.",8,0,1
+0126_png.rf.3b21573e01ab8dd1709cc6ea997e20b2.jpg,1,1,1,TP,TP,True,True,0.7695,0.95,"There is a significant amount of discarded waste, including cardboard boxes and plastic bags, piled up on the sidewalk/curb area between two trees.",5,2,1
+0127_png.rf.157481e167eb0c7cb3525eafbf851e77.jpg,1,0,1,FN,TP,False,True,0.1986,0.09,"Acúmulo de sacos de lixo e detritos diversos na calçada, ao lado de uma árvore.",4,0,1
+0128_png.rf.8e3ed3494f5500d220b8788600be3d3e.jpg,1,0,1,FN,TP,False,True,0.0522,0.09,Acúmulo de resíduos e sacos de lixo descartados irregularmente na calçada/canteiro.,1,0,1
+0129_png.rf.45788c13fea6472434ba6587f9b26b3d.jpg,1,1,1,TP,TP,True,True,0.819,0.95,There are discarded bags and waste materials on the sidewalk next to the tree.,3,1,1
+0130_png.rf.fd0d89f6059f4b5197986103cebdd9d4.jpg,1,1,1,TP,TP,True,True,0.878,0.09,A black garbage bag sitting on the sidewalk/curb area.,1,1,1
+0131_png.rf.a23c4eb0406ab705be250f1472904fc4.jpg,1,1,1,TP,TP,True,True,0.5782,0.95,There is a significant amount of discarded waste and debris piled up on the grass verge between the sidewalk and the street.,5,1,2
+0132_png.rf.f4f393d4da00b87750ad3d342e14aae3.jpg,1,1,1,TP,TP,True,True,0.6198,0.9,There is a white garbage bag or discarded waste material on the sidewalk next to the tree.,1,1,1
+0133_png.rf.ee6394229c838248ce4cbb2006900510.jpg,1,0,1,FN,TP,False,True,0.0,0.9,There is accumulated waste and debris on the sidewalk/ground next to the wall.,2,0,1
+0134_png.rf.a38ebe03e4d93b117cc317d875b408c4.jpg,1,1,1,TP,TP,True,True,0.8481,0.95,Several garbage bags are discarded on the sidewalk/dirt area next to the tree.,3,5,4
+0135_png.rf.5d336212f6fcf4aae6b7780ad0bd7685.jpg,1,0,1,FN,TP,False,True,0.0,0.85,There is some discarded waste/debris on the sidewalk near the base of the wall and the curb.,1,0,1
+0136_png.rf.f3a787a714ea644147fe3d88a00df05f.jpg,1,1,1,TP,TP,True,True,0.2951,0.95,There are several white garbage bags and discarded waste piled up along the curb of the sidewalk.,2,1,1
+0137_png.rf.b1ec60b8129af28e5df2ca5f74c1a6cc.jpg,1,1,1,TP,TP,True,True,0.7933,0.9,There is visible discarded waste and debris on the sidewalk and street edge near the small plant.,1,1,1
+0138_png.rf.ee6824ca3e042e4d64a70f439dda760e.jpg,1,0,1,FN,TP,False,True,0.0,0.9,There is discarded waste and debris near the base of the tree and the signpost on the sidewalk.,1,0,1
+0139_png.rf.c4af27793309ea72ae8e246f4ff42a8f.jpg,1,0,1,FN,TP,False,True,0.112,0.09,"There is a pile of discarded waste and debris, including wood and other materials, on the sidewalk/street corner.",1,0,1
+0140_png.rf.6b1ae88d298357ea64f5015bcc174962.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is discarded waste and debris accumulated along the curb/gutter area next to the sidewalk.,2,0,1
+0141_png.rf.48a2c98f574a617f5d3b0baeaa20392d.jpg,1,1,1,TP,TP,True,True,0.7025,0.95,There are several garbage bags and discarded waste items on the sidewalk/curb area.,3,3,1
+0142_png.rf.179620534e72003d0bc3fec68e6fc5de.jpg,1,0,1,FN,TP,False,True,0.0904,0.9,There is a pile of white debris or construction waste on the sidewalk/street area.,1,0,1
+0143_png.rf.8b99a8d04303a746c4122d8ab64c65c6.jpg,1,1,1,TP,TP,True,True,0.694,0.9,"There is visible discarded waste and debris on the sidewalk and near the curb, specifically white plastic or packaging materials.",6,1,1
+0144_png.rf.5d5be0b16f26aa552df0594f51c82fc4.jpg,1,0,1,FN,TP,False,True,0.0928,0.95,There are several discarded bags and waste items piled up at the base of the tree on the sidewalk.,2,0,1
+0145_png.rf.545c3476b04688abdfcabf3346f2cbbe.jpg,1,1,1,TP,TP,True,True,0.706,0.9,There is some discarded waste/debris on the sidewalk/curb area near the center of the image.,2,2,1
+0146_png.rf.c61f60b17decb1b29b3ba37df4a1c528.jpg,1,1,1,TP,TP,True,True,0.8231,0.09,Discarded construction debris and packaging materials on the sidewalk.,3,3,5
+0147_png.rf.4a27ec23459f820392006689c45e960d.jpg,1,0,1,FN,TP,False,True,0.1488,0.95,There are several garbage bags and discarded waste piled up on the sidewalk/grass area near the fence.,1,0,1
+0148_png.rf.03f57eb246df4f5c349e2493290f4b2f.jpg,1,1,1,TP,TP,True,True,0.6558,0.0,Acúmulo de sacos de lixo e resíduos diversos na beira da via pública.,6,2,1
+0149_png.rf.a3338025525c844f5e5e90a117b50614.jpg,1,1,1,TP,TP,True,True,0.5161,0.09,There is discarded waste and debris on the side of the road/sidewalk area near the base of the signpost.,4,3,1
+0150_png.rf.815c02ddcb5b94edbcc8914acd582a49.jpg,1,1,1,TP,TP,True,True,0.5069,0.95,Acúmulo de sacos de lixo e resíduos diversos no canto da calçada,1,2,1
+0151_png.rf.4bdfdd5e6c3e8e8b83bdb6cda9ec804a.jpg,1,0,1,FN,TP,False,True,0.0,0.95,Large amount of discarded construction debris and general waste accumulated along the sidewalk/wall.,4,0,1
+0152_png.rf.895a69fe4cc2ad89a48a482daa4fd637.jpg,1,0,1,FN,TP,False,True,0.1543,0.95,"Various discarded waste, including bags and plastic bottles, accumulated on the sidewalk next to a wall.",5,0,5
+0153_png.rf.a39f655d6d6d2bcb17068d5c888d28b5.jpg,1,0,1,FN,TP,False,True,0.0555,0.09,There is a white plastic bag containing waste on the sidewalk next to a utility pole.,2,0,2
+0154_png.rf.682eb2f42e1e8be551a30c397ec2b756.jpg,1,0,1,FN,TP,False,True,0.2193,0.95,Several garbage bags and discarded waste are visible on the sidewalk/curb area.,2,0,3
+0155_png.rf.5061d028bb29292ef9d54d3a971bbf7c.jpg,1,0,1,FN,TP,False,True,0.113,0.9,There is scattered debris and waste along the curb/sidewalk area near the trees.,3,0,1
+0156_png.rf.b202edf37c43cb8c72b366e261d06296.jpg,1,1,1,TP,TP,True,True,0.8438,0.09,Several black garbage bags are placed on the sidewalk/curb area.,4,5,5
+0157_png.rf.23fee278b40c25b6092656b4ee1e2c3c.jpg,1,1,0,TP,FN,True,False,0.7586,0.95,No visible trash or discarded waste on the street or sidewalk.,1,1,1
+0158_png.rf.816354605a73cc51dae2adfd93993cd0.jpg,1,1,1,TP,TP,True,True,0.7755,0.09,"Acúmulo de resíduos e sacos de lixo descartados na calçada, junto ao pé de árvore.",4,1,1
+0159_png.rf.935ff63f5ec32eabad3fe5aa42895aad.jpg,1,1,1,TP,TP,True,True,0.3342,0.9,Discarded waste and debris on the sidewalk/curb area.,1,1,1
+0160_png.rf.4e4005260b2f30754765f9a47eec717b.jpg,1,1,1,TP,TP,True,True,0.8258,0.95,There are black garbage bags on the sidewalk.,2,2,1
+0161_png.rf.7331c20d6e86999d3f501e368bceaec4.jpg,1,1,1,TP,TP,True,True,0.8667,0.95,Multiple black garbage bags piled up on the sidewalk/curb.,3,8,5
+0162_png.rf.1aa1f17fdaa29a43cef07c224000183f.jpg,1,1,1,TP,TP,True,True,0.638,0.95,There are several discarded bags and items of waste on the sidewalk next to a trash bin.,3,4,1
+0163_png.rf.7495561d776fcb6d36b2a6305bad3d33.jpg,1,0,1,FN,TP,False,True,0.0,0.9,There is visible debris and discarded waste on the dirt area and sidewalk edge along the street.,3,0,1
+0164_png.rf.22149e089236dad56091fb8bf05995cf.jpg,1,1,1,TP,TP,True,True,0.8077,0.95,Large amount of garbage bags and loose waste scattered along the curb and sidewalk.,8,1,3
+0165_png.rf.5ac7f9b35f26027a731dbfe5ea88fbe7.jpg,1,0,1,FN,TP,False,True,0.0,0.95,"There are several pieces of discarded waste, including bags and cardboard, on the sidewalk next to the fence.",3,0,4
+0166_png.rf.291e046bc85509e3614996eb408f3f56.jpg,1,1,1,TP,TP,True,True,0.3848,0.95,There is visible discarded waste and debris on the sidewalk/dirt area next to the tree.,3,1,1
+0167_png.rf.677966ae14d8c153f4e06133a7c3b7fd.jpg,1,1,1,TP,TP,True,True,0.6152,1.0,"Large pile of discarded plastic bottles, packaging, and general waste scattered across the street/ground.",1,1,1
+0168_png.rf.b5ce2fcac22bb6d0201ee6b4baeb7b44.jpg,1,1,1,TP,TP,True,True,0.4562,0.09,"Large pile of discarded furniture, cardboard, and miscellaneous waste on the street.",1,1,1
+0169_png.rf.da1fead981b5361fbb824a6d261d6f02.jpg,1,1,1,TP,TP,True,True,0.8961,1.0,"Large pile of mixed waste including plastic bags, packaging, and organic debris on the side of the street.",1,3,1
+0170_png.rf.78b9e8997265a206ebd006f42afe37d9.jpg,1,1,1,TP,TP,True,True,0.8308,0.09,Large pile of garbage bags and discarded furniture on the sidewalk.,1,6,1
+0171_png.rf.a57b8512de3a899ef861dd2b1f76dcf6.jpg,1,1,1,TP,TP,True,True,0.8639,0.09,Several garbage bags piled up on the sidewalk/street edge.,4,7,5
+0172_png.rf.9240c2b4f638627bf276494ab10a4b22.jpg,1,1,1,TP,TP,True,True,0.6966,0.09,Plastic bags filled with waste and a red plastic crate on the sidewalk.,1,2,1
+0173_png.rf.9f82fe712deb0b999e7c21e07c99b1fc.jpg,1,1,1,TP,TP,True,True,0.4982,0.95,Large pile of garbage bags and cardboard boxes on the side of the dirt road.,1,3,5
+0174_png.rf.4839d3dde1c4f58fab4d555c5c5e9992.jpg,1,1,1,TP,TP,True,True,0.8944,0.95,Various garbage bags and cardboard boxes discarded on the sidewalk/street edge.,2,4,3
+0175_png.rf.959fb5a03f7bdb5f6ac3c23be507b09e.jpg,1,0,1,FN,TP,False,True,0.0706,0.09,Piles of construction debris and rubble on the sidewalk and street.,2,0,2
+0176_png.rf.1bec440efeda924b309bafcaa4ed4fa9.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Pile of organic waste and discarded debris on the sidewalk/street edge.,1,0,1
+0177_png.rf.bef87b6645af9f251fd8604dce44adb2.jpg,1,0,1,FN,TP,False,True,0.0538,0.95,Debris and construction waste (broken concrete/plaster) on the sidewalk and street.,2,0,1
+0178_png.rf.6834210a6ae4558d0ce624e7c022122a.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Pile of construction debris and waste on the sidewalk/street edge.,3,0,1
+0179_png.rf.1f884ebbf0d7d41c8c0fcc41ba0f0a8a.jpg,1,1,1,TP,TP,True,True,0.9122,0.09,Black garbage bag on the sidewalk,1,1,1
+0180_png.rf.772b5cd6b390d9ae0b4b6e892b26ce3f.jpg,1,1,1,TP,TP,True,True,0.8904,0.09,Two black garbage bags on the sidewalk.,1,2,1
+0181_png.rf.411dfd19f24a847e11cc7e4fe73b4a3c.jpg,1,1,1,TP,TP,True,True,0.8781,0.95,A black garbage bag is discarded on the sidewalk/curb area.,1,1,1
+0182_png.rf.604abdb14eaa5a9932c99f217040928b.jpg,1,1,1,TP,TP,True,True,0.831,0.95,"There are several pieces of discarded waste, including plastic bags and packaging, scattered on the ground near the base of the utility pole.",4,1,3
+0183_png.rf.fdf3205989294443e38b43b405c7f92b.jpg,1,1,1,TP,TP,True,True,0.2897,0.95,There are several white garbage bags on the side of the street/sidewalk.,1,1,1
+0184_png.rf.2f14947ccfd7127e98810df19f892a04.jpg,1,1,1,TP,TP,True,True,0.8509,0.95,There are several garbage bags and discarded waste piled up at the base of the tree on the sidewalk.,1,4,1
+0185_png.rf.ffe4c505f1e0af993d96a7d22cc56292.jpg,1,1,1,TP,TP,True,True,0.8754,0.95,Several garbage bags piled up at the base of a tree on the sidewalk.,1,6,1
+0186_png.rf.ab85b8b772812f393b9f811d89341024.jpg,1,0,1,FN,TP,False,True,0.1554,0.95,There are several bags and cardboard boxes of discarded waste on the sidewalk.,2,0,1
+0187_png.rf.e1389fa2610692f400e25b0761010ec5.jpg,1,1,1,TP,TP,True,True,0.7746,0.09,There are several pieces of discarded waste/bags on the sidewalk corner.,2,3,5
+0188_png.rf.cdda9b2810902fa007cff8078aced267.jpg,1,1,1,TP,TP,True,True,0.4897,0.95,Discarded cardboard boxes and plastic bags at the base of a utility pole.,2,2,2
+0189_png.rf.f4b9351f251baf37accefa8350e7b21f.jpg,1,1,1,TP,TP,True,True,0.868,0.95,"Large pile of construction debris, bricks, and miscellaneous waste materials on the street corner.",5,2,3
+0190_png.rf.e5ae0edb04d7799f13be2b85cea85766.jpg,1,1,1,TP,TP,True,True,0.8053,0.95,There is a black garbage bag and a blue plastic bag on the sidewalk.,2,1,2
+0191_png.rf.9e3882632ed5db353c613ba764a88869.jpg,1,1,1,TP,TP,True,True,0.8869,0.09,Two black garbage bags on the sidewalk.,2,4,2
+0192_png.rf.481b034b2bc2d6701653945ea26ad220.jpg,1,1,1,TP,TP,True,True,0.8602,0.09,There are discarded plastic bags and waste on the sidewalk next to the wall.,3,1,5
+0193_png.rf.5f6597d6adfb300208913bbdda074906.jpg,1,1,1,TP,TP,True,True,0.8621,0.09,Black garbage bag on the sidewalk/curb area.,1,1,1
+0194_png.rf.e875867a8bd989fdbdc6cece7812f4b4.jpg,1,0,1,FN,TP,False,True,0.1167,0.09,There are several pieces of white and light-colored discarded waste/debris on the ground near the tree and the sidewalk.,4,0,1
+0195_png.rf.fff609f41889ea446e626caab7c3db10.jpg,1,0,1,FN,TP,False,True,0.1812,0.09,"Acúmulo de galhos, folhas e resíduos orgânicos descartados na calçada/rua.",2,0,1
+0196_png.rf.bb03a602690d8b48ba4ee3e8b2dfe73c.jpg,1,1,1,TP,TP,True,True,0.7205,0.09,Large pile of dried plant waste and organic debris on the sidewalk/street.,1,2,1
+0197_png.rf.e346d3ce0ba31729e4f59be245f2dccd.jpg,1,1,1,TP,TP,True,True,0.852,0.95,A black garbage bag sitting on the sidewalk.,1,1,1
+0198_png.rf.06a66986eabcbf3f740f9ac694bf28a8.jpg,1,1,1,TP,TP,True,True,0.7607,0.95,Several plastic garbage bags are discarded on the sidewalk and street gutter.,3,3,5
+0199_png.rf.270516498a511c804a4badd547ca15e1.jpg,1,1,1,TP,TP,True,True,0.9071,0.95,Several garbage bags and loose discarded waste materials are piled against a wall.,3,3,1
+0200_png.rf.4a6b17b3608c6c3e84aadfcd2d553a3e.jpg,1,1,1,TP,TP,True,True,0.4254,0.09,Black garbage bag and loose debris on the sidewalk/street corner.,2,1,1
+0201_png.rf.8929b6d8a615e74ca698935208f8ec70.jpg,1,1,1,TP,TP,True,True,0.8975,0.09,Two garbage bags on the sidewalk/curb.,1,2,1
+0202_png.rf.6b362cfac5eff8d34374c37798348609.jpg,1,1,1,TP,TP,True,True,0.6104,0.09,Discarded bags and cardboard on the side of the street.,5,1,1
+0203_png.rf.8c0b827fda81eeb18b5072f6cff8c039.jpg,1,0,1,FN,TP,False,True,0.0,0.09,There are discarded papers and a cardboard box on the sidewalk.,2,0,3
+0204_png.rf.581cac0c222179b9792a198a2b43e78f.jpg,1,1,1,TP,TP,True,True,0.8018,0.09,Black garbage bag on the sidewalk,1,1,1
+0205_png.rf.1f4a7c069b83aca849757529b1e5f93c.jpg,1,1,1,TP,TP,True,True,0.8276,0.95,Several garbage bags and loose waste are piled up on the sidewalk/grass edge.,1,2,1
+0206_png.rf.06898fa66dcb417429f7ca852d90dc1e.jpg,1,1,1,TP,TP,True,True,0.8487,0.95,Several garbage bags filled with waste are piled up on the sidewalk next to a tree.,1,4,5
+0207_png.rf.74e05e18137df0a75149d91bf8b2c176.jpg,1,0,1,FN,TP,False,True,0.1038,0.95,"Various pieces of scattered waste, including plastics and cardboard, are visible on the grass and sidewalk area.",4,0,5
+0208_png.rf.30b240108b4f83308418271a4112f888.jpg,1,1,1,TP,TP,True,True,0.8,0.95,Various garbage bags and loose waste piled up against a wall on the sidewalk.,2,7,1
+0209_png.rf.a9fff8dbb89a4a40f1f5552d98c1097d.jpg,1,1,1,TP,TP,True,True,0.7862,0.95,"There are several pieces of discarded waste, including plastic bags and other debris, on the grass next to the wall.",1,1,3
+0210_png.rf.98eea9860362c51a7622dc6b7fc62da0.jpg,1,1,1,TP,TP,True,True,0.8276,0.09,Plastic bags containing waste on the sidewalk.,1,1,1
+0211_png.rf.eaeebcdfeb760475cda6349a2cb0f8e3.jpg,1,1,1,TP,TP,True,True,0.7939,0.95,Several white plastic garbage bags filled with waste are piled on the sidewalk/street corner.,1,3,1
+0212_png.rf.15e006e6b58a1a9a7962e119fabac94e.jpg,1,1,1,TP,TP,True,True,0.7429,0.95,Several black garbage bags piled up on the sidewalk in front of a gate.,1,2,1
+0213_png.rf.3690ffd502837bfa3c1e4a5536c1d51d.jpg,1,1,1,TP,TP,True,True,0.3969,0.95,"Large amount of scattered waste, including plastic bags and packaging, accumulated at the street corner.",6,2,1
+0214_png.rf.a9cf419315146eb510ddc99ff0f9bc32.jpg,1,1,1,TP,TP,True,True,0.8674,0.95,Blue plastic garbage bag and cardboard boxes on the sidewalk.,3,3,5
+0215_png.rf.6b2d04d7e91d7462e7175b7af955eb49.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Pile of construction debris and rubble on the sidewalk/street area.,3,0,1
+0216_png.rf.9b40c4061547f2a9be4276fd36e6c4cf.jpg,1,0,1,FN,TP,False,True,0.0,0.09,"Acúmulo de resíduos e embalagens descartadas no chão, ao lado de uma casa.",3,0,1
+0217_png.rf.20ba855658b07acbefe7e1f90961c164.jpg,1,1,1,TP,TP,True,True,0.8074,0.09,Several garbage bags piled up on the sidewalk/street edge.,1,6,1
+0218_png.rf.0190c6991fe15a2fc3c4a86225c4c7c9.jpg,1,1,1,TP,TP,True,True,0.7943,0.95,Several black garbage bags piled up on the sidewalk/curb area near a tree.,1,4,1
+0219_png.rf.d379350307e6a9a9fe267ba81a111296.jpg,1,0,1,FN,TP,False,True,0.0,0.09,"Acúmulo de entulho, galhos e resíduos descartados ao longo do muro.",2,0,1
+0220_png.rf.0a42cb34a3fc222cda9a42f4659c3624.jpg,1,1,1,TP,TP,True,True,0.7403,0.95,Large pile of garbage bags and loose waste scattered on the sidewalk next to a pink wall.,2,4,2
+0221_png.rf.45ab7c98c78fb383517932bcf4c0155c.jpg,1,1,1,TP,TP,True,True,0.8504,1.0,Large amount of accumulated garbage bags and loose waste scattered on the sidewalk and against a wall.,5,12,2
+0222_png.rf.8614e5e7c638264064f962a1cf973913.jpg,1,1,1,TP,TP,True,True,0.9013,1.0,"Large amount of scattered garbage bags, loose waste, and cardboard boxes on the sidewalk.",4,11,5
+0223_png.rf.036c4724b11f42fd73df5e383e4de25e.jpg,1,1,1,TP,TP,True,True,0.8954,0.09,"Large amount of white and colored plastic bags filled with waste, piled up on the sidewalk and against a wall.",2,14,1
+0224_png.rf.fbcd26894116b1c45a469a0af59a952d.jpg,1,1,1,TP,TP,True,True,0.6124,0.95,Various bags of waste and discarded furniture (a wooden frame/table) piled up against a wall.,1,2,5
+0225_png.rf.644361acadf8b96e0df60cd738b36c83.jpg,1,1,1,TP,TP,True,True,0.843,0.95,"Large pile of discarded waste including cardboard boxes, plastic bags, and organic debris on the sidewalk.",1,7,4
+0226_png.rf.d1b94a2499f78613c5ce7ea78e3a3170.jpg,1,1,1,TP,TP,True,True,0.7831,0.95,Large pile of discarded tires and various plastic waste and debris scattered on the street.,2,4,5
+0227_png.rf.2de556dec872cf541b40f9dec82ff5f7.jpg,1,1,1,TP,TP,True,True,0.3015,0.09,Large amount of cardboard boxes and plastic bags scattered on the sidewalk.,1,1,5
+0228_png.rf.b47699a3c3ea116a058efde2a160510c.jpg,1,1,1,TP,TP,True,True,0.8299,1.0,"Large pile of discarded waste, including plastic bags and organic debris, on the street corner.",5,2,3
+0229_png.rf.89957686e47bae9c50ae1de871f988c3.jpg,1,1,1,TP,TP,True,True,0.8603,0.95,Large pile of white and black garbage bags on the street sidewalk.,1,7,1
+0230_png.rf.010bb6669e32c7ff83929594bfd02b37.jpg,1,1,1,TP,TP,True,True,0.8712,0.95,Various discarded plastic bags and waste materials scattered across the grass and dirt ground.,8,3,5
+0231_png.rf.7bb4b5bde031d669a955e98798be4009.jpg,1,0,1,FN,TP,False,True,0.2326,0.95,Large amount of scattered waste and garbage bags on the side of the road.,6,0,1
+0232_png.rf.1dec899806f4f3bc12021ab9df5a04db.jpg,1,1,1,TP,TP,True,True,0.4551,0.95,White plastic packaging and other discarded waste materials on the side of the road among the vegetation.,4,1,1
+0233_png.rf.811c67257c366d8ac484c8036125a936.jpg,1,1,1,TP,TP,True,True,0.844,0.95,"Large amount of discarded white packaging materials, plastic bags, and general waste scattered on the roadside vegetation.",7,2,5
+0234_png.rf.934499446687e21e5caa476e4eac6379.jpg,1,1,1,TP,TP,True,True,0.4344,0.95,"Large pile of mixed waste including plastics, cardboard, and other discarded materials on the grass verge beside the road.",1,1,1
+0235_png.rf.476432a347b9f3a26795b5cae5b22135.jpg,1,1,1,TP,TP,True,True,0.5072,0.95,Large amounts of discarded furniture (sofas/mattresses) and scattered plastic waste on the side of the road.,4,1,2
+0236_png.rf.f2d306d9f21d4ff9b6fa13b79d69f753.jpg,1,1,1,TP,TP,True,True,0.854,0.95,Several black garbage bags and some loose white plastic waste scattered on the sidewalk.,3,3,1
+0237_png.rf.34ed1b9e165555aa72757364019787de.jpg,1,1,1,TP,TP,True,True,0.8742,0.95,Large pile of black and white garbage bags and loose debris on the sidewalk.,3,2,2
+0238_png.rf.553fcc703600bb11ffa2b47c704dc9b1.jpg,1,0,1,FN,TP,False,True,0.0,0.95,A discarded sofa is visible on the sidewalk/street.,2,0,1
+0239_png.rf.2f30fbbd1cc928c600944faa9ec34468.jpg,1,1,1,TP,TP,True,True,0.7448,0.95,"Various discarded waste including plastic bags, packaging, and other debris scattered on the sidewalk against a wall.",1,4,1
+0240_png.rf.7b41c6cb615c1f2de533fe513164d9a4.jpg,1,1,1,TP,TP,True,True,0.8869,0.95,"Several black and blue plastic bags filled with waste, along with cardboard boxes, discarded on the sidewalk in front of a row of mailboxes.",1,4,5
+0241_png.rf.a7c97af9453783c84124bc666033854a.jpg,1,1,1,TP,TP,True,True,0.6326,0.95,Several garbage bags and loose waste are piled up against the wall.,1,2,1
+0242_png.rf.869a8e77a3ea96e0071b3cde51a8c964.jpg,1,1,1,TP,TP,True,True,0.8894,0.95,Several black garbage bags filled with waste are piled up on the sidewalk.,1,3,1
+0243_png.rf.4410d591a32398e42371525067205180.jpg,1,1,1,TP,TP,True,True,0.7666,0.9,There is a pile of discarded waste/bags on the sidewalk near the utility pole.,1,3,1
+0244_png.rf.01b19633a1b1aa991d9fe5de8a4f3bf6.jpg,1,1,1,TP,TP,True,True,0.8704,0.09,Several black garbage bags and cardboard boxes are piled on the sidewalk.,1,5,5
+0245_png.rf.78e34ff46e64deedca08ff23df8edce0.jpg,1,1,1,TP,TP,True,True,0.8918,0.95,A plastic garbage bag filled with waste is sitting on the sidewalk.,1,1,1
+0246_png.rf.4984916d02f982be1236f6d028565e3d.jpg,1,1,1,TP,TP,True,True,0.8885,0.09,"Two large plastic garbage bags, one blue and one black, sitting on the sidewalk next to a wall.",1,2,2
+0247_png.rf.745e17d7e977178e55cf1df2a433ceef.jpg,1,1,1,TP,TP,True,True,0.933,1.0,"Several black and blue plastic garbage bags filled with waste, left on the sidewalk/curb.",1,3,5
+0248_png.rf.a04b4002734ee6a10dd8fb15fe0dc1be.jpg,1,1,1,TP,TP,True,True,0.9238,0.09,Garbage bags and a cardboard box containing waste on the sidewalk/grass area.,1,2,2
+0249_png.rf.fa7075b90a183765c82ea7d88c0568ea.jpg,1,1,1,TP,TP,True,True,0.8403,0.09,Several black and white garbage bags and loose plastic waste on the sidewalk/curb.,1,3,3
+0250_png.rf.c2504ba69a7aec436dfe64cde27e4fbb.jpg,1,1,1,TP,TP,True,True,0.5674,0.95,Plastic bags and bottles discarded on the sidewalk/curb.,1,1,3
+0251_png.rf.0077b4c8a824e7d13b4561c5a9b32047.jpg,1,1,1,TP,TP,True,True,0.8575,0.95,Black garbage bag on the sidewalk next to a pole.,1,1,1
+0252_png.rf.2d97dea46850f73e545e3048eadcec06.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Pile of construction debris and discarded waste on the sidewalk.,1,0,1
+0253_png.rf.0950cd2c4e51245f576b1f4294b6f136.jpg,1,0,1,FN,TP,False,True,0.0,0.09,"Acúmulo de galhos, folhas e detritos descartados junto ao muro.",1,0,1
+0255_png.rf.608e426612f4d33be78f65f5e1ecf6af.jpg,1,1,1,TP,TP,True,True,0.3014,0.95,"Various scattered debris, plastics, and discarded waste materials on the ground.",3,1,1
+0256_png.rf.db3ab244545b4e4c5c5eb066a172d02c.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Debris and construction waste scattered on the sidewalk/street edge.,2,0,1
+0258_png.rf.824ff166bfc6a4b265facd951189cc86.jpg,1,1,1,TP,TP,True,True,0.7826,0.95,"Various discarded waste materials, including white plastic and other debris, scattered among dry vegetation on the sidewalk.",1,1,5
+0259_png.rf.1fc0e324960c998a42c03ed8d8ed98b3.jpg,1,1,1,TP,TP,True,True,0.4871,0.95,There are garbage bags and a cardboard box discarded on the sidewalk/street edge.,1,1,3
+0260_png.rf.864dffaa8cbc06cc618997689b0168f6.jpg,1,1,1,TP,TP,True,True,0.6706,0.09,"Two blue plastic bags containing waste, discarded on the sidewalk/ground near a wall.",1,2,1
+0261_png.rf.7ad9f3a6e0f18f3266f760cb44f43eda.jpg,1,0,1,FN,TP,False,True,0.0644,0.95,"Various discarded waste, including plastics and papers, scattered on the ground near a pole and a brick wall.",3,0,2
+0262_png.rf.f63d896950cf9c75348d83db53042c40.jpg,1,0,1,FN,TP,False,True,0.0,0.95,Acúmulo de entulho e resíduos diversos ao longo da calçada e junto ao muro.,1,0,1
+0263_png.rf.95f3e904beda3258ec1d71fd5bde7c3b.jpg,1,0,1,FN,TP,False,True,0.0,0.95,Large pile of organic waste and discarded materials on the sidewalk and street edge.,2,0,1
+0264_png.rf.b6fd1d4975da93dd2d93be9516aec79e.jpg,1,0,1,FN,TP,False,True,0.2484,0.95,There are green garbage bags on the ground next to the tree.,3,0,1
+0265_png.rf.faae52153253220f3aefa6e57655b931.jpg,1,0,1,FN,TP,False,True,0.1,0.09,Large pile of discarded organic waste and debris along the wall.,2,0,1
+0266_png.rf.efa3791e43caa11d6b320082af79d56b.jpg,1,1,1,TP,TP,True,True,0.7186,0.95,A plastic garbage bag tied to a tree trunk.,1,2,1
+0267_png.rf.df31c3c408a0c58f6fd05e901438dc58.jpg,1,1,1,TP,TP,True,True,0.8797,0.09,Blue plastic bag on the sidewalk/curb,1,1,1
+0268_png.rf.4ef1a3b642c25a7d36b03458f38ba902.jpg,1,0,1,FN,TP,False,True,0.1747,0.9,There is a discarded cardboard box containing waste on the sidewalk near the curb.,1,0,1
+0269_png.rf.35caf2d0818a4e6bdc25f14da682b567.jpg,1,1,1,TP,TP,True,True,0.2921,0.09,Pile of garbage bags and loose waste on the sidewalk/corner.,1,1,1
+0270_png.rf.d052f1f2a26009ee3bab9ea5b463ad99.jpg,1,1,1,TP,TP,True,True,0.891,0.95,Two garbage bags on the sidewalk/street edge.,1,2,2
+0271_png.rf.ce19797da6bdfeaf2018a45ef05ddf63.jpg,1,0,1,FN,TP,False,True,0.0,0.95,"Large pile of organic waste, branches, and discarded packaging/cardboard boxes against a wall.",2,0,1
+0272_png.rf.4828ef9386aa5a88c3cbf51fd8ba1a13.jpg,1,0,1,FN,TP,False,True,0.1254,0.09,Cardboard boxes filled with discarded waste on the sidewalk.,1,0,1
+0273_png.rf.43c8c8b7423205719fdf408be85c0a52.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Acúmulo de entulho e resíduos diversos no acostamento da rua.,2,0,1
+0274_png.rf.075ad816405de67b1d4c3843337110ff.jpg,1,1,1,TP,TP,True,True,0.5457,0.95,Black garbage bags and construction debris (broken tiles/concrete) on the sidewalk.,2,1,2
+0275_png.rf.3d5c9fc7b4ba2b8a97a6f5789e2d7286.jpg,1,1,1,TP,TP,True,True,0.2648,0.95,"Large pile of discarded electronics, computer monitors, and general waste on the sidewalk.",2,1,5
+0276_png.rf.6bb958a6162d4e796e4396fd9e06940c.jpg,1,0,1,FN,TP,False,True,0.0,0.95,"There is a significant amount of debris and discarded waste, including plastics and cardboard, scattered across the sidewalk and street area.",2,0,1
+0277_png.rf.cc79e94c1981c2434bc23502116fb911.jpg,1,1,1,TP,TP,True,True,0.4361,0.95,"There are several discarded items, including bags and containers, on the sidewalk/street area.",1,1,1
+0278_png.rf.76753f605a88e680d8f4469ccee1b9d5.jpg,1,0,1,FN,TP,False,True,0.0,0.95,Pile of construction debris and rubble on the street/sidewalk.,1,0,1
+0279_png.rf.46bd102a975c877c5005141758f7c3ff.jpg,1,0,1,FN,TP,False,True,0.0,0.09,Pile of construction debris and rubble on the street.,1,0,1
+0280_png.rf.e7736c1287b4d933f7233b2dec9410c3.jpg,1,1,1,TP,TP,True,True,0.6763,0.95,"There is a pile of discarded cardboard, wood, and other waste materials on the sidewalk.",2,2,1
+Captura-de-tela-2026-06-05-185812_png.rf.34175ee5ff67f3a0e3f27361e9a6d737.jpg,0,0,1,TN,FP,True,False,0.0,0.9,There is a pile of discarded waste/debris on the left side of the garden area.,0,0,1
+Captura-de-tela-2026-06-05-190106_png.rf.6a3bbed09226b5cfe028a70d3e92cfac.jpg,0,0,0,TN,TN,True,True,0.15,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-190208_png.rf.115d63e27edf82202ab91b19e2bd077e.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-190304_png.rf.c01f9cec0135ea02811215dfeeb501fd.jpg,0,1,0,FP,TN,False,True,0.2766,1.0,"The street image shows a clean sidewalk and street, with no visible garbage bags, bottles, or discarded waste.",0,1,0
+Captura-de-tela-2026-06-05-190358_png.rf.cd1b9134657cbc71a10766ace3021944.jpg,0,1,0,FP,TN,False,True,0.3933,1.0,"The street and sidewalk area in front of the house are clean, with no visible garbage bags, bottles, or discarded waste.",0,1,0
+Captura-de-tela-2026-06-05-190414_png.rf.2211c8d0772298f07e39c09c851779cb.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-190423_png.rf.d4be580c6176bf6f9177b57c08e233fb.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-190449_png.rf.2ec6c062e234f006708b7ab09fdf8b68.jpg,0,1,0,FP,TN,False,True,0.6168,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
+Captura-de-tela-2026-06-05-190528_png.rf.13f173cbcfaabadbd68e13134579bc54.jpg,0,1,0,FP,TN,False,True,0.3086,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
+Captura-de-tela-2026-06-05-190740_png.rf.144e50a73e34ebdd8845fd6e67667d7b.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-190917_png.rf.e0d66be7af6bdc4087a7d9caa8abaafe.jpg,0,0,0,TN,TN,True,True,0.1329,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-05-190927_png.rf.8a743778ffcdee2382ab98e1e1e4ba2c.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-191033_png.rf.813b12d7fe21b467b802f6b6f477acd1.jpg,0,0,0,TN,TN,True,True,0.0,0.95,The street is clean with no visible discarded waste or garbage bags.,0,0,0
+Captura-de-tela-2026-06-05-191455_png.rf.26618fae7fbb60bc06f9ac58f05605b0.jpg,0,0,0,TN,TN,True,True,0.0,0.95,The street and sidewalk in front of the the building are clean.,0,0,0
+Captura-de-tela-2026-06-05-191542_png.rf.2151bfd31219349b80691fa81a507a25.jpg,0,0,0,TN,TN,True,True,0.0,1.0,The street and sidewalk in front of the yellow building are clear of visible trash or discarded waste.,0,0,0
+Captura-de-tela-2026-06-05-191747_png.rf.da48eb5515bc52d84ce64f4bd050ae65.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-191807_png.rf.8dcf201b463494ffc895f832977a77f4.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-191954_png.rf.42e84cc2727fdba8139f5ed34eaaa48c.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-192137_png.rf.cae652f76778ada5f3e8ccffcb0c73d2.jpg,0,1,0,FP,TN,False,True,0.6306,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
+Captura-de-tela-2026-06-05-192245_png.rf.1ba7ce2ba07f1beffd2344e3df39f572.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-192258_png.rf.414fe31cecf6750b6aee4d6b379994d5.jpg,0,0,0,TN,TN,True,True,0.0,0.95,The street and public square area appear clean with no visible discarded waste or trash.,0,0,0
+Captura-de-tela-2026-06-05-192658_png.rf.a612f0a78e146d7c5fa8143724127594.jpg,0,1,0,FP,TN,False,True,0.2873,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,1,0
+Captura-de-tela-2026-06-05-192814_png.rf.7b95f043e3839a29c8a7d2f09b66b827.jpg,0,0,0,TN,TN,True,True,0.1385,1.0,"The street and sidewalk in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-192859_png.rf.9fa087e3dd38965b671c3f27c52d422a.jpg,0,0,0,TN,TN,True,True,0.0619,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-192918_png.rf.5c18a3af2243e281d5d0453ecc0820cc.jpg,0,0,0,TN,TN,True,True,0.0531,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-193049_png.rf.f477c1f3a899087006cce3c5d1eb644e.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-193359_png.rf.d74e15890ee1661bb0286f1ca05c8ed4.jpg,0,0,0,TN,TN,True,True,0.0931,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-193421_png.rf.4853ac954f7682ce655672fc8c7d8113.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-193501_png.rf.f419a0f762edc35440eec13ad5898c4a.jpg,0,0,0,TN,TN,True,True,0.1641,1.0,The street and sidewalk area in front of the wall are clear of visible trash or discarded waste.,0,0,0
+Captura-de-tela-2026-06-05-193520_png.rf.23ed96ebf1fb7c5fba0e935512259f2a.jpg,0,0,0,TN,TN,True,True,0.0542,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-193553_png.rf.fb4765f4ee7c9d9908e71cbdd4160410.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-193745_png.rf.9fa2ceb326549002fc2e5133e1cc314f.jpg,0,0,0,TN,TN,True,True,0.0516,1.0,"The street and sidewalk area in front of the houses are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-200700_png.rf.19c8219c1f364ac6dc69ab4a767c8899.jpg,0,0,0,TN,TN,True,True,0.0648,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-201009_png.rf.9fa00431d19d35b30c8332ed3a70a79c.jpg,0,0,0,TN,TN,True,True,0.1565,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-201156_png.rf.795ca6dffc1be4cc1115052023734b06.jpg,0,1,0,FP,TN,False,True,0.3357,0.0,No visible trash or discarded waste on the street or sidewalk.,0,2,0
+Captura-de-tela-2026-06-05-201216_png.rf.9c0c0955428be9f37038addc7b372eb0.jpg,0,0,0,TN,TN,True,True,0.1243,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-201231_png.rf.c304207b94940d0911a7bcff8133627a.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-201255_png.rf.007fe5f986624c69956ac93aa62bf4ed.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-201318_png.rf.e3d71ec089418f91243419da10389a95.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-201339_png.rf.8e4bebfca0b4f0816d5ab3244ecb665b.jpg,0,0,0,TN,TN,True,True,0.0505,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-201359_png.rf.7526d8895aeaec390d95cbb912e46095.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-05-201426_png.rf.1966dc8a8197a5f43a71c7fe0e4e269d.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-201509_png.rf.bfc2034af16e96209f94b1d7efdf263f.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-05-201543_png.rf.af47e3f7d3c1805507ef476e7cb6ebf7.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,1
+Captura-de-tela-2026-06-05-201653_png.rf.16d7cc5faabb0acc1bb8099c8274f46f.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-201742_png.rf.4b6d903f602af2812cce16af63602317.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-203203_png.rf.b8e07f4df3b50e2f0dafca59cc4cab3e.jpg,0,0,0,TN,TN,True,True,0.0766,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-204106_png.rf.202042a0756ea12e82b781c3047cae1d.jpg,0,0,0,TN,TN,True,True,0.2186,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-204124_png.rf.127e70f12a13f75af7665b5b5b29bb3e.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-05-204134_png.rf.341a50c2b0df7fc1b592ed5508d862c0.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible garbage bags, bottles, or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-204258_png.rf.9b24c4608f8672b6b8b698753347b02a.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,1
+Captura-de-tela-2026-06-05-204502_png.rf.ac22652ac97392351d1aedb51149df58.jpg,0,0,0,TN,TN,True,True,0.1448,0.95,The street and sidewalk area around the outdoor seating is not showing any visible discarded waste or trash.,0,0,0
+Captura-de-tela-2026-06-05-204548_png.rf.181020f800806afc372fd95f1e3bd2a1.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the building are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-204719_png.rf.9a329b5cffd9251eef7bf79a21b4c242.jpg,0,0,0,TN,TN,True,True,0.1289,1.0,"The street and sidewalk area in front of the building are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-205058_png.rf.995acd0f110b8baee26245d4278160af.jpg,0,0,0,TN,TN,True,True,0.0539,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-205143_png.rf.c90c9bec5f4ea7b1ca76f936f8d26847.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-05-205250_png.rf.66a12cd338e20d493331d199a32c0404.jpg,0,0,0,TN,TN,True,True,0.0906,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-05-205335_png.rf.ee11d8ff23484bbfa14e8b78f01f1dc8.jpg,0,1,0,FP,TN,False,True,0.3925,0.0,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-2026-06-05-205410_png.rf.2180a2917c2c3387d1e7722ddc09c14f.jpg,0,0,0,TN,TN,True,True,0.1558,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-05-205432_png.rf.3801ddca91bcb03f6427889146341640.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-094755_png.rf.cb68ac086caf2f4200dd23eddbd96831.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk around the building are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-094813_png.rf.76d5ec554e148c3d46672dc27349cff6.jpg,0,0,0,TN,TN,True,True,0.0,0.0,The street scene is clean with no visible discarded waste or trash.,0,0,0
+Captura-de-tela-2026-06-06-094848_png.rf.3abdb0ac9c685060ed62becd664407f9.jpg,0,1,0,FP,TN,False,True,0.2805,0.0,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-2026-06-06-094938_png.rf.5a87fce75f7a1008a615b5341c136654.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-095001_png.rf.e113489ea4c4a96e7c7f5bf5a70cc097.jpg,0,0,0,TN,TN,True,True,0.0793,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-095032_png.rf.9e9e1af3f69c46b18bcd66a784d64d82.jpg,0,1,0,FP,TN,False,True,0.3242,0.95,The street and sidewalk are clear of visible discarded waste or trash.,0,1,0
+Captura-de-tela-2026-06-06-095118_png.rf.07279f1af0afd94f10746fbc72b0ba88.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-095242_png.rf.21594a6984757e729c675472fa772746.jpg,0,1,0,FP,TN,False,True,0.2653,0.95,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-2026-06-06-095353_png.rf.73a0ccae69a81b13191bef0add8e97b1.jpg,0,0,0,TN,TN,True,True,0.2189,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-095432_png.rf.12c5da25378d3f2a87fdd2fc3bae0d0c.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk area around the trees and benches are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-095453_png.rf.ab67e369c9241cb8fa15c6a73693bd1a.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-095540_png.rf.77f2df1e6322109c5c354c130dbf1d68.jpg,0,0,0,TN,TN,True,True,0.0,0.0,The street and sidewalk area appear clean with no visible discarded waste.,0,0,0
+Captura-de-tela-2026-06-06-095644_png.rf.a0aa60e545fa992a07065d7a5846d77b.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-095842_png.rf.642199d9bac23bb38ebf2cb00f2ff4bc.jpg,0,0,0,TN,TN,True,True,0.0,0.95,The street scene is clean with no visible discarded waste or trash on the sidewalk or road.,0,0,0
+Captura-de-tela-2026-06-06-095954_png.rf.45ecf2f075017abfa50737bfef1e96e9.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-100357_png.rf.5bec35b5b126de4d37b2ecb07206a2f8.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-100426_png.rf.d29394220d56865baa2f5d8a41f2e148.jpg,0,0,0,TN,TN,True,True,0.1837,0.95,The street and sidewalk area appear clean with no visible discarded waste.,0,0,0
+Captura-de-tela-2026-06-06-100447_png.rf.868196a3ef440fc01df53ee1bc77acac.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-100511_png.rf.8fda791708367c3b988ac179df5a79eb.jpg,0,0,1,TN,FP,True,False,0.0,0.9,There is some discarded waste/debris on the sidewalk/curb area near the tree on the left.,0,0,1
+Captura-de-tela-2026-06-06-100525_png.rf.68749a2281a2ed67af59d2e97b98b9f3.jpg,0,1,0,FP,TN,False,True,0.5161,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,1,0
+Captura-de-tela-2026-06-06-100601_png.rf.446e9583c61326b901415c99ced4e217.jpg,0,0,0,TN,TN,True,True,0.0,0.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-100648_png.rf.6e1f83aa36e3c5d51d169f33e901aeb6.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-100900_png.rf.0c722c250a303beb829b26732fd2bd35.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-101046_png.rf.247aa8145758f08052bbcc7dd24fa590.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-101153_png.rf.686f6840262b658f76956e80c96fbc86.jpg,0,0,0,TN,TN,True,True,0.1107,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-101222_png.rf.7690393414840826b5d2b5c882d46802.jpg,0,0,0,TN,TN,True,True,0.0,0.0,"The street image shows a clean sidewalk and a planter area with two palm trees, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-101324_png.rf.460f014ada4c661b2b533e40302b7169.jpg,0,0,0,TN,TN,True,True,0.1424,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-101354_png.rf.3467740fb97b9d0e89b3291cb156f9ed.jpg,0,0,0,TN,TN,True,True,0.061,1.0,"The sidewalk and street are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-101443_png.rf.a2d271308ae3cd4a0698b6a52f34cf02.jpg,0,0,0,TN,TN,True,True,0.0943,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-101618_png.rf.6dc783438a9632b716bbfa03e64a8b8c.jpg,0,1,0,FP,TN,False,True,0.2622,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,1,0
+Captura-de-tela-2026-06-06-101742_png.rf.f60aea074644da5d561e57db48c50936.jpg,0,0,0,TN,TN,True,True,0.2087,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-101824_png.rf.25ce8abccfed915195c5ec8c2d1efa50.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-101900_png.rf.1cd8b2403e5fdb7c52fa3ecb10506e90.jpg,0,0,0,TN,TN,True,True,0.0749,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-101947_png.rf.fdb1f1125a62337cd36875ed7b5d9f47.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-102116_png.rf.bff5d9b66eb352ffc93d7c00d9a6d2dc.jpg,0,0,0,TN,TN,True,True,0.228,1.0,"The street and sidewalk area are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-102411_png.rf.14fdc32d0fa8204d5964c615edbb99f6.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-102503_png.rf.7158d95d368e3470f47dab68ddb288c8.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-102519_png.rf.0460fcf431802334efa690263885a46f.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-103212_png.rf.43614a08d11303809527aceed7a00709.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-103344_png.rf.517dad67bd2ca45af725e44402576150.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-103425_png.rf.2f82f742556ee25f12c57c30e09b2fcc.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-103551_png.rf.7d856eedd3e4b2c8c8158cf336a6f6a6.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-103626_png.rf.1d85ca08219b2f7306f4f4bc2fd91cee.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-104039_png.rf.97edaedef270def5c012bfd500c50b0c.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-104247_png.rf.498d5b61517c1002d1960b4165739a6e.jpg,0,0,0,TN,TN,True,True,0.213,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-104304_png.rf.8410fd85e4749dc0e470177408457f5d.jpg,0,1,0,FP,TN,False,True,0.3914,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,1,0
+Captura-de-tela-2026-06-06-104332_png.rf.879ea3cf673692485d1e6e777c66aff1.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-104432_png.rf.d5a9069cc191b7092423348823d0169f.jpg,0,0,0,TN,TN,True,True,0.1766,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-104500_png.rf.ac3ea23e9f61328d1ea7cf51fa254bae.jpg,0,0,0,TN,TN,True,True,0.0,0.09,"The street and sidewalk area in front of the closed blue tiled wall are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-104714_png.rf.ca6a9274606eee693cf1f963b593b4be.jpg,0,1,0,FP,TN,False,True,0.6369,0.95,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-2026-06-06-104732_png.rf.8bc280d78acd7c9069b8d652f0205ccb.jpg,0,1,0,FP,TN,False,True,0.5396,0.95,The street and sidewalk area in front of the building are clear of visible discarded waste or trash.,0,1,0
+Captura-de-tela-2026-06-06-104800_png.rf.357f6e9a206954a9cecba9c7a99472f5.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-104902_png.rf.b0880916887e8c62c24f34d4699c80c7.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-104925_png.rf.13191f3c3af428e17667d9056ef26d23.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-104943_png.rf.38fb00384a3bb103233fef75515036f2.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-104955_png.rf.f482079e1ac89252c2e2686207436b77.jpg,0,0,0,TN,TN,True,True,0.0975,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-105009_png.rf.b79871887a1ae56cdf9ee446cc8d2b8f.jpg,0,1,0,FP,TN,False,True,0.2501,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,1,0
+Captura-de-tela-2026-06-06-105214_png.rf.21a59c2384bbd76dc3ffea95e2aed19b.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-105259_png.rf.2be319eab3c1d8c2161446dfb7bc14e9.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-105323_png.rf.0f191a8ef4cd8e8bf7b4dc885e2f2551.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-105358_png.rf.c500304246b39f8d59a639db9cccfe72.jpg,0,0,0,TN,TN,True,True,0.0592,0.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-105415_png.rf.d90c8eb5e96866faf4985d235641238d.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-105433_png.rf.ca0ba554cc67b128b9ffcf6450559090.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-105450_png.rf.e6f2f8abf1139bbeb234bf4ae5bf0011.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk areas are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-105510_png.rf.7268defb6c6cf8dca318467b1beb2805.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-105806_png.rf.de0ad1ec5833d7ba194dbf3dba2ec8cb.jpg,0,0,0,TN,TN,True,True,0.0,1.0,The street image shows a clean sidewalk with no visible trash or discarded waste.,0,0,0
+Captura-de-tela-2026-06-06-105912_png.rf.ff7339544b93a3e60aeb99ba83d1c266.jpg,0,1,0,FP,TN,False,True,0.3473,0.0,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-2026-06-06-105938_png.rf.20ab2832fa817599535f1a77321900bc.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-105954_png.rf.7beb5c0b0a67567b52398925e3aac2b4.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-110012_png.rf.9497566431631de672adaa34ca5c113a.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-110029_png.rf.d20db2ca18f77cb7ae5887f82e496886.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-110048_png.rf.521ad3b1c708d9c54b3a706a64ba6e36.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-110118_png.rf.9bc667762efbfdde7b742aadabda17ee.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-110246_png.rf.65b3df803b17942702d74c234c1eb280.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-112159_png.rf.c88857622755098593a00fc0cae69f8a.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street image shows a tiled wall and a sidewalk, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-2026-06-06-112248_png.rf.d35fba003e68cbdcbf706945ad2e27e4.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-2026-06-06-112316_png.rf.f43c4bf2cc6654cdc1c0e3b148e42b6e.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-112343_png.rf.02082e906a69ac23f0d9cf70978adae9.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-2026-06-06-112358_png.rf.42dc84525030442052b7142898da6ad2.jpg,0,0,0,TN,TN,True,True,0.0881,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-2026-06-06-112719_png.rf.f47cbf29d96dd30f7e23831b1dd349a8.jpg,0,0,0,TN,TN,True,True,0.0509,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-21-57-13_png.rf.f057ef665238f3cd471e3552e4e67e28.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-21-58-35_png.rf.f3ee38045668a177c1b7c36558dda1d3.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-21-58-59_png.rf.7460d8e88bc1e9c903ee211535183849.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-04-22-00-13_png.rf.49bc8b9fe71c593aba455d08a23702f0.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-00-42_png.rf.ba9e147552a61fce1a0bf19015abf5c1.jpg,0,0,0,TN,TN,True,True,0.0628,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-de-2026-06-04-22-02-08_png.rf.409c6d388192ffff287ce46a81fd578a.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-03-38_png.rf.41665c3337d8740a0b52193fc6dac9b7.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-04-52_png.rf.5b3e9df3217226ad142e2ef4b80038aa.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-07-10_png.rf.2f1129601614ba27a71a458191b15ae5.jpg,0,1,0,FP,TN,False,True,0.4673,0.0,No visible trash or discarded waste on the street or sidewalk.,0,2,0
+Captura-de-tela-de-2026-06-04-22-07-56_png.rf.7e79d41082a1628f1dd851180e6673e4.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-04-22-09-42_png.rf.6e401e0da2de1bda4089b1cdf61647af.jpg,0,0,0,TN,TN,True,True,0.0586,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-de-2026-06-04-22-10-44_png.rf.0b0db151a18af7d389f0839c6d7606aa.jpg,0,0,0,TN,TN,True,True,0.1292,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-11-45_png.rf.c5be99ceaabe2d02ee69f3e384632e3f.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-12-13_png.rf.c49d3a0f8830f427109931ed4a78afc1.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-14-49_png.rf.a730f12bac46f2ab4522fee18d1534b6.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street image shows a paved area with trees and benches, and no visible discarded waste or trash on the ground.",0,0,0
+Captura-de-tela-de-2026-06-04-22-15-52_png.rf.732a5e0298a4f0474636e459239e0beb.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the building are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-de-2026-06-04-22-16-51_png.rf.3e5e3450679f20a6e1d4a24f1527ceb5.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-04-22-17-13_png.rf.c4fad982f16092e5663af2f742693566.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-17-41_png.rf.f82dc81db64ac6a5891cf8437f38eb45.jpg,0,0,0,TN,TN,True,True,0.1324,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-22-18-03_png.rf.8100b116e8d5875c2d2c951b591b5dd4.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area shown in the image are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-de-2026-06-04-22-20-03_png.rf.0b6021584417293a9117b0a993b5a48a.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-22-21-27_png.rf.b62a5d5ecf51ef891b1ac494ebc774f7.jpg,0,0,0,TN,TN,True,True,0.0782,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-24-50_png.rf.8286c062405226e0fdd818b2a4000a9e.jpg,0,1,0,FP,TN,False,True,0.8051,1.0,"The street and sidewalk area in front of the green building are clean, with no visible discarded waste.",0,1,0
+Captura-de-tela-de-2026-06-04-22-26-25_png.rf.aa3b14752dce7ae876cffabffcc8c991.jpg,0,0,0,TN,TN,True,True,0.0595,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-29-28_png.rf.7e1a17e7eb99c8d61976fd8b7c8a3f5e.jpg,0,0,0,TN,TN,True,True,0.0507,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-22-33-14_png.rf.eb6c9bebdc37d1045c698eaac48f93fd.jpg,0,0,0,TN,TN,True,True,0.1892,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-22-33-58_png.rf.ccb570d6d57aedc64849adba95ed2773.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-22-35-10_png.rf.a4dad4661cadd733ddd2e54185a2f832.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk in front of the house are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-04-22-36-59_png.rf.796d5649f22d4b7b150c443f9df66d3f.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-38-57_png.rf.37859a08f1cccb7aba7064bc54a04e95.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-39-59_png.rf.8e2924ab844ad470174dd89d88ea9760.jpg,0,1,0,FP,TN,False,True,0.5742,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,1,0
+Captura-de-tela-de-2026-06-04-22-40-47_png.rf.58161328165a98fc6c8cfd363602ca5d.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-41-31_png.rf.c7eafee797887a14675a7bf9281efc14.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-44-06_png.rf.1b84206737d4a259bfffef5252ab28dc.jpg,0,1,0,FP,TN,False,True,0.4374,0.95,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-de-2026-06-04-22-45-09_png.rf.f668ed4322823f9f93a24ccc977510a5.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street is clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-22-45-53_png.rf.50aadb71de65ec1464f2a6b521814fd6.jpg,0,1,0,FP,TN,False,True,0.5401,0.0,No visible trash or discarded waste on the street or sidewalk.,0,2,0
+Captura-de-tela-de-2026-06-04-22-47-44_png.rf.4cde9b413cd62621c34f4e6663c13f29.jpg,0,1,0,FP,TN,False,True,0.4617,0.0,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-de-2026-06-04-22-48-42_png.rf.0d6b20c051cd300cbc94d6bfb5f64316.jpg,0,0,0,TN,TN,True,True,0.0741,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-04-22-49-48_png.rf.0e84fd81cf1e71c63dcfcaee83d9d6ac.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-04-22-50-49_png.rf.639f67cab267d610dc62099f44b2aa58.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible garbage bags, bottles, or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-04-22-52-12_png.rf.dd3b0ad56ea93a43fcfc5c71c33762c1.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-18-52-25_png.rf.912f048d1c1aa9584767aa51f91b9dcb.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-18-52-45_png.rf.7121eb7ca58f07cccbf003d2696489ca.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-18-53-32_png.rf.12fe657f483149a88bf591362e9de221.jpg,0,0,0,TN,TN,True,True,0.0,1.0,The street and sidewalk area appear clean with no visible discarded waste or trash.,0,0,0
+Captura-de-tela-de-2026-06-05-18-53-44_png.rf.ea200d77a8fa74be5f67d300906fcda1.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-18-58-34_png.rf.2aa9b57dd0222f180478b9870beeccc8.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-18-58-59_png.rf.35e78451f624715527519ea28cb6fd78.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-01-19_png.rf.f0a27af7a5c7973f6891be37b3df742e.jpg,0,0,0,TN,TN,True,True,0.0823,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-02-45_png.rf.09e57114d64e2502a4e716b673951467.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-03-33_png.rf.6e60bf7f3150c3870dcf42e83d92e1be.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-04-33_png.rf.e183c2703a02fede3a39cb47b10a7295.jpg,0,0,0,TN,TN,True,True,0.0784,1.0,"The street and sidewalk area in front of the house are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-05-19-04-50_png.rf.9b24cfb973c3dd32992dd17fb2fcb976.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-09-21_png.rf.7403860c2136e78a16dccb758509064e.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street image shows a clean sidewalk and street, with no visible garbage bags, bottles, or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-05-19-10-45_png.rf.8fb8599feb11fedfbe051fded794519a.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-10-58_png.rf.9f5090299f180825c3d51626cfbb8e54.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-05-19-11-18_png.rf.a910f7a914d738ea0bc9a2cf7b3fc0ad.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-19-11-52_png.rf.dceb7e7fb05d1595c53e8bbf0d102f23.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-12-43_png.rf.00655179b7481c691a8b859f0b55819f.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-de-2026-06-05-19-14-15_png.rf.9d4d8766412af7d18e9b56d3332c704f.jpg,0,0,0,TN,TN,True,True,0.0711,1.0,"The street and sidewalk area are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-de-2026-06-05-19-14-47_png.rf.b88174f11ba8c79d2b2de22ef27b454f.jpg,0,0,0,TN,TN,True,True,0.0921,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-19-33_png.rf.7c86730349d7630b5785ce9e1de7c961.jpg,0,0,0,TN,TN,True,True,0.1467,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-24-04_png.rf.7f5795599250ed8b9c01a8597c9292e9.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-19-25-56_png.rf.2e5e995e94411d84fa923036f852e003.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-26-45_png.rf.54919baea6b5ef892895ce3d4aebf330.jpg,0,0,0,TN,TN,True,True,0.1067,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-05-19-33-04_png.rf.28d220fcfc97c0f6cc4b974588f05aaa.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-38-01_png.rf.d6852a4b74b22e47f855196e33dcaf73.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-40-31_png.rf.952940cdd5569172d048ff130d3d7d73.jpg,0,1,0,FP,TN,False,True,0.4479,0.0,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-de-2026-06-05-19-41-57_png.rf.c5164d1384fb295888acf46765e6c54f.jpg,0,0,0,TN,TN,True,True,0.0,0.95,The street and sidewalk are clear of visible discarded waste or trash.,0,0,0
+Captura-de-tela-de-2026-06-05-19-43-03_png.rf.1ec6e368c5f15fad67d63a9785085000.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-44-37_png.rf.444cb580e38622470726e197012a3753.jpg,0,0,0,TN,TN,True,True,0.0748,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-19-52-01_png.rf.5280cb7aa7516da3b8df9b87b322bb0c.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-56-31_png.rf.bf547b54444088cad8f99c5614b9161e.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in the image are clean, with no visible discarded waste or trash.",0,0,0
+Captura-de-tela-de-2026-06-05-19-57-25_png.rf.cc9dd6680b61c993199fdc92fe54a557.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-05-19-57-35_png.rf.7153de05601c7e44bfc53de3561f6e94.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-19-59-17_png.rf.337c3cddba7b05a5c2dd1f059bd0203e.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-20-00-14_png.rf.1b7c960aac5df1ae63b0dd5a5a34b8ea.jpg,0,0,0,TN,TN,True,True,0.2483,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-09-18_png.rf.503961d3bc655f756458c581dcd2d329.jpg,0,1,0,FP,TN,False,True,0.2626,0.95,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-de-2026-06-05-20-09-44_png.rf.5df2da6abb428eb5d610cfd4897e396a.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-10-35_png.rf.bba78f0f08dfb2de50852c77509d9e1a.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,1
+Captura-de-tela-de-2026-06-05-20-11-04_png.rf.a4634da4e74faa80492691421427e354.jpg,0,0,0,TN,TN,True,True,0.1622,1.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-12-46_png.rf.8529b0d19cbc98f6f34bef5374d2638f.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-13-05_png.rf.81b15df6d74a10d7f4e2cb865b1842b4.jpg,0,0,0,TN,TN,True,True,0.0,0.95,The street and the front yard of the house are clear of visible trash or discarded waste.,0,0,0
+Captura-de-tela-de-2026-06-05-20-17-16_png.rf.31ee9931bbf590f0448df87f158549f0.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-17-58_png.rf.b37920d31bd1d9238493818b1dd98775.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-28-21_png.rf.c25419aef75e7af029c73b136d3f1223.jpg,0,1,0,FP,TN,False,True,0.5289,0.95,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-de-2026-06-05-20-36-03_png.rf.a5f405ad2f6342fa536db8a70da0def1.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The image shows a public outdoor gym area with exercise equipment, a river, and mountains in the background. No visible trash or discarded waste is present on the street or sidewalk.",0,0,0
+Captura-de-tela-de-2026-06-05-20-41-34_png.rf.f28bb3374034c20d144abfe748f4952b.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-42-54_png.rf.974bf41a3ba11a9352088a17be30e820.jpg,0,0,0,TN,TN,True,True,0.065,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-43-54_png.rf.014ddbf34cc231091a21fcacbe686a46.jpg,0,0,0,TN,TN,True,True,0.2031,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-53-32_png.rf.50cf000bb43911de07be8acb2798e78f.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-20-59-25_png.rf.ddc713df3a3ce31cc02debc163b9268a.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-21-12-19_png.rf.232c1e1fa29b35944f5572fb4f0f9609.jpg,0,0,0,TN,TN,True,True,0.0569,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-21-17-41_png.rf.2e6e8ddcd37501f768ac09337f1e0a30.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,1
+Captura-de-tela-de-2026-06-05-21-22-40_png.rf.c605c0f7bcae561e2d82bbf7c6ed7f74.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-21-25-10_png.rf.993daa158d928cb322347fa38f131dba.jpg,0,1,0,FP,TN,False,True,0.534,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,1,0
+Captura-de-tela-de-2026-06-05-21-25-47_png.rf.f9d79cd7b6160c897727aba482791766.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-21-32-22_png.rf.7563ef0682238f9e8762112d7c177f3c.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk area in front of the house are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-05-21-34-38_png.rf.e31ad4b0266fa9056cda3d7c894e29a7.jpg,0,1,0,FP,TN,False,True,0.4431,0.0,No visible trash or discarded waste on the street or sidewalk.,0,1,0
+Captura-de-tela-de-2026-06-05-21-35-16_png.rf.34782903e5e2869658976a3afe1dc89b.jpg,0,0,0,TN,TN,True,True,0.0534,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-21-38-32_png.rf.4c99d51b7959a4774a823666341207b8.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-05-21-41-03_png.rf.90db0b1c13e756162edcdc7c75b94322.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-21-44-52_png.rf.49608a1d51f7a73396684d911b3f4696.jpg,0,0,0,TN,TN,True,True,0.1655,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-21-46-01_png.rf.cd26fecf4f0a8b1c950ec2998cfb46c9.jpg,0,0,0,TN,TN,True,True,0.0873,0.95,The street and sidewalk area in front of the house are clear of visible trash or discarded waste.,0,0,0
+Captura-de-tela-de-2026-06-05-21-47-48_png.rf.09e819b85d7c2a7a84b2e71f3b723637.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-21-50-30_png.rf.ca6fbbe0a8247f43e8cc89309fb46a23.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-21-53-10_png.rf.6120d1dd19d532deabde2cd05be2f24e.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-05-21-54-05_png.rf.7b3444b84a7cfc55d1a4d25b8f97c0c2.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-05-21-54-57_png.rf.62ad78332a5e85db16daea9876924193.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-39-36_png.rf.75304a1633a676c7c4270e451edf2ead.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-39-49_png.rf.f014b3812a6f5278bef3ecbbae3d1c72.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-40-22_png.rf.5e843bd1f72df8d5182bc1e11e9bc088.jpg,0,0,0,TN,TN,True,True,0.0678,1.0,The image shows a clean driveway and a white wall with a plant in a pot. No visible trash or discarded waste is present.,0,0,0
+Captura-de-tela-de-2026-06-06-08-41-32_png.rf.9f385827e8d60cef8db63bd9fb5e9189.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-06-08-42-08_png.rf.c5ce3972d5661cab53db7c84781d3448.jpg,0,0,0,TN,TN,True,True,0.1678,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-43-00_png.rf.8885e559c6e34337c9e2c45620778a75.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-43-51_png.rf.fb15465d973e5a1e81906ec6495ebe1a.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-44-23_png.rf.0ef5dbde7ae2f3b85348bfa9c408c5ec.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-45-02_png.rf.a6e914feaa1675b1a74e7623e1a2a465.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-46-59_png.rf.4f4c7fff04a11e89e70bbfe34cafde8e.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-06-08-47-22_png.rf.3c5840539a152fc4c704ea2213da6e17.jpg,0,0,0,TN,TN,True,True,0.0,1.0,The image shows a clean concrete driveway/street area in front of a purple wall and a white garage door. No visible trash or discarded waste is present.,0,0,0
+Captura-de-tela-de-2026-06-06-08-47-59_png.rf.26475dbd457844ece3ecd7c3ab6e5864.jpg,0,0,0,TN,TN,True,True,0.1103,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-06-08-48-40_png.rf.890b0dff1c4f4eb1310382e20c45714d.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-51-17_png.rf.a68da063241b2340e1a092f1e229f174.jpg,0,0,0,TN,TN,True,True,0.0,0.95,The street and sidewalk area appear clean with no visible discarded waste or trash.,0,0,0
+Captura-de-tela-de-2026-06-06-08-52-35_png.rf.79ce79cd3d62cce2f97a5192ffbdd2a1.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-08-56-55_png.rf.89a6603d8a446341a351b9389d04e1f7.jpg,0,0,0,TN,TN,True,True,0.0581,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-01-58_png.rf.863174222e2eee1d462ef24f8fc13247.jpg,0,1,0,FP,TN,False,True,0.3641,1.0,"The street and sidewalk area in front of the building are clean, with no visible trash or discarded waste.",0,1,0
+Captura-de-tela-de-2026-06-06-09-03-59_png.rf.a2dd099bf722755308eabad9bc504d35.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-08-47_png.rf.945331e3062dcbf9e62f9be79c4bc95c.jpg,0,0,0,TN,TN,True,True,0.1413,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-12-58_png.rf.3824ef8a0a379c31515e2bc5cfee2654.jpg,0,0,0,TN,TN,True,True,0.12,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-13-20_png.rf.686e2ec74fb8cd3ee17a6fe8a87a7660.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk in front of the house are clean, with no visible trash or discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-06-09-15-42_png.rf.822b5697ceef8edadb37ab5b29e76cc0.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-16-39_png.rf.0aba9aaafb28d5eab245ac470b0bf8f4.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-19-01_png.rf.06c24b09daafa5dd03c2da44597d74ff.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk in front of the store are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-06-09-21-09_png.rf.e864a3ef3ceeb1cc81c6d1b1d24011ff.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-22-40_png.rf.10fa2463c81492e78d812744e4c066bb.jpg,0,0,0,TN,TN,True,True,0.1282,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-23-09_png.rf.ee863471f0ebdc27f576982d0917b249.jpg,0,0,0,TN,TN,True,True,0.0,0.0,"The street and sidewalk are clean, with no visible discarded waste.",0,0,0
+Captura-de-tela-de-2026-06-06-09-23-36_png.rf.07652c5944bc5912b56602dbb2d0e39b.jpg,0,0,0,TN,TN,True,True,0.0597,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-06-09-23-59_png.rf.a885b42a7c47f24b1addad0f72416e3a.jpg,0,0,0,TN,TN,True,True,0.0,1.0,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-06-09-25-37_png.rf.fc97e656f26e14498c0a48948ddfe7c6.jpg,0,0,0,TN,TN,True,True,0.1518,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-09-26-22_png.rf.b80caa5ecd0c6fa2fc1c53d6b05d8e13.jpg,0,0,0,TN,TN,True,True,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
+Captura-de-tela-de-2026-06-06-09-40-14_png.rf.332ed51174b001b17bc07ffbfa1dc63d.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
+Captura-de-tela-de-2026-06-06-18-59-04_png.rf.f0563356e18a425c58bfde162e76e1e3.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There are several garbage bags and discarded waste items on the side of the road/sidewalk.,1,0,0
+Captura-de-tela-de-2026-06-06-19-07-59_png.rf.8a9431df00fcc77a0f3d65149494d3b3.jpg,1,1,1,TP,TP,True,True,0.6992,0.09,Black garbage bags on the sidewalk next to a tree.,2,2,0

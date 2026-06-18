@@ -1,0 +1,8 @@
+{
+  "images": 560,
+  "positive_images": 280,
+  "negative_images": 280,
+  "boxes": 794,
+  "source": "imagens-teste-lixo",
+  "version": 1
+}

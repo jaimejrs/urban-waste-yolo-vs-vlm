@@ -1,0 +1,2 @@
+comparacao,metrica,diferenca,ic95_inf,ic95_sup,a_certo_b_errado,a_errado_b_certo,discordantes,p_valor_exato
+Gemma - YOLO,acuracia_pareada,0.1982,0.1625,0.2322,7,118,125,3.98143732417019e-27

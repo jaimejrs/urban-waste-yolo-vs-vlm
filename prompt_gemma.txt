@@ -1,6 +1,6 @@
-# Gemma 3 27B-IT Zero-Shot Prompt & Output Specification
+# Gemma 4 31B-QAT Zero-Shot Prompt & Output Specification
 
-This file contains the exact prompt, JSON schema, and robust parsing logic used to execute the zero-shot Gemma 3 27B-IT experiments for the paper.
+This file contains the exact prompt, JSON schema, and robust parsing logic used to execute the zero-shot Gemma 4 31B-QAT experiments for the paper.
 
 ---
 

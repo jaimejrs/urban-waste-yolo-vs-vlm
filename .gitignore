@@ -1,3 +1,9 @@
+# Python/cache
+__pycache__/
+.ipynb_checkpoints/
+.cache/
+.venv/
+
 # LaTeX auxiliary files
 *.aux
 *.log
@@ -12,17 +18,50 @@
 *.synctex.gz
 *.pdf
 
-# LibreOffice lock files
+# Local notes and editor/OS files
+orientacoes/
 .~lock.*#
-
-# OS generated files
 .DS_Store
 Thumbs.db
-
-# Ignored document formats
 *.odt
 *.docx
 
-# Local planning and guidance files
-orientacoes/
-outputs/
+# Secrets/local configuration
+.env
+
+# Large local datasets and model outputs
+data/raw_*/
+data/teste/images/
+data/unified/images/
+data/unified/labels/
+runs/
+models/
+*.pt
+
+# Keep lightweight reproducibility artifacts
+!data/
+!data/teste/
+!data/teste/ground_truth.csv
+!data/teste/summary.json
+!data/teste/labels/
+!data/teste/labels/*.txt
+!data/unified/
+!data/unified/data.yaml
+!data/unified/manifest.csv
+!data/unified/summary.json
+!data/unified/split_audit.json
+
+# Outputs: ignore heavyweight/intermediate caches by default, keep selected summaries.
+outputs/vlm_cache/
+outputs/vlm_loc_cache/
+!outputs/
+!outputs/predictions_yolo.json
+!outputs/varredura_limiares.csv
+!outputs/gemma-4-31b-qat/
+!outputs/gemma-4-31b-qat/predictions_vlm.json
+!outputs/gemma-4-31b-qat/predictions_vlm_localizacao.json
+!outputs/gemma-4-31b-qat/metricas_finais_otimizado.json
+!outputs/gemma-4-31b-qat/analises/
+!outputs/gemma-4-31b-qat/analises/*.csv
+!outputs/figures/
+!outputs/figures/*.png

@@ -1,0 +1,3 @@
+modelo,iou_threshold,imagens_avaliadas,imagens_positivas_gt,imagens_negativas_gt,gt_boxes,pred_boxes,tp_boxes_iou_05,fp_boxes_iou_05,fn_boxes_iou_05,precisao_box_iou_05,recall_box_iou_05,f1_box_iou_05,imagens_positivas_com_iou_05,taxa_imagens_positivas_com_iou_05,iou_medio_melhor_por_imagem_positiva,taxa_imagens_negativas_com_predicao,sucessos_iou_05,taxa_sucesso_iou_05,iou_medio,limiar_conf,prompt_hash,modelo_id
+YOLOv11m,0.5,560,280,280,794,511,92,419,702,0.18,0.1159,0.141,76,0.2714,0.2866,0.1071,76,0.2714,0.2866,0.25,,
+Gemma 4 31B-QAT,0.5,560,280,280,794,527,112,415,682,0.2125,0.1411,0.1696,109,0.3893,0.4403,0.0214,109,0.3893,0.4403,,ddec5b514bcd591a,gemma-4-31b-qat

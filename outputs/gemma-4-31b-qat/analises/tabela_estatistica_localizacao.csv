@@ -1,0 +1,3 @@
+comparacao,metrica,diferenca,ic95_inf,ic95_sup,a_certo_b_errado,a_errado_b_certo,discordantes,p_valor_exato,n_sem_empate,vlm_maior,yolo_maior
+Gemma - YOLO,taxa_sucesso_iou_05_positivos,0.1179,0.0429,0.1893,41.0,74.0,115.0,0.00268570100596285,,,
+Gemma - YOLO,melhor_iou_medio_positivos,0.1538,0.1096,0.197,,,,4.818709412888219e-07,276.0,180.0,96.0
