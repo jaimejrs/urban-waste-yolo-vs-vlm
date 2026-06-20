@@ -35,6 +35,7 @@ Thumbs.db
 
 # Large local datasets and model outputs
 data/raw_*/
+data/.*_building/
 data/teste/images/
 data/unified/images/
 data/unified/labels/
@@ -64,6 +65,8 @@ local_artifacts/
 # Outputs: ignore heavyweight/intermediate caches by default, keep selected summaries.
 outputs/vlm_cache/
 outputs/vlm_loc_cache/
+outputs/yolo_cache/
+outputs/pipeline_state.json
 !outputs/
 !outputs/predictions_yolo.json
 !outputs/varredura_limiares.csv

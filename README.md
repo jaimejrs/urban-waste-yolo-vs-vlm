@@ -4,7 +4,7 @@ Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para i
 
 O projeto foi organizado para que um clone do repositório consiga renderizar as principais tabelas e figuras sem redistribuir as imagens originais, que dependem das licenças das bases e das fontes de coleta. Para isso, artefatos leves de cache foram versionados.
 
-## Como reproduzir em modo cache
+## Como executar
 
 ```bash
 python -m venv .venv
@@ -13,7 +13,9 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Abra `urban-waste-yolo-vs-vlm-otimizado.ipynb` e execute as células. Por padrão, as flags de treino, download, reconstrução de dados, inferência YOLO/VLM e auditoria pHash ficam desligadas. O notebook carrega os artefatos versionados em `data/` e `outputs/`.
+Copie `env.example` para `.env`, informe `ROBOFLOW_API_KEY`, carregue o modelo no LM Studio e execute **Run All** em `urban-waste-yolo-vs-vlm-otimizado.ipynb`. Por padrão, `RUN_ALL_PIPELINE=true` ativa download, preparação, treinamento, inferências e análises. O progresso é salvo em `outputs/pipeline_state.json`; etapas concluídas e caches compatíveis são reutilizados automaticamente.
+
+O treinamento YOLO salva `last.pt` a cada época e retoma desse checkpoint após uma interrupção. As inferências YOLO e VLM são salvas por imagem, de modo que somente imagens pendentes são processadas novamente. Para apenas renderizar os artefatos versionados, defina `RUN_ALL_PIPELINE=false`.
 
 ## Artefatos versionados
 
@@ -25,8 +27,9 @@ Abra `urban-waste-yolo-vs-vlm-otimizado.ipynb` e execute as células. Por padrã
 - `outputs/varredura_limiares.csv`
 - `outputs/gemma-4-31b-qat/analises/*.csv`
 - `outputs/figures/fig_tradeoff_f1_latencia.png`
+- `prompt_gemma_classificacao.txt` e `prompt_gemma_localizacao.txt`
 
-As imagens e pesos de modelo não são versionados. Para reconstruir os dados ou treinar novamente, configure `.env` a partir de `env.example`, coloque as fontes locais necessárias e altere explicitamente as flags no notebook.
+As imagens, pesos e checkpoints intermediários não são versionados. Configure o comportamento no `.env` a partir de `env.example`.
 
 ## Resultados em cache
 
@@ -46,7 +49,13 @@ pdflatex urban-waste-yolo-vs-vlm.tex
 
 ## Preparação de dados
 
-A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.py`. O script é chamado pelo notebook somente quando `RUN_RECONSTRUIR_UNIFIED=True`.
+A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.py`. O treinamento usa somente:
+
+- `garbage-8uzha`: classes `black_bag` e `white_bag` (1.838 imagens positivas de referência);
+- `garbage-mvzg3`: classe `trash bag` (865 imagens positivas de referência);
+- `garbage-mvzg3`: imagens `Roadway` sem `trash bag`, em quantidade equivalente a 10% das positivas e limitada a 271 negativas.
+
+O teste é baixado de `jaime-teixeira/urban-waste-brazil`. Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
 
 ## Modelo VLM
 

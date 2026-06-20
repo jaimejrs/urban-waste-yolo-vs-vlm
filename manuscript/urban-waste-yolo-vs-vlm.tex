@@ -30,7 +30,7 @@ Fortaleza, CE, Brasil\\
 
 
 \begin{abstract}
-Monitoring garbage bags on public roads requires large-scale inspection under limited operational resources. This study compares YOLOv11m, fine-tuned as a specialized detector, and Gemma 4 31B-QAT, used as a zero-shot vision-language model, for identifying the presence and location of garbage bags in Brazilian street images. YOLOv11m was trained with 5,248 images from two Roboflow garbage-bag datasets and negative sidewalk scenes. Both models were evaluated on a balanced external test set of 560 Google Street View screenshots from multiple Brazilian states, annotated and cross-reviewed by two researchers. Gemma achieved higher F1-score for binary identification (0.9838 versus 0.7600) and higher per-image localization success at intersection over union (IoU) 0.5 (0.3893 versus 0.2714), although both models had low box-level F1-scores. YOLOv11m processed 106.5 images per second, whereas Gemma's average latency was 141.9 times higher. These results reveal an accuracy--latency--localization trade-off and motivate hybrid systems combining fast detection, multimodal confirmation, and human review.
+Monitoring garbage bags on public roads requires large-scale inspection under limited operational resources. This study compares YOLOv11m, fine-tuned as a specialized detector, and Gemma 4 31B-QAT, used as a zero-shot vision-language model, for identifying the presence and location of garbage bags in Brazilian street images. YOLOv11m used 2,703 positive images from two Roboflow garbage-bag datasets and 271 negative roadway scenes. Both models were evaluated on a balanced external test set of 560 Google Street View screenshots from multiple Brazilian states, annotated and cross-reviewed by two researchers. Gemma achieved higher F1-score for binary identification (0.9838 versus 0.7600) and higher per-image localization success at intersection over union (IoU) 0.5 (0.3893 versus 0.2714), although both models had low box-level F1-scores. YOLOv11m processed 106.5 images per second, whereas Gemma's average latency was 141.9 times higher. These results reveal an accuracy--latency--localization trade-off and motivate hybrid systems combining fast detection, multimodal confirmation, and human review.
 \end{abstract}
 
 \begin{CCSXML}
@@ -110,19 +110,20 @@ O modelo multimodal foi carregado pelo identificador \texttt{google/gemma-4-31b-
 \subsection{Tarefa e dados}
 \label{sec:tarefa-dados}
 
-A avaliação considerou duas camadas. Na primeira, cada imagem foi classificada como \textbf{com saco de lixo visível} ou \textbf{sem saco de lixo visível}. Na segunda, as caixas previstas foram comparadas às 794 caixas anotadas no teste. O treinamento do YOLOv11m utilizou imagens positivas de dois conjuntos disponíveis no Roboflow, \emph{garbage-8uzha} (v1) e \emph{garbage-mvzg3} (v1), ambos agregados na classe ``saco de lixo'', e imagens negativas da base Sidewalk Segmentation. A composição resultante é apresentada na Tabela~\ref{tab:conjuntos}.
+A avaliação considerou duas camadas. Na primeira, cada imagem foi classificada como \textbf{com saco de lixo visível} ou \textbf{sem saco de lixo visível}. Na segunda, as caixas previstas foram comparadas às 794 caixas anotadas no teste. Para o YOLOv11m, \emph{black\_bag} e \emph{white\_bag} foram selecionadas de \emph{garbage-8uzha} (v1), e \emph{trash bag}, de \emph{garbage-mvzg3} (v1); todas foram agregadas na classe ``saco de lixo''. Como negativos, foram usadas 271 imagens da classe \emph{Roadway} sem sacos anotados, equivalentes a 10\% das positivas. A composição é apresentada na Tabela~\ref{tab:conjuntos}.
 
 \begin{table}[htbp]
 \centering
 \footnotesize
-\caption{Composição dos conjuntos experimentais}
+\caption{Composição das fontes de dados experimentais}
 \label{tab:conjuntos}
 \begin{tabular}{lccc}
 \toprule
 \textbf{Conjunto} & \textbf{Total de Imagens} & \textbf{Positivas (com saco)} & \textbf{Negativas (sem saco)} \\
 \midrule
-Treinamento & 5.248 & 3.634 & 1.614 \\
-Validação & 950 & 636 & 314 \\
+\emph{garbage-8uzha} & 1.838 & 1.838 & 0 \\
+\emph{garbage-mvzg3} & 865 & 865 & 0 \\
+\emph{Roadway} (fundo) & 271 & 0 & 271 \\
 Teste brasileiro & 560 & 280 & 280 \\
 \bottomrule
 \end{tabular}
@@ -166,14 +167,14 @@ Temperatura & Não aplicável & 0 \\
 
 O melhor \emph{checkpoint} do YOLO foi selecionado via validação (limiar de detecção $\ge 0,25$). O rótulo ``Gemma 4 31B-QAT'' designa o identificador \texttt{google/gemma-4-31b-qat} carregado no LM Studio 0.4.15 (Build 2). O arquivo executado foi \path{gemma-4-31B-it-QAT-Q4_0.gguf}, em formato GGUF, com quantização Q4\_0, arquitetura \texttt{gemma4} e 18,85~GB em disco.
 
-Para a inferência do Gemma 4, foram usados dois prompts: um para determinar se havia ao menos um saco de lixo visível e outro para localizar individualmente os sacos, solicitando até cinco caixas normalizadas no intervalo 0--1000. Resíduos avulsos foram explicitamente excluídos. O prompt binário completo está em \texttt{prompt\_gemma.txt}, e os hashes SHA-256 são registrados automaticamente nos artefatos de cada execução.
+Para a inferência do Gemma 4, foram usados dois prompts: um para determinar se havia ao menos um saco de lixo visível e outro para localizar individualmente até 20 sacos, com caixas normalizadas no intervalo 0--1000. Resíduos avulsos foram explicitamente excluídos. Os textos completos estão em \texttt{prompt\_gemma\_classificacao.txt} e \texttt{prompt\_gemma\_localizacao.txt}; seus hashes SHA-256 são registrados automaticamente nos artefatos de cada execução.
 
 Para lidar com saídas fora do formato esperado, implementou-se um parser robusto que isola a estrutura JSON por captura de chaves (\emph{brackets matching}) e valida o resultado com \emph{jsonschema}. Caso o parsing falhasse por completo ou ocorresse timeout na requisição HTTP, a imagem seria conservadoramente rotulada como classe negativa (sem saco de lixo). No experimento de teste, contudo, as 560 respostas de classificação e de localização foram estruturadas com sucesso pelo parser.
 
 \subsection{Avaliação}
 \label{sec:avaliacao}
 
-Para a identificação binária, foram calculadas acurácia, precisão, sensibilidade, especificidade, F1-score, taxa de falsos positivos, kappa de Cohen, coeficiente de correlação de Matthews e matrizes de confusão. Para a localização, caixas previstas e anotadas foram pareadas por interseção sobre união (\emph{Intersection over Union}, IoU) $\ge 0,5$, reportando precisão, \emph{recall} e F1 por caixas, sucesso em imagens positivas e melhor IoU médio por imagem. O mAP não foi comparado porque o Gemma retornou até cinco caixas sem confiança ranqueável.
+Para a identificação binária, foram calculadas acurácia, precisão, sensibilidade, especificidade, F1-score, taxa de falsos positivos, kappa de Cohen, coeficiente de correlação de Matthews e matrizes de confusão. Para a localização, caixas previstas e anotadas foram pareadas por interseção sobre união (\emph{Intersection over Union}, IoU) $\ge 0,5$, reportando precisão, \emph{recall} e F1 por caixas, sucesso em imagens positivas e melhor IoU médio por imagem. O mAP não foi comparado porque o Gemma retornou caixas sem confiança ranqueável.
 
 Intervalos de confiança de 95\% foram estimados pelo método de Wilson e as discordâncias avaliadas pelo teste de McNemar. A latência e o \emph{throughput} foram medidos em uma GPU RTX 5090. No YOLO, o tempo incluiu a leitura local e inferência; no Gemma, o tempo decorrido entre a requisição HTTP e a resposta.
 
@@ -314,7 +315,7 @@ Os resultados sugerem três usos principais: em monitoramento contínuo, o YOLOv
 
 As ameaças à validade externa decorrem principalmente do recorte do conjunto de teste. A avaliação usou uma amostra balanceada artificialmente, com 50\% de imagens positivas, útil para comparação controlada, mas distinta da prevalência esperada em monitoramento contínuo de vias públicas. Embora o teste utilize imagens brasileiras, ele ainda representa um subconjunto específico de cenas, horários, enquadramentos e condições urbanas; assim, os resultados devem ser interpretados como evidência comparativa no domínio avaliado, não como estimativa direta para qualquer cidade, câmera ou política operacional.
 
-Quanto à validade de construto, a tarefa foi reduzida à presença de sacos de lixo visíveis, sem estimar conteúdo, volume ou risco sanitário. A avaliação espacial por IoU 0,5 é diagnóstica, pois o VLM retorna até cinco caixas sem confiança. A anotação primária de cada imagem foi feita por um pesquisador e revisada pelo outro; o consenso reduz divergências, mas não produz uma medida independente de concordância interanotador.
+Quanto à validade de construto, a tarefa foi reduzida à presença de sacos de lixo visíveis, sem estimar conteúdo, volume ou risco sanitário. A avaliação espacial por IoU 0,5 é diagnóstica, pois o VLM retorna até 20 caixas sem confiança. A anotação primária de cada imagem foi feita por um pesquisador e revisada pelo outro; o consenso reduz divergências, mas não produz uma medida independente de concordância interanotador.
 
 As ameaças à validade interna decorrem da assimetria entre as estratégias: a comparação reflete formas de implantação distintas, e não uma comparação isolada entre arquiteturas. O YOLO foi ajustado com supervisão específica, enquanto o Gemma 4 31B-QAT se beneficia de pré-treinamento multimodal em larga escala. Comparações desse tipo dependem do alinhamento entre os conceitos aprendidos pelo modelo fundacional e as definições adotadas no conjunto-alvo \cite{Madan2024FewShotVLM}; o possível \emph{domain shift} pode afetar especialmente o detector. A validade de conclusão é mitigada por métricas pareadas, intervalos de confiança e teste de McNemar, mas a eficiência representa os fluxos implementados: Gemma via LM Studio 0.4.15 (Build 2), artefato GGUF Q4\_0 e HTTP, sem experimentos de concorrência, energia ou custo em produção.
 
