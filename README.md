@@ -1,6 +1,6 @@
-# Urban Waste YOLO vs VLM
+# Garbage Bag Detection: YOLO vs VLM
 
-Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para monitoramento visual de resíduos em vias públicas. O notebook principal é `urban-waste-yolo-vs-vlm-otimizado.ipynb`.
+Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para identificar a presença e a localização de sacos de lixo em vias públicas. O notebook principal é `urban-waste-yolo-vs-vlm-otimizado.ipynb`.
 
 O projeto foi organizado para que um clone do repositório consiga renderizar as principais tabelas e figuras sem redistribuir as imagens originais, que dependem das licenças das bases e das fontes de coleta. Para isso, artefatos leves de cache foram versionados.
 
@@ -28,9 +28,9 @@ Abra `urban-waste-yolo-vs-vlm-otimizado.ipynb` e execute as células. Por padrã
 
 As imagens e pesos de modelo não são versionados. Para reconstruir os dados ou treinar novamente, configure `.env` a partir de `env.example`, coloque as fontes locais necessárias e altere explicitamente as flags no notebook.
 
-## Resultados atuais
+## Resultados em cache
 
-No conjunto de teste balanceado com 560 imagens, o Gemma 4 31B-QAT obteve F1 de 0,9838 na classificação binária, enquanto o YOLOv11m obteve F1 de 0,7600. Em contrapartida, o YOLO apresentou latência end-to-end média de 9,39 ms, contra 1.291,9 ms do Gemma no fluxo HTTP avaliado.
+Os artefatos atualmente versionados correspondem à execução anterior. Como a classe-alvo e os prompts foram restringidos a sacos de lixo e o TACO foi removido do treinamento, as métricas deverão ser regeneradas antes da versão final do artigo.
 
 ## Artigo
 
@@ -50,4 +50,4 @@ A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.p
 
 ## Modelo VLM
 
-O identificador operacional do projeto é `gemma-4-31b-qat`, usado no LM Studio. A família pública oficial possui o checkpoint `google/gemma-4-31B-it`; a variante QAT pode aparecer como artefato/quantização local no servidor de inferência.
+O modelo foi carregado pelo identificador [`google/gemma-4-31b-qat`](https://lmstudio.ai/models/google/gemma-4-31b-qat), que no catálogo do LM Studio é baseado no repositório GGUF [`lmstudio-community/gemma-4-31B-it-QAT-GGUF`](https://huggingface.co/lmstudio-community/gemma-4-31B-it-QAT-GGUF). A inferência foi executada no LM Studio 0.4.15 (Build 2) com o arquivo `gemma-4-31B-it-QAT-Q4_0.gguf`: formato GGUF, quantização Q4_0, arquitetura `gemma4` e tamanho de 18,85 GB em disco. Esses dados são registrados separadamente nos artefatos de proveniência.

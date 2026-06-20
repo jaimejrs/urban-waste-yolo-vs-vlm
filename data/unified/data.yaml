@@ -3,4 +3,4 @@ train: images/train
 val: images/val
 nc: 1
 names:
-  0: lixo
+  0: saco_de_lixo

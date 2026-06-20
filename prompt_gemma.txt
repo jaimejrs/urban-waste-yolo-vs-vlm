@@ -8,19 +8,20 @@ This file contains the exact prompt, JSON schema, and robust parsing logic used 
 
 ```text
 You are a public street monitoring analyst.
-Your task is to answer one single question: IS THERE TRASH or discarded WASTE in this street image?
+Your task is to answer one single question: IS THERE AT LEAST ONE VISIBLE GARBAGE BAG in this street image?
 
-Consider as trash: garbage bags, bottles, cans, cardboard, packaging, plastics,
-glass, or any discarded waste on a public street or sidewalk.
+Count only bags that are visibly being used to contain discarded household or commercial waste.
+The bag may be tied, open, full, partially full, isolated, or grouped with other garbage bags.
 
-Do NOT consider as trash: closed trash bins/containers in normal use, vehicles, people,
-vegetation, street furniture in good condition, or normal pavement.
+Do NOT count loose bottles, cans, cardboard, packaging, plastics or glass; empty shopping bags;
+closed trash bins/containers in normal use; vehicles; people; vegetation; street furniture; or pavement.
 
 Respond STRICTLY in valid JSON, with no markdown and no text outside the JSON.
 Use exactly these field names:
 {"tem_lixo": true, "descricao_breve": "...", "confianca": 0.0}
 
-If there is no visible trash, return tem_lixo: false.
+In this schema, tem_lixo means that at least one visible garbage bag is present.
+If there is no visible garbage bag, return tem_lixo: false.
 ```
 
 ---
@@ -51,7 +52,7 @@ If there is no visible trash, return tem_lixo: false.
 
 If the model output contains conversational text surrounding the JSON block or is enclosed in Markdown code fences (e.g., ```json ... ```), the following robust parser isolates and extracts the JSON object. 
 
-If parsing fails or a request timeout occurs, the image is conservatively classified as having no trash (`tem_lixo: false`).
+If parsing fails or a request timeout occurs, the image is conservatively classified as having no visible garbage bag (`tem_lixo: false`).
 
 ```python
 import json
@@ -73,7 +74,7 @@ def parse_json_robusto(raw: str) -> dict:
     return {"parse_error": True}
 
 def vlm_decisao(p: dict) -> int:
-    # If a parsing error or network error occurred, treat as negative (no trash)
+    # If a parsing error or network error occurred, treat as negative (no garbage bag)
     if p.get("parse_error") or p.get("erro"):
         return 0
     return int(bool(p.get("tem_lixo")))
@@ -82,6 +83,13 @@ def vlm_decisao(p: dict) -> int:
 ---
 
 ## 4. Run Parameters
+- **LM Studio model identifier:** `google/gemma-4-31b-qat`
+- **Underlying GGUF repository:** `lmstudio-community/gemma-4-31B-it-QAT-GGUF`
+- **Loaded file:** `gemma-4-31B-it-QAT-Q4_0.gguf`
+- **Model catalog:** https://lmstudio.ai/models/google/gemma-4-31b-qat
+- **GGUF repository:** https://huggingface.co/lmstudio-community/gemma-4-31B-it-QAT-GGUF
+- **Runtime:** LM Studio 0.4.15 (Build 2)
 - **Temperature:** 0.0
 - **Seed:** 42 (when supported by server)
-- **Quantization:** Q5_K_M (via LM Studio OpenAI-compatible API)
+- **Format / quantization:** GGUF / Q4_0 (18.85 GB on disk)
+- **Architecture:** `gemma4`

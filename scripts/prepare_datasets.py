@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Download source datasets and rebuild the YOLO unified dataset.
 
-The unified dataset is single-class: class 0 = lixo.
+The unified dataset is single-class: class 0 = saco_de_lixo.
 """
 
 from __future__ import annotations
@@ -13,8 +13,6 @@ import os
 import random
 import re
 import shutil
-import subprocess
-import sys
 import tempfile
 import zipfile
 from collections import defaultdict
@@ -219,65 +217,6 @@ def direct_download_roboflow(ds: RoboflowDataset, api_key: str, dest: Path) -> N
     print(f"[ok] {ds.project}: {len(list_images(dest))} imagens baixadas")
 
 
-def ensure_taco(download_images: bool) -> None:
-    env = read_env()
-    repo = ROOT / env.get("TACO_DEST", "data/raw_taco") / "TACO"
-    repo_url = env.get("TACO_REPO_URL", "https://github.com/pedropro/TACO.git")
-    if not repo.exists():
-        print(f"[clone] TACO -> {repo.relative_to(ROOT)}")
-        repo.parent.mkdir(parents=True, exist_ok=True)
-        subprocess.run(["git", "clone", repo_url, str(repo)], check=True)
-    if download_images:
-        print("[download] TACO images")
-        subprocess.run([sys.executable, "download.py"], cwd=str(repo), check=False)
-    print(f"[ok] TACO: {len(list_images(repo / 'data'))} imagens locais")
-
-
-def taco_records() -> list[dict]:
-    env = read_env()
-    taco_root = ROOT / env.get("TACO_DEST", "data/raw_taco") / "TACO" / "data"
-    ann_path = taco_root / "annotations.json"
-    if not ann_path.exists():
-        raise RuntimeError(f"Anotacoes TACO ausentes: {ann_path}")
-
-    data = json.loads(ann_path.read_text(encoding="utf-8"))
-    anns_by_img: dict[int, list[dict]] = defaultdict(list)
-    for ann in data.get("annotations", []):
-        anns_by_img[int(ann["image_id"])].append(ann)
-
-    records: list[dict] = []
-    for img in data.get("images", []):
-        img_path = taco_root / img["file_name"]
-        if not img_path.exists():
-            continue
-        width = float(img["width"])
-        height = float(img["height"])
-        lines: list[str] = []
-        for ann in anns_by_img.get(int(img["id"]), []):
-            x, y, w, h = [float(v) for v in ann["bbox"]]
-            if w <= 0 or h <= 0:
-                continue
-            xc = (x + w / 2) / width
-            yc = (y + h / 2) / height
-            lines.append(f"0 {xc:.6f} {yc:.6f} {w / width:.6f} {h / height:.6f}")
-        if lines:
-            records.append(
-                {
-                    "source": "taco",
-                    "image": img_path,
-                    "labels": lines,
-                    "positive": True,
-                    "group_key": group_key_for_record("taco", img_path),
-                }
-            )
-
-    target = int(env.get("TACO_N_ALVO", "1500"))
-    if len(records) > target:
-        rng = random.Random(SEED)
-        records = rng.sample(records, target)
-    return records
-
-
 def roboflow_positive_records(datasets: list[RoboflowDataset]) -> list[dict]:
     records: list[dict] = []
     for ds in datasets:
@@ -400,8 +339,7 @@ def rebuild_test_set() -> None:
 def rebuild_unified() -> None:
     env = read_env()
     datasets = roboflow_configs(env)
-    records = taco_records()
-    records.extend(roboflow_positive_records(datasets))
+    records = roboflow_positive_records(datasets)
     records.extend(sidewalk_negative_records(datasets))
     if not records:
         raise RuntimeError("Nenhum registro encontrado para reconstruir data/unified.")
@@ -444,7 +382,7 @@ def rebuild_unified() -> None:
         "val: images/val\n"
         "nc: 1\n"
         "names:\n"
-        "  0: lixo\n",
+        "  0: saco_de_lixo\n",
         encoding="utf-8",
     )
 
@@ -483,19 +421,17 @@ def rebuild_unified() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--download", action="store_true", help="Baixa datasets Roboflow e garante TACO.")
+    parser.add_argument("--download", action="store_true", help="Baixa os datasets configurados no Roboflow.")
     parser.add_argument("--rebuild", action="store_true", help="Reconstrói data/unified.")
     parser.add_argument("--rebuild-test", action="store_true", help="Reconstrói data/teste a partir do Roboflow bruto.")
     parser.add_argument("--all", action="store_true", help="Executa download e rebuild.")
     parser.add_argument("--overwrite", action="store_true", help="Força novo download Roboflow.")
-    parser.add_argument("--download-taco-images", action="store_true", help="Executa download.py do TACO.")
     args = parser.parse_args()
 
     env = read_env()
     if args.download or args.all:
         datasets = roboflow_configs(env)
         download_roboflow(datasets, overwrite=args.overwrite)
-        ensure_taco(download_images=args.download_taco_images)
     if args.rebuild_test or args.all:
         rebuild_test_set()
     if args.rebuild or args.all:
