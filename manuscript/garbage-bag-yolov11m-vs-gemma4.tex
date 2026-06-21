@@ -125,7 +125,7 @@ O modelo multimodal foi carregado pelo identificador \texttt{google/gemma-4-31b-
 
 A avaliação considerou duas camadas. Na primeira, cada imagem foi classificada como \textbf{com saco de lixo visível} ou \textbf{sem saco de lixo visível}. Na segunda, as caixas previstas foram comparadas às 785 caixas anotadas no teste. Para o YOLOv11m, \emph{black\_bag} e \emph{white\_bag} foram selecionadas de \emph{garbage-8uzha} (v4), e \emph{trash bag}, de \emph{garbage-mvzg3} (v1); todas foram agregadas na classe ``saco de lixo''. Como negativos, foram usadas 424 imagens da classe \emph{Roadway} sem sacos anotados, equivalentes a 10\% das positivas. A composição é apresentada na Tabela~\ref{tab:conjuntos}.
 
-\begin{table}[htbp]
+\begin{table}[t]
 \centering
 \footnotesize
 \caption{Composição das fontes de dados experimentais}
@@ -151,7 +151,7 @@ A integridade das divisões foi verificada por deduplicação perceptual com \em
 
 O experimento comparou duas estratégias de adoção --- treinar um modelo especializado ou empregar um generalista sem treinamento adicional ---, detalhadas na Tabela~\ref{tab:configuracao}.
 
-\begin{table}[htbp]
+\begin{table}[t]
 \centering
 \footnotesize
 \caption{Configuração dos modelos experimentais}
@@ -206,7 +206,7 @@ Intervalos de confiança de 95\% foram estimados pelo método de Wilson e as dis
 
 A Tabela~\ref{tab:desempenho} apresenta as métricas obtidas no conjunto de 560 imagens, separando a identificação binária por imagem da localização por caixas.
 
-\begin{table}[htbp]
+\begin{table}[t]
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
@@ -261,7 +261,7 @@ Os intervalos de confiança de 95\% da acurácia foram 0,833--0,890 (YOLO) e 0,9
 
 O limiar de confiança altera o equilíbrio entre sensibilidade e falsos positivos. A Tabela~\ref{tab:limiar_yolo} apresenta os quatro pontos de operação avaliados para o YOLOv11m.
 
-\begin{table}[htbp]
+\begin{table}[t]
 \centering
 \footnotesize
 \caption{Sensibilidade ao limiar de confiança do YOLOv11m}
