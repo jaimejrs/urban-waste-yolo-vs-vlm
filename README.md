@@ -1,8 +1,8 @@
-# Garbage Bag Detection: YOLO vs VLM
+# Specialized Detection or Zero-Shot Vision-Language Modeling?
 
-Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para identificar a presença e a localização de sacos de lixo em vias públicas brasileiras. O notebook principal é `garbage-bag-yolov11m-vs-gemma4.ipynb`.
+Repositório do artigo **"Specialized Detection or Zero-Shot Vision-Language Modeling? Garbage Bag Identification and Localization in Brazilian Street Images"**, de Jaime Teixeira de Araújo Júnior e Carlos Caminha, **Kunumi Lab - Universidade Federal do Ceará (UFC)**. O experimento compara **YOLOv11m** e **Gemma 4 31B-QAT** para identificar a presença e a localização de sacos de lixo em vias públicas brasileiras. O notebook canônico do projeto é `garbage-bag-yolov11m-vs-gemma4.ipynb`.
 
-O projeto foi organizado para que um clone do repositório consiga renderizar as principais tabelas e figuras sem redistribuir as imagens originais, que dependem das licenças das bases e das fontes de coleta. Para isso, artefatos leves de cache foram versionados.
+O projeto foi organizado para que um clone do repositório consiga reproduzir as principais tabelas e figuras sem redistribuir imagens originais não autorizadas. Para isso, artefatos leves de cache foram versionados.
 
 ## Resultados principais
 
@@ -46,7 +46,7 @@ As imagens, pesos e checkpoints intermediários não são versionados. Configure
 
 ## Artigo
 
-Os arquivos LaTeX estão em `manuscript/`. O artigo foi submetido ao **KDMiLe 2025** com 8 páginas, 20 referências e 4 tabelas. Para compilar:
+Os arquivos LaTeX estão em `manuscript/`. O artigo foi submetido ao **KDMiLe 2025** com 8 páginas e 20 referências. Para compilar:
 
 ```bash
 cd manuscript
@@ -72,6 +72,8 @@ A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.p
 - `Roadway` como fundo: 424 imagens negativas sem sacos anotados, equivalentes a 10% das positivas, limitadas pela disponibilidade elegível.
 
 O teste é baixado de `jaime-teixeira/urban-waste-brazil` e contém 560 capturas do Google Street View de diferentes estados brasileiros, sendo 280 imagens positivas e 280 negativas. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50% das imagens e revisou os 50% restantes. As divergências foram discutidas e ajustadas por consenso, e todos os sacos de lixo visíveis foram anotados individualmente antes da subida para o Roboflow. No total, o teste contém 785 caixas anotadas. Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
+
+As imagens do Google Street View foram utilizadas exclusivamente para avaliação, com anonimização dos elementos sensíveis, respeito aos termos de uso aplicáveis e sem redistribuição não autorizada.
 
 ## Modelo VLM
 
