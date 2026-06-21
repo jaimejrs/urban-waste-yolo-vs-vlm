@@ -27,13 +27,13 @@
 \newdef{definition}[theorem]{Definition}
 \newdef{remark}[theorem]{Remark}
 
-\markboth{Araújo Júnior and Caminha Neto}
-{Garbage Bag Detection and Localization}
-\title{Garbage Bag Detection and Localization: Comparing YOLOv11m and Gemma 4 31B-QAT}
+\markboth{Araújo Júnior and Caminha}
+{Garbage Bag Identification and Localization}
+\title{Specialized Detection or Zero-Shot Vision-Language Modeling? Garbage Bag Identification and Localization in Brazilian Street Images}
 
-\author{Jaime Teixeira de Araújo Júnior$^{1}$, Carlos de Oliveira Caminha Neto$^{1}$}
+\author{Jaime Teixeira de Araújo Júnior$^{1}$, Carlos Caminha$^{1}$}
 
-\institute{$^{1}$ Universidade Federal do Ceará (UFC)\\
+\institute{$^{1}$ Kunumi Lab - Universidade Federal do Ceará (UFC)\\
 Fortaleza, CE, Brasil\\
 \texttt{jaimejrs@alu.ufc.br, caminha@ufc.br}}
 
@@ -304,7 +304,7 @@ Na classificação binária, os modelos discordaram em 79 imagens (68 acertadas 
     \fbox{\parbox{0.90\linewidth}{\centering Figura não encontrada. Execute o notebook para gerar o PNG.}}%
   }%
 }
-\caption{Exemplos qualitativos de localização no conjunto de teste. Caixas verdes indicam as anotações de referência (\emph{ground truth}); vermelhas, as previsões do YOLOv11m; azuis, as do Gemma 4 31B-QAT. O YOLO tende a alinhar-se às caixas de referência, enquanto o Gemma gera caixas em excesso e desalinhadas. Imagens originais \copyright~2026 Google. Fragmentos reproduzidos estritamente para fins acadêmicos e de pesquisa científica sob a doutrina de Uso Justo (\emph{Fair Use}).}
+\caption{Exemplos qualitativos de localização no conjunto de teste. Caixas verdes indicam as anotações de referência (\emph{ground truth}); vermelhas, as previsões do YOLOv11m; azuis, as do Gemma 4 31B-QAT. O YOLO tende a alinhar-se às caixas de referência, enquanto o Gemma gera caixas em excesso e desalinhadas. Imagens originais \copyright~2026 Google, utilizadas exclusivamente para avaliação acadêmica, com anonimização e sem redistribuição não autorizada, em conformidade com os termos de uso aplicáveis.}
 \label{fig:caixas-tp-fp-fn}
 \end{figure}
 
@@ -324,7 +324,7 @@ Os resultados não sustentam a adoção universal de um único modelo: o Gemma f
 
 \noindent\textbf{Limitações.} A amostra de teste é balanceada artificialmente (50\% positivas), diferindo da prevalência esperada em monitoramento contínuo, e representa um subconjunto específico de cenas e enquadramentos brasileiros; os resultados constituem evidência comparativa no domínio avaliado. A tarefa restringe-se à presença visual de sacos, sem estimar volume ou risco sanitário, e a anotação por consenso entre dois pesquisadores não produz medida independente de concordância interanotador. A comparação reflete estratégias distintas (fine-tuning supervisionado versus zero-shot multimodal), e as medições de eficiência representam os fluxos implementados (Gemma via HTTP/LM Studio, YOLO local), sem experimentos de concorrência, energia ou custo em produção \cite{Madan2024FewShotVLM}.
 
-\noindent\textbf{Disponibilidade de código e dados.} Os artefatos de reprodução e o notebook estão disponíveis em \url{https://github.com/jaimejrs/garbage-bag-yolov11m-vs-gemma4}. A publicação das imagens observará as licenças, os termos do Google Street View e os procedimentos de anonimização.
+\noindent\textbf{Disponibilidade de código e dados.} Os artefatos de reprodução e o notebook estão disponíveis em \url{https://github.com/jaimejrs/garbage-bag-yolov11m-vs-gemma4}. As imagens do Google Street View foram utilizadas exclusivamente para avaliação, com anonimização dos elementos sensíveis, respeito aos termos de uso aplicáveis e sem redistribuição não autorizada.
 
 \bibliographystyle{kdmile}
 \bibliography{garbage-bag-yolov11m-vs-gemma4}

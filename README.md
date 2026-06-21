@@ -50,29 +50,29 @@ Os arquivos LaTeX estão em `manuscript/`. O artigo foi submetido ao **KDMiLe 20
 
 ```bash
 cd manuscript
-latexmk -pdf urban-waste-yolo-vs-vlm.tex
+latexmk -pdf garbage-bag-yolov11m-vs-gemma4.tex
 ```
 
 Ou, manualmente:
 
 ```bash
 cd manuscript
-pdflatex urban-waste-yolo-vs-vlm.tex
-bibtex urban-waste-yolo-vs-vlm
-pdflatex urban-waste-yolo-vs-vlm.tex
-pdflatex urban-waste-yolo-vs-vlm.tex
+pdflatex garbage-bag-yolov11m-vs-gemma4.tex
+bibtex garbage-bag-yolov11m-vs-gemma4
+pdflatex garbage-bag-yolov11m-vs-gemma4.tex
+pdflatex garbage-bag-yolov11m-vs-gemma4.tex
 ```
 
 ## Preparação de dados
 
-A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.py`. O treinamento usa somente:
+A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.py`. Conforme o paper, o treinamento do YOLOv11m foi realizado com 4.235 imagens positivas e 424 imagens negativas de fundo:
 
-- `garbage-8uzha`: classes `black_bag` e `white_bag` (1.838 imagens positivas de referência);
-- `garbage-mvzg3`: classe `trash bag` (865 imagens positivas de referência);
-- `garbage-mvzg3`: imagens `Roadway` sem `trash bag`, em quantidade equivalente a 10% das positivas e limitada a 271 negativas.
+- `garbage-8uzha` (v4): 3.370 imagens positivas, usando apenas as classes `black_bag` e `white_bag`;
+- `garbage-mvzg3` (v1): 865 imagens positivas, agregadas na classe única `saco_de_lixo`;
+- `Roadway` como fundo: 424 imagens negativas sem sacos anotados, equivalentes a 10% das positivas, limitadas pela disponibilidade elegível.
 
-O teste é baixado de `jaime-teixeira/urban-waste-brazil` (560 imagens de vias públicas brasileiras do Google Street View). Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
+O teste é baixado de `jaime-teixeira/urban-waste-brazil` e contém 560 capturas do Google Street View de diferentes estados brasileiros, sendo 280 imagens positivas e 280 negativas. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50% das imagens e revisou os 50% restantes. As divergências foram discutidas e ajustadas por consenso, e todos os sacos de lixo visíveis foram anotados individualmente antes da subida para o Roboflow. No total, o teste contém 785 caixas anotadas. Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
 
 ## Modelo VLM
 
-O modelo foi carregado pelo identificador [`google/gemma-4-31b-qat`](https://lmstudio.ai/models/google/gemma-4-31b-qat), que no catálogo do LM Studio é baseado no repositório GGUF [`lmstudio-community/gemma-4-31B-it-QAT-GGUF`](https://huggingface.co/lmstudio-community/gemma-4-31B-it-QAT-GGUF). A inferência foi executada no LM Studio 0.4.15 (Build 2) com o arquivo `gemma-4-31B-it-QAT-Q4_0.gguf`: formato GGUF, quantização Q4_0, arquitetura `gemma4` e tamanho de 18,85 GB em disco. Esses dados são registrados separadamente nos artefatos de proveniência.
+O modelo foi carregado pelo identificador [`google/gemma-4-31b-qat`](https://lmstudio.ai/models/google/gemma-4-31b-qat), que no catálogo do LM Studio é baseado no repositório GGUF [`lmstudio-community/gemma-4-31B-it-QAT-GGUF`](https://huggingface.co/lmstudio-community/gemma-4-31B-it-QAT-GGUF). A inferência foi executada no LM Studio 0.4.15 (Build 2) com o arquivo `gemma-4-31B-it-QAT-Q4_0.gguf`: formato GGUF, quantização Q4_0, arquitetura `gemma4` e tamanho de 18,85 GB em disco. O experimento usa dois prompts versionados, um para classificação binária e outro para localização individual de até 20 sacos por imagem. Esses dados são registrados separadamente nos artefatos de proveniência.

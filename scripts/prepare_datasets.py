@@ -26,7 +26,7 @@ EXTS_IMG = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".heic"}
 SEED = int(os.getenv("SEED", "42"))
 TRAIN_RATIO = float(os.getenv("UNIFIED_TRAIN_RATIO", "0.85"))
 BACKGROUND_RATIO = float(os.getenv("UNIFIED_BACKGROUND_RATIO", "0.10"))
-BACKGROUND_MAX_IMAGES = int(os.getenv("UNIFIED_BACKGROUND_MAX_IMAGES", "271"))
+BACKGROUND_MAX_IMAGES = int(os.getenv("UNIFIED_BACKGROUND_MAX_IMAGES", "447"))
 
 
 @dataclass(frozen=True)
@@ -196,7 +196,7 @@ def roboflow_configs(env: dict[str, str]) -> list[RoboflowDataset]:
             version=int(value("ROBOFLOW_VERSION_GARBAGE_8UZHA", "4")),
             role="train",
             positive_classes=("black_bag", "white_bag"),
-            expected_positive_images=3601,
+            expected_positive_images=3370,
         ),
         RoboflowDataset(
             key="GARBAGE_MVZG3",
@@ -204,15 +204,9 @@ def roboflow_configs(env: dict[str, str]) -> list[RoboflowDataset]:
             project=value("ROBOFLOW_PROJECT_GARBAGE_MVZG3", "garbage-mvzg3"),
             version=int(value("ROBOFLOW_VERSION_GARBAGE_MVZG3", "1")),
             role="train",
-            positive_classes=("bag - v4 2023-05-12 11-25pm",),
+            positive_classes=("trash bag",),
             expected_positive_images=865,
-        ),
-        RoboflowDataset(
-            key="SIDEWALK",
-            workspace=value("ROBOFLOW_WORKSPACE_SIDEWALK", "sidewalk"),
-            project=value("ROBOFLOW_PROJECT_SIDEWALK", "sidewalk-segmentation"),
-            version=int(value("ROBOFLOW_VERSION_SIDEWALK", "4")),
-            role="train",
+            background_classes=("Roadway",),
         ),
         RoboflowDataset(
             key="TESTE",
@@ -355,7 +349,7 @@ def roboflow_training_records(datasets: list[RoboflowDataset]) -> tuple[list[dic
         if found == 0 and ds.positive_classes:
             raise RuntimeError(
                 f"Nenhuma imagem positiva valida encontrada em {ds.raw_dir.relative_to(ROOT)}. "
-                "Execute primeiro: python scripts/prepare_datasets.py --download"
+                "Execute primeiro: python scripts/prepare_datasets.py --download-train"
             )
         expected = ds.expected_positive_images
         expectation = f"; referencia informada={expected}" if expected is not None else ""
@@ -418,7 +412,7 @@ def rebuild_test_set() -> None:
     if not raw_images:
         raise RuntimeError(
             f"Nenhuma imagem de teste encontrada em {ds.raw_dir.relative_to(ROOT)}. "
-            "Execute primeiro: python scripts/prepare_datasets.py --download"
+            "Execute primeiro: python scripts/prepare_datasets.py --download-test"
         )
 
     test_root = ROOT / "data" / "teste"
