@@ -1,42 +1,65 @@
 {
-  "train:garbage-8uzha": {
-    "images": 2895,
-    "positive_images": 2895,
-    "boxes": 3648
+  "target_class": "saco_de_lixo",
+  "positive_classes": {
+    "garbage-8uzha": [
+      "black_bag",
+      "white_bag"
+    ],
+    "garbage-mvzg3": [
+      "bag - v4 2023-05-12 11-25pm"
+    ],
+    "sidewalk-segmentation": []
   },
-  "train:garbage-mvzg3": {
-    "images": 739,
-    "positive_images": 739,
-    "boxes": 1145
+  "background": {
+    "source_project": "garbage-mvzg3",
+    "source_class": "Roadway",
+    "ratio_over_positive_images": 0.1,
+    "max_images": 447,
+    "available_candidates": 1639,
+    "selected_images": 424
   },
-  "train:sidewalk-segmentation": {
-    "images": 1614,
-    "positive_images": 0,
-    "boxes": 0
+  "totals": {
+    "images": 4659,
+    "positive_images": 4235,
+    "negative_images": 424,
+    "boxes": 5523
   },
-  "train:taco": {
-    "images": 1309,
-    "positive_images": 1309,
-    "boxes": 4204
-  },
-  "val:garbage-8uzha": {
-    "images": 506,
-    "positive_images": 506,
-    "boxes": 636
-  },
-  "val:garbage-mvzg3": {
-    "images": 130,
-    "positive_images": 130,
-    "boxes": 190
-  },
-  "val:sidewalk-segmentation": {
-    "images": 314,
-    "positive_images": 0,
-    "boxes": 0
-  },
-  "val:taco": {
-    "images": 191,
-    "positive_images": 191,
-    "boxes": 580
+  "by_split_source": {
+    "train:garbage-8uzha": {
+      "images": 2870,
+      "positive_images": 2870,
+      "negative_images": 0,
+      "boxes": 3581
+    },
+    "train:garbage-mvzg3": {
+      "images": 740,
+      "positive_images": 740,
+      "negative_images": 0,
+      "boxes": 1167
+    },
+    "train:sidewalk-segmentation_background": {
+      "images": 360,
+      "positive_images": 0,
+      "negative_images": 360,
+      "boxes": 0
+    },
+    "val:garbage-8uzha": {
+      "images": 500,
+      "positive_images": 500,
+      "negative_images": 0,
+      "boxes": 611
+    },
+    "val:garbage-mvzg3": {
+      "images": 125,
+      "positive_images": 125,
+      "negative_images": 0,
+      "boxes": 164
+    },
+    "val:sidewalk-segmentation_background": {
+      "images": 64,
+      "positive_images": 0,
+      "negative_images": 64,
+      "boxes": 0
+    }
   }
 }

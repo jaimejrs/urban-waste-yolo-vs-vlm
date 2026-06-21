@@ -193,10 +193,10 @@ def roboflow_configs(env: dict[str, str]) -> list[RoboflowDataset]:
             key="GARBAGE_8UZHA",
             workspace=value("ROBOFLOW_WORKSPACE_GARBAGE_8UZHA", "project-r1emy"),
             project=value("ROBOFLOW_PROJECT_GARBAGE_8UZHA", "garbage-8uzha"),
-            version=int(value("ROBOFLOW_VERSION_GARBAGE_8UZHA", "1")),
+            version=int(value("ROBOFLOW_VERSION_GARBAGE_8UZHA", "4")),
             role="train",
             positive_classes=("black_bag", "white_bag"),
-            expected_positive_images=1838,
+            expected_positive_images=3601,
         ),
         RoboflowDataset(
             key="GARBAGE_MVZG3",
@@ -204,9 +204,15 @@ def roboflow_configs(env: dict[str, str]) -> list[RoboflowDataset]:
             project=value("ROBOFLOW_PROJECT_GARBAGE_MVZG3", "garbage-mvzg3"),
             version=int(value("ROBOFLOW_VERSION_GARBAGE_MVZG3", "1")),
             role="train",
-            positive_classes=("trash bag",),
-            background_classes=("Roadway",),
+            positive_classes=("bag - v4 2023-05-12 11-25pm",),
             expected_positive_images=865,
+        ),
+        RoboflowDataset(
+            key="SIDEWALK",
+            workspace=value("ROBOFLOW_WORKSPACE_SIDEWALK", "sidewalk"),
+            project=value("ROBOFLOW_PROJECT_SIDEWALK", "sidewalk-segmentation"),
+            version=int(value("ROBOFLOW_VERSION_SIDEWALK", "4")),
+            role="train",
         ),
         RoboflowDataset(
             key="TESTE",
@@ -315,7 +321,14 @@ def roboflow_training_records(datasets: list[RoboflowDataset]) -> tuple[list[dic
                 continue
             objects = normalized_yolo_objects(yolo_label_for_image(img))
             positive_lines = [line for class_id, line in objects if class_id in positive_ids]
-            has_background = any(class_id in background_ids for class_id, _ in objects)
+            if ds.background_classes:
+                has_background = any(class_id in background_ids for class_id, _ in objects)
+            elif not ds.positive_classes:
+                # Se não tem classes positivas nem restrição de fundo, aceita qualquer imagem com alguma anotação
+                has_background = len(objects) > 0
+            else:
+                has_background = False
+
             if positive_lines:
                 positives.append(
                     {
@@ -330,7 +343,7 @@ def roboflow_training_records(datasets: list[RoboflowDataset]) -> tuple[list[dic
             elif has_background:
                 background_candidates.append(
                     {
-                        "source": f"{ds.project}_Roadway_background",
+                        "source": f"{ds.project}_background",
                         "image": img,
                         "labels": [],
                         "positive": False,
@@ -339,7 +352,7 @@ def roboflow_training_records(datasets: list[RoboflowDataset]) -> tuple[list[dic
                     }
                 )
         found = len(positives) - before
-        if found == 0:
+        if found == 0 and ds.positive_classes:
             raise RuntimeError(
                 f"Nenhuma imagem positiva valida encontrada em {ds.raw_dir.relative_to(ROOT)}. "
                 "Execute primeiro: python scripts/prepare_datasets.py --download"

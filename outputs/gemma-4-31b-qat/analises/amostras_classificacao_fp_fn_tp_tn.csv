@@ -1,58 +1,58 @@
 modelo_amostra,tipo_amostra,image_id,gt,yolo_pred,vlm_pred,yolo_resultado,vlm_resultado,yolo_correto,vlm_correto,yolo_score_max,vlm_confianca,vlm_descricao,n_gt_boxes,n_yolo_boxes,n_vlm_boxes
-YOLOv11m,FP,Captura-de-tela-2026-06-05-190304_png.rf.c01f9cec0135ea02811215dfeeb501fd.jpg,0,1,0,FP,TN,False,True,0.2766,1.0,"The street image shows a clean sidewalk and street, with no visible garbage bags, bottles, or discarded waste.",0,1,0
-YOLOv11m,FP,Captura-de-tela-2026-06-05-190358_png.rf.cd1b9134657cbc71a10766ace3021944.jpg,0,1,0,FP,TN,False,True,0.3933,1.0,"The street and sidewalk area in front of the house are clean, with no visible garbage bags, bottles, or discarded waste.",0,1,0
-YOLOv11m,FP,Captura-de-tela-2026-06-05-190449_png.rf.2ec6c062e234f006708b7ab09fdf8b68.jpg,0,1,0,FP,TN,False,True,0.6168,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
-YOLOv11m,FP,Captura-de-tela-2026-06-05-190528_png.rf.13f173cbcfaabadbd68e13134579bc54.jpg,0,1,0,FP,TN,False,True,0.3086,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
-YOLOv11m,FP,Captura-de-tela-2026-06-05-192137_png.rf.cae652f76778ada5f3e8ccffcb0c73d2.jpg,0,1,0,FP,TN,False,True,0.6306,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
-YOLOv11m,FP,Captura-de-tela-2026-06-05-192658_png.rf.a612f0a78e146d7c5fa8143724127594.jpg,0,1,0,FP,TN,False,True,0.2873,1.0,"The street and sidewalk area in front of the house are clean, with no visible trash or discarded waste.",0,1,0
-YOLOv11m,FP,Captura-de-tela-2026-06-05-201156_png.rf.795ca6dffc1be4cc1115052023734b06.jpg,0,1,0,FP,TN,False,True,0.3357,0.0,No visible trash or discarded waste on the street or sidewalk.,0,2,0
-YOLOv11m,FP,Captura-de-tela-2026-06-05-205335_png.rf.ee11d8ff23484bbfa14e8b78f01f1dc8.jpg,0,1,0,FP,TN,False,True,0.3925,0.0,No visible trash or discarded waste on the street or sidewalk.,0,1,0
-YOLOv11m,FN,0005_png.rf.615c600de1855d04bb5069ff5fac35c4.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is a pile of discarded waste and garbage bags on the sidewalk/street corner.,5,0,5
-YOLOv11m,FN,0007_png.rf.11c60b250afdb358ddcc21dcda66806f.jpg,1,0,1,FN,TP,False,True,0.1208,0.9,There are pieces of discarded waste and debris along the curb of the street.,1,0,3
-YOLOv11m,FN,0009_png.rf.4a8bfe2066823788778e98198e7d8efa.jpg,1,0,1,FN,TP,False,True,0.0,0.09,"There is a pile of discarded materials, including bags and containers, next to a utility pole on the sidewalk.",2,0,1
-YOLOv11m,FN,0011_png.rf.3f147c35954ecdc2391e56d94a88d268.jpg,1,0,1,FN,TP,False,True,0.1145,0.95,Large pile of mixed waste and garbage bags on the sidewalk/curb area.,2,0,1
-YOLOv11m,FN,0016_png.rf.4d617a02171d0981c828cae08c5b422f.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is a pile of discarded waste and garbage bags on the sidewalk next to the tree.,5,0,2
-YOLOv11m,FN,0020_png.rf.e19936fff9886e4b9ef0526f020dba93.jpg,1,0,1,FN,TP,False,True,0.0599,0.9,There is a discarded plastic bag or waste material on the side of the road/sidewalk area.,4,0,1
-YOLOv11m,FN,0022_png.rf.5aef81baddd502eb37b2cd21a6307af3.jpg,1,0,1,FN,TP,False,True,0.1452,0.0,Acúmulo de entulho e resíduos sólidos descartados na calçada.,4,0,3
-YOLOv11m,FN,0025_png.rf.7b134340eea3de0629fdbb6a61ccb489.jpg,1,0,1,FN,TP,False,True,0.1345,0.95,There are several bags and discarded items piled up on the sidewalk next to a tree.,1,0,1
-YOLOv11m,TP,0001_png.rf.46fadddf83685aa742b67c843dcd1c12.jpg,1,1,1,TP,TP,True,True,0.7953,0.95,"There is a significant amount of scattered waste, including plastic bags and cardboard, on the sidewalk and curb.",1,1,5
-YOLOv11m,TP,0002_png.rf.a29cc134fd5ef3de536d91625bc431b9.jpg,1,1,1,TP,TP,True,True,0.2842,0.95,"Various pieces of plastic waste, bottles, and discarded packaging scattered on the ground along the rock wall.",5,1,1
-YOLOv11m,TP,0003_png.rf.75866d15bdb7ee8513e35f2536efffa8.jpg,1,1,1,TP,TP,True,True,0.2892,0.95,Large pile of discarded garbage bags and loose waste on the sidewalk/street corner.,2,1,1
-YOLOv11m,TP,0004_png.rf.743cbfae4726326044854ae2ec8feb9b.jpg,1,1,1,TP,TP,True,True,0.812,0.95,There are garbage bags and discarded waste on the sidewalk near the base of the tree.,1,3,1
-YOLOv11m,TP,0006_png.rf.aa9b3dfe000414e04c06935acedc93cb.jpg,1,1,1,TP,TP,True,True,0.398,0.9,There is some discarded waste/trash on the curb next to the wall.,1,1,1
-YOLOv11m,TP,0008_png.rf.1b0cdc297b0b9b90b5fd7e5c895a6f86.jpg,1,1,0,TP,FN,True,False,0.671,0.95,No visible trash or discarded waste on the street or sidewalk.,1,4,1
-YOLOv11m,TP,0010_png.rf.719dd5e146376e89b263e131ba6a7320.jpg,1,1,1,TP,TP,True,True,0.6803,0.9,There are some discarded items and debris on the sidewalk/curb area near the trees.,3,2,1
-YOLOv11m,TP,0012_png.rf.4f9ff847bcd80db4cacb14a43f5d9b3f.jpg,1,1,1,TP,TP,True,True,0.4764,0.95,There are several bags of trash and discarded waste piled up on the sidewalk/curb area near the tree.,5,1,1
-YOLOv11m,TN,Captura-de-tela-2026-06-05-185812_png.rf.34175ee5ff67f3a0e3f27361e9a6d737.jpg,0,0,1,TN,FP,True,False,0.0,0.9,There is a pile of discarded waste/debris on the left side of the garden area.,0,0,1
-YOLOv11m,TN,Captura-de-tela-2026-06-05-190106_png.rf.6a3bbed09226b5cfe028a70d3e92cfac.jpg,0,0,0,TN,TN,True,True,0.15,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-YOLOv11m,TN,Captura-de-tela-2026-06-05-190208_png.rf.115d63e27edf82202ab91b19e2bd077e.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-YOLOv11m,TN,Captura-de-tela-2026-06-05-190414_png.rf.2211c8d0772298f07e39c09c851779cb.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-YOLOv11m,TN,Captura-de-tela-2026-06-05-190423_png.rf.d4be580c6176bf6f9177b57c08e233fb.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-YOLOv11m,TN,Captura-de-tela-2026-06-05-190740_png.rf.144e50a73e34ebdd8845fd6e67667d7b.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-YOLOv11m,TN,Captura-de-tela-2026-06-05-190917_png.rf.e0d66be7af6bdc4087a7d9caa8abaafe.jpg,0,0,0,TN,TN,True,True,0.1329,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",0,0,0
-YOLOv11m,TN,Captura-de-tela-2026-06-05-190927_png.rf.8a743778ffcdee2382ab98e1e1e4ba2c.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-Gemma 4 31B-QAT,FP,Captura-de-tela-2026-06-05-185812_png.rf.34175ee5ff67f3a0e3f27361e9a6d737.jpg,0,0,1,TN,FP,True,False,0.0,0.9,There is a pile of discarded waste/debris on the left side of the garden area.,0,0,1
-Gemma 4 31B-QAT,FP,Captura-de-tela-2026-06-06-100511_png.rf.8fda791708367c3b988ac179df5a79eb.jpg,0,0,1,TN,FP,True,False,0.0,0.9,There is some discarded waste/debris on the sidewalk/curb area near the tree on the left.,0,0,1
-Gemma 4 31B-QAT,FN,0008_png.rf.1b0cdc297b0b9b90b5fd7e5c895a6f86.jpg,1,1,0,TP,FN,True,False,0.671,0.95,No visible trash or discarded waste on the street or sidewalk.,1,4,1
-Gemma 4 31B-QAT,FN,0019_png.rf.2c02c405038cf805004ee57d1cbb430d.jpg,1,1,0,TP,FN,True,False,0.7892,0.95,No visible trash or discarded waste on the street or sidewalk.,1,6,0
-Gemma 4 31B-QAT,FN,0066_png.rf.03840d11d9349411095003e17ec97d2d.jpg,1,0,0,FN,FN,False,False,0.0,0.95,"The street and sidewalk are clean, with no visible discarded waste or garbage bags.",2,0,0
-Gemma 4 31B-QAT,FN,0094_png.rf.ecc23214dd6bc0876103b13dcd258aee.jpg,1,1,0,TP,FN,True,False,0.7276,0.0,No visible trash or discarded waste on the street or sidewalk.,1,1,0
-Gemma 4 31B-QAT,FN,0105_png.rf.ced2360b6fe18147537b9eb9551e5fe2.jpg,1,1,0,TP,FN,True,False,0.7628,0.95,No visible trash or discarded waste on the street or sidewalk.,1,1,1
-Gemma 4 31B-QAT,FN,0120_png.rf.941fea780b184269f9bc861f4c1900c9.jpg,1,0,0,FN,FN,False,False,0.0615,0.95,No visible trash or discarded waste on the street or sidewalk.,3,0,0
-Gemma 4 31B-QAT,FN,0157_png.rf.23fee278b40c25b6092656b4ee1e2c3c.jpg,1,1,0,TP,FN,True,False,0.7586,0.95,No visible trash or discarded waste on the street or sidewalk.,1,1,1
-Gemma 4 31B-QAT,TP,0001_png.rf.46fadddf83685aa742b67c843dcd1c12.jpg,1,1,1,TP,TP,True,True,0.7953,0.95,"There is a significant amount of scattered waste, including plastic bags and cardboard, on the sidewalk and curb.",1,1,5
-Gemma 4 31B-QAT,TP,0002_png.rf.a29cc134fd5ef3de536d91625bc431b9.jpg,1,1,1,TP,TP,True,True,0.2842,0.95,"Various pieces of plastic waste, bottles, and discarded packaging scattered on the ground along the rock wall.",5,1,1
-Gemma 4 31B-QAT,TP,0003_png.rf.75866d15bdb7ee8513e35f2536efffa8.jpg,1,1,1,TP,TP,True,True,0.2892,0.95,Large pile of discarded garbage bags and loose waste on the sidewalk/street corner.,2,1,1
-Gemma 4 31B-QAT,TP,0004_png.rf.743cbfae4726326044854ae2ec8feb9b.jpg,1,1,1,TP,TP,True,True,0.812,0.95,There are garbage bags and discarded waste on the sidewalk near the base of the tree.,1,3,1
-Gemma 4 31B-QAT,TP,0005_png.rf.615c600de1855d04bb5069ff5fac35c4.jpg,1,0,1,FN,TP,False,True,0.0,0.95,There is a pile of discarded waste and garbage bags on the sidewalk/street corner.,5,0,5
-Gemma 4 31B-QAT,TP,0006_png.rf.aa9b3dfe000414e04c06935acedc93cb.jpg,1,1,1,TP,TP,True,True,0.398,0.9,There is some discarded waste/trash on the curb next to the wall.,1,1,1
-Gemma 4 31B-QAT,TP,0007_png.rf.11c60b250afdb358ddcc21dcda66806f.jpg,1,0,1,FN,TP,False,True,0.1208,0.9,There are pieces of discarded waste and debris along the curb of the street.,1,0,3
-Gemma 4 31B-QAT,TP,0009_png.rf.4a8bfe2066823788778e98198e7d8efa.jpg,1,0,1,FN,TP,False,True,0.0,0.09,"There is a pile of discarded materials, including bags and containers, next to a utility pole on the sidewalk.",2,0,1
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190106_png.rf.6a3bbed09226b5cfe028a70d3e92cfac.jpg,0,0,0,TN,TN,True,True,0.15,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190208_png.rf.115d63e27edf82202ab91b19e2bd077e.jpg,0,0,0,TN,TN,True,True,0.0,0.95,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190304_png.rf.c01f9cec0135ea02811215dfeeb501fd.jpg,0,1,0,FP,TN,False,True,0.2766,1.0,"The street image shows a clean sidewalk and street, with no visible garbage bags, bottles, or discarded waste.",0,1,0
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190358_png.rf.cd1b9134657cbc71a10766ace3021944.jpg,0,1,0,FP,TN,False,True,0.3933,1.0,"The street and sidewalk area in front of the house are clean, with no visible garbage bags, bottles, or discarded waste.",0,1,0
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190414_png.rf.2211c8d0772298f07e39c09c851779cb.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190423_png.rf.d4be580c6176bf6f9177b57c08e233fb.jpg,0,0,0,TN,TN,True,True,0.0,0.0,No visible trash or discarded waste on the street or sidewalk.,0,0,0
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190449_png.rf.2ec6c062e234f006708b7ab09fdf8b68.jpg,0,1,0,FP,TN,False,True,0.6168,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
-Gemma 4 31B-QAT,TN,Captura-de-tela-2026-06-05-190528_png.rf.13f173cbcfaabadbd68e13134579bc54.jpg,0,1,0,FP,TN,False,True,0.3086,1.0,"The street and sidewalk are clean, with no visible trash or discarded waste.",0,1,0
+YOLOv11m,FP,04be7ff19e1c_jpg.rf.d12c401ba43560b31daddca0ed17904b.jpg,0,1,0,FP,TN,False,True,0.3138,1.0,No visible garbage bags in the street image.,0,1,0
+YOLOv11m,FP,060c1dd89fa9_jpg.rf.05c32d448aaaae6c45bf635bb9d39636.jpg,0,1,0,FP,TN,False,True,0.2656,1.0,No visible garbage bags in the street image.,0,1,0
+YOLOv11m,FP,0b0ae7579525_jpg.rf.639ae2bd3e4c5beb68a04e70ce50fc3f.jpg,0,1,0,FP,TN,False,True,0.6966,1.0,No visible garbage bags in the street image.,0,3,0
+YOLOv11m,FP,0b11bd5ddb47_jpg.rf.74c50e8d9e04fc4875f0dc60b31f73a2.jpg,0,1,0,FP,TN,False,True,0.3829,1.0,No visible garbage bags in the image.,0,1,0
+YOLOv11m,FP,0d1bf7fff18d_jpg.rf.74ea86c7b2a3975e275f6ef7fefdaa1d.jpg,0,1,0,FP,TN,False,True,0.3367,1.0,No visible garbage bags in the image.,0,1,0
+YOLOv11m,FP,112f561a35a2_jpg.rf.1275bf7b7e49ff14ede529c79465bed5.jpg,0,1,0,FP,TN,False,True,0.7015,1.0,No visible garbage bags in the image.,0,1,0
+YOLOv11m,FP,12a14f8d8ace_jpg.rf.aea0d7124d00951a8e1184d57b85e36c.jpg,0,1,0,FP,TN,False,True,0.7103,1.0,No visible garbage bags in the street image.,0,1,0
+YOLOv11m,FP,220130a63088_jpg.rf.41222f0a2a601abcdc413e2afde93896.jpg,0,1,0,FP,TN,False,True,0.6253,1.0,No visible garbage bags in the image.,0,1,0
+YOLOv11m,FN,1272bd8b6709_png.rf.56abb90f8722722b6cd769ac21323336.jpg,1,0,1,FN,TP,False,True,0.0,0.95,A white garbage bag is visible on the sidewalk/curb area.,1,0,1
+YOLOv11m,FN,15448512f793_png.rf.256abd5cddd67c6d8ae2d231cb34c059.jpg,1,0,1,FN,TP,False,True,0.1331,0.95,There are garbage bags on the sidewalk in front of the wall.,4,0,1
+YOLOv11m,FN,16ba51c424bf_jpg.rf.2fc97340d3dabf96165932d7d690592d.jpg,1,0,1,FN,TP,False,True,0.0529,0.95,Several garbage bags are visible at the base of the utility pole.,6,0,4
+YOLOv11m,FN,18e8a147fdc8_png.rf.ae0308abe5f1c14bbdd1ea9af76e1513.jpg,1,0,1,FN,TP,False,True,0.193,0.95,Two blue garbage bags are visible on the sidewalk in front of the green house.,3,0,2
+YOLOv11m,FN,1d1608abbdba_png.rf.d3076c238758546440c25aeff6ce02df.jpg,1,0,1,FN,TP,False,True,0.0,0.95,A single green garbage bag is visible on the sidewalk next to the door.,1,0,1
+YOLOv11m,FN,260bee374357_jpg.rf.3bf9096a25fdf1a7eb48bba6fc6ba699.jpg,1,0,1,FN,TP,False,True,0.1553,0.95,A black garbage bag is visible on the median strip of the street.,1,0,1
+YOLOv11m,FN,3aa9f03c84e2_jpg.rf.69499388b5dd509bda60b3762a74037a.jpg,1,0,1,FN,TP,False,True,0.213,0.9,There are black garbage bags piled up on the sidewalk next to the wall of the building.,4,0,1
+YOLOv11m,FN,3b1433b2c1ef_jpg.rf.739c2db7b30823d0d0bbb49d9cd04ec6.jpg,1,0,0,FN,FN,False,False,0.0,1.0,No visible garbage bags in the image.,1,0,0
+YOLOv11m,TP,009079175305_png.rf.30202ebc137811211e1ec40f50885f42.jpg,1,1,1,TP,TP,True,True,0.8104,0.95,Two blue garbage bags are visible on the sidewalk next to a wall.,4,2,2
+YOLOv11m,TP,015dcd01e58c_png.rf.26d15c2c7dcb3591d15c8e2c19006246.jpg,1,1,1,TP,TP,True,True,0.849,0.95,There is a visible white garbage bag on the sidewalk/step area near the person sitting.,2,2,1
+YOLOv11m,TP,044bfdc8716f_png.rf.e0202628a18204764297875c2391af52.jpg,1,1,1,TP,TP,True,True,0.8074,1.0,Three garbage bags are visible on the sidewalk/street near the base of a tree.,4,2,6
+YOLOv11m,TP,0500af923984_png.rf.68705a52111f4740c4c3a3079a05beeb.jpg,1,1,0,TP,FN,True,False,0.7702,1.0,No visible garbage bags in the image.,2,2,0
+YOLOv11m,TP,0a0293f6ed3b_jpg.rf.97d14e85c171366c4a677abbbad6d2d1.jpg,1,1,1,TP,TP,True,True,0.8493,1.0,A black garbage bag is visible on the sidewalk/street.,1,1,1
+YOLOv11m,TP,0aae81f97e63_jpg.rf.ca825dfa97692b0e241abc6405da280f.jpg,1,1,1,TP,TP,True,True,0.7615,0.95,There is a large black garbage bag and several other smaller bags of waste on the sidewalk.,5,4,4
+YOLOv11m,TP,0b25087fdc75_png.rf.3faef6e52728d4e05f53f79a8d88d436.jpg,1,1,1,TP,TP,True,True,0.7787,0.95,A blue and white garbage bag is visible on the ground against the wall.,2,2,1
+YOLOv11m,TP,0c64c2d39f92_png.rf.30098430544d9a0e87024363f45d7231.jpg,1,1,1,TP,TP,True,True,0.8252,1.0,A black garbage bag is visible on the sidewalk next to a wall.,1,1,1
+YOLOv11m,TN,01d56ec370b1_jpg.rf.1eb14229d1114380315ce1731fe53820.jpg,0,0,0,TN,TN,True,True,0.0523,1.0,No visible garbage bags in the street image.,0,0,0
+YOLOv11m,TN,028e863f8da8_jpg.rf.b3571c8a9149034e628572bae75fb4ef.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the image.,0,0,0
+YOLOv11m,TN,02cd54b77c10_jpg.rf.33d1b382a20512333372342d3f942700.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the street image.,0,0,0
+YOLOv11m,TN,04cc97a3aaf6_jpg.rf.78682457b4b1a135c22f738ded25e77b.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the image.,0,0,0
+YOLOv11m,TN,051b5664f256_jpg.rf.c6194c2f9b7e99b42b2033247fe734e8.jpg,0,0,0,TN,TN,True,True,0.1678,1.0,No visible garbage bags in the image.,0,0,0
+YOLOv11m,TN,05bea12c80dc_jpg.rf.b92736dc12a6efa8125a2ee38c822e8d.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the image.,0,0,0
+YOLOv11m,TN,08225d47a219_jpg.rf.4eb4bb2fbffeb23614415a8e629e09fa.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the street image.,0,0,0
+YOLOv11m,TN,088ae65d1252_jpg.rf.405aab4121d8a9d8461b1ef9cef34537.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the image.,0,0,0
+Gemma 4 31B-QAT,FP,2c11b686387c_jpg.rf.91c0b08c95e65bfdf0dbfa72865fe140.jpg,0,0,1,TN,FP,True,False,0.0757,0.95,A black garbage bag is visible on the ground in the garden area.,0,0,1
+Gemma 4 31B-QAT,FN,0500af923984_png.rf.68705a52111f4740c4c3a3079a05beeb.jpg,1,1,0,TP,FN,True,False,0.7702,1.0,No visible garbage bags in the image.,2,2,0
+Gemma 4 31B-QAT,FN,3b1433b2c1ef_jpg.rf.739c2db7b30823d0d0bbb49d9cd04ec6.jpg,1,0,0,FN,FN,False,False,0.0,1.0,No visible garbage bags in the image.,1,0,0
+Gemma 4 31B-QAT,FN,5727b22fa9b7_png.rf.7127e4a553720fede56495ae118877be.jpg,1,1,0,TP,FN,True,False,0.8615,1.0,No visible garbage bags are present in the image.,1,1,0
+Gemma 4 31B-QAT,FN,62b55a16ed49_png.rf.48a845045d00b55cc96963b407d47a6c.jpg,1,1,0,TP,FN,True,False,0.82,1.0,No visible garbage bags present in the image.,1,1,1
+Gemma 4 31B-QAT,FN,675b1e10f583_png.rf.13ce03655ec766a67b059c291c82c62c.jpg,1,0,0,FN,FN,False,False,0.0,1.0,No visible garbage bags are present in the image.,1,0,1
+Gemma 4 31B-QAT,FN,7806dec1b3e3_png.rf.5d91e0ac2154b44633f652fd14795c44.jpg,1,1,0,TP,FN,True,False,0.6253,1.0,No visible garbage bags in the image.,1,1,1
+Gemma 4 31B-QAT,FN,7b143df52319_jpg.rf.122a4e4e6740d5514c1819c0c6b9e7f1.jpg,1,1,0,TP,FN,True,False,0.4272,0.95,No visible garbage bags containing waste are present in the street image.,5,2,1
+Gemma 4 31B-QAT,FN,7f851398def6_png.rf.cd8bc05db95f3aa4f85efc7ddd9ba97d.jpg,1,0,0,FN,FN,False,False,0.1393,1.0,No visible garbage bags in the image.,2,0,0
+Gemma 4 31B-QAT,TP,009079175305_png.rf.30202ebc137811211e1ec40f50885f42.jpg,1,1,1,TP,TP,True,True,0.8104,0.95,Two blue garbage bags are visible on the sidewalk next to a wall.,4,2,2
+Gemma 4 31B-QAT,TP,015dcd01e58c_png.rf.26d15c2c7dcb3591d15c8e2c19006246.jpg,1,1,1,TP,TP,True,True,0.849,0.95,There is a visible white garbage bag on the sidewalk/step area near the person sitting.,2,2,1
+Gemma 4 31B-QAT,TP,044bfdc8716f_png.rf.e0202628a18204764297875c2391af52.jpg,1,1,1,TP,TP,True,True,0.8074,1.0,Three garbage bags are visible on the sidewalk/street near the base of a tree.,4,2,6
+Gemma 4 31B-QAT,TP,0a0293f6ed3b_jpg.rf.97d14e85c171366c4a677abbbad6d2d1.jpg,1,1,1,TP,TP,True,True,0.8493,1.0,A black garbage bag is visible on the sidewalk/street.,1,1,1
+Gemma 4 31B-QAT,TP,0aae81f97e63_jpg.rf.ca825dfa97692b0e241abc6405da280f.jpg,1,1,1,TP,TP,True,True,0.7615,0.95,There is a large black garbage bag and several other smaller bags of waste on the sidewalk.,5,4,4
+Gemma 4 31B-QAT,TP,0b25087fdc75_png.rf.3faef6e52728d4e05f53f79a8d88d436.jpg,1,1,1,TP,TP,True,True,0.7787,0.95,A blue and white garbage bag is visible on the ground against the wall.,2,2,1
+Gemma 4 31B-QAT,TP,0c64c2d39f92_png.rf.30098430544d9a0e87024363f45d7231.jpg,1,1,1,TP,TP,True,True,0.8252,1.0,A black garbage bag is visible on the sidewalk next to a wall.,1,1,1
+Gemma 4 31B-QAT,TP,0d8d65bc41fb_png.rf.716990f2edd12ded04378f6f39d2cb72.jpg,1,1,1,TP,TP,True,True,0.8637,0.95,A single light-colored garbage bag is visible against the white tiled wall.,1,1,1
+Gemma 4 31B-QAT,TN,01d56ec370b1_jpg.rf.1eb14229d1114380315ce1731fe53820.jpg,0,0,0,TN,TN,True,True,0.0523,1.0,No visible garbage bags in the street image.,0,0,0
+Gemma 4 31B-QAT,TN,028e863f8da8_jpg.rf.b3571c8a9149034e628572bae75fb4ef.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the image.,0,0,0
+Gemma 4 31B-QAT,TN,02cd54b77c10_jpg.rf.33d1b382a20512333372342d3f942700.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the street image.,0,0,0
+Gemma 4 31B-QAT,TN,04be7ff19e1c_jpg.rf.d12c401ba43560b31daddca0ed17904b.jpg,0,1,0,FP,TN,False,True,0.3138,1.0,No visible garbage bags in the street image.,0,1,0
+Gemma 4 31B-QAT,TN,04cc97a3aaf6_jpg.rf.78682457b4b1a135c22f738ded25e77b.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the image.,0,0,0
+Gemma 4 31B-QAT,TN,051b5664f256_jpg.rf.c6194c2f9b7e99b42b2033247fe734e8.jpg,0,0,0,TN,TN,True,True,0.1678,1.0,No visible garbage bags in the image.,0,0,0
+Gemma 4 31B-QAT,TN,05bea12c80dc_jpg.rf.b92736dc12a6efa8125a2ee38c822e8d.jpg,0,0,0,TN,TN,True,True,0.0,1.0,No visible garbage bags in the image.,0,0,0
+Gemma 4 31B-QAT,TN,060c1dd89fa9_jpg.rf.05c32d448aaaae6c45bf635bb9d39636.jpg,0,1,0,FP,TN,False,True,0.2656,1.0,No visible garbage bags in the street image.,0,1,0
