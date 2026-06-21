@@ -46,7 +46,7 @@ As imagens, pesos e checkpoints intermediários não são versionados. Configure
 
 ## Artigo
 
-Os arquivos LaTeX estão em `manuscript/`. O artigo foi submetido ao **KDMiLe 2025** com 8 páginas e 20 referências. Para compilar:
+Os arquivos LaTeX estão em `manuscript/`. Para compilar:
 
 ```bash
 cd manuscript
@@ -71,9 +71,8 @@ A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.p
 - `garbage-mvzg3` (v1): 865 imagens positivas, agregadas na classe única `saco_de_lixo`;
 - `Roadway` como fundo: 424 imagens negativas sem sacos anotados, equivalentes a 10% das positivas, limitadas pela disponibilidade elegível.
 
-O teste é baixado de `jaime-teixeira/urban-waste-brazil` e contém 560 capturas do Google Street View de diferentes estados brasileiros, sendo 280 imagens positivas e 280 negativas. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50% das imagens e revisou os 50% restantes. As divergências foram discutidas e ajustadas por consenso, e todos os sacos de lixo visíveis foram anotados individualmente antes da subida para o Roboflow. No total, o teste contém 785 caixas anotadas. Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
+O teste é baixado de `jaime-teixeira/urban-waste-brazil` e contém 560 capturas de diferentes estados brasileiros, sendo 280 imagens positivas e 280 negativas. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50% das imagens e revisou os 50% restantes. As divergências foram discutidas e ajustadas por consenso, e todos os sacos de lixo visíveis foram anotados individualmente antes da subida para o Roboflow. No total, o teste contém 785 caixas anotadas. Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
 
-As imagens do Google Street View foram utilizadas exclusivamente para avaliação, com anonimização dos elementos sensíveis, respeito aos termos de uso aplicáveis e sem redistribuição não autorizada.
 
 ## Modelo VLM
 
