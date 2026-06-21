@@ -1,6 +1,6 @@
 # Garbage Bag Detection: YOLO vs VLM
 
-Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para identificar a presença e a localização de sacos de lixo em vias públicas brasileiras. O notebook principal é `urban-waste-yolo-vs-vlm-otimizado.ipynb`.
+Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para identificar a presença e a localização de sacos de lixo em vias públicas brasileiras. O notebook principal é `garbage-bag-yolov11m-vs-gemma4.ipynb`.
 
 O projeto foi organizado para que um clone do repositório consiga renderizar as principais tabelas e figuras sem redistribuir as imagens originais, que dependem das licenças das bases e das fontes de coleta. Para isso, artefatos leves de cache foram versionados.
 
@@ -24,7 +24,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Copie `env.example` para `.env`, informe `ROBOFLOW_API_KEY`, carregue o modelo no LM Studio e execute **Run All** em `urban-waste-yolo-vs-vlm-otimizado.ipynb`. O progresso é salvo em `outputs/pipeline_state.json`; etapas concluídas e caches compatíveis são reutilizados automaticamente.
+Copie `env.example` para `.env`, informe `ROBOFLOW_API_KEY`, carregue o modelo no LM Studio e execute **Run All** em `garbage-bag-yolov11m-vs-gemma4.ipynb`. O progresso é salvo em `outputs/pipeline_state.json`; etapas concluídas e caches compatíveis são reutilizados automaticamente.
 
 O download e a preparação dos datasets de treino ocorrem antes do treinamento. O dataset `urban-waste-brazil` é baixado e preparado somente depois que o YOLO termina, imediatamente antes das inferências. Enquanto o teste não estiver pronto, use `TRAIN_ONLY_PIPELINE=true`: o Run All concluirá o download dos dados de treino e o treinamento, sem tentar baixar o teste ou executar inferências. Quando o teste estiver pronto, altere para `false`.
 
