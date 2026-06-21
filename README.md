@@ -6,14 +6,15 @@ O projeto foi organizado para que um clone do repositório consiga reproduzir as
 
 ## Resultados principais
 
-| Métrica | YOLOv11m | Gemma 4 31B-QAT |
-|---|---|---|
-| F1 classificação binária | 0,8685 | **0,9650** |
-| F1 caixas (IoU ≥ 0,5) | **0,5744** | 0,1546 |
-| Taxa de sucesso por imagem | **0,8071** | 0,3821 |
-| Latência média por imagem | **10,2 ms** | 1.278,6 ms |
+| Métrica | YOLOv11m | Gemma 4 31B-QAT | Cascata Gemma→YOLO |
+|---|---|---|---|
+| F1 classificação binária | 0,8685 | **0,9650** | — |
+| F1 caixas (IoU ≥ 0,5) | 0,5744 | 0,1546 | **0,5942** |
+| Taxa de sucesso por imagem | 0,8071 | 0,3821 | 0,7821 |
+| Falsos positivos de caixas | 178 | 731 | **114 (−36%)** |
+| Latência média por imagem | **10,2 ms** | 1.278,6 ms | — |
 
-O Gemma supera o YOLO na identificação binária (presença/ausência); o YOLO supera o Gemma na localização precisa com caixas e é ~126× mais rápido.
+O Gemma supera o YOLO na identificação binária; o YOLO supera o Gemma na localização e é ~126× mais rápido. A cascata Gemma→YOLO (VLM confirma a presença, YOLO localiza) reduz os falsos positivos em 36% e eleva o F1 de caixas para 0,5942, ao custo de menor recall.
 
 ## Como executar
 
