@@ -11,7 +11,7 @@
     "sidewalk-segmentation": []
   },
   "background": {
-    "source_project": "garbage-mvzg3",
+    "source_project": "sidewalk-segmentation",
     "source_class": "Roadway",
     "ratio_over_positive_images": 0.1,
     "max_images": 447,

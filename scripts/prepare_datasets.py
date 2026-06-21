@@ -204,7 +204,7 @@ def roboflow_configs(env: dict[str, str]) -> list[RoboflowDataset]:
             project=value("ROBOFLOW_PROJECT_GARBAGE_MVZG3", "garbage-mvzg3"),
             version=int(value("ROBOFLOW_VERSION_GARBAGE_MVZG3", "1")),
             role="train",
-            positive_classes=("trash bag",),
+            positive_classes=("bag - v4 2023-05-12 11-25pm",),
             expected_positive_images=865,
             background_classes=("Roadway",),
         ),
@@ -522,8 +522,8 @@ def rebuild_unified() -> None:
             ds.project: list(ds.positive_classes) for ds in datasets if ds.role == "train"
         },
         "background": {
-            "source_project": "garbage-mvzg3",
-            "source_class": "Roadway",
+            "source_project": next((ds.project for ds in datasets if ds.background_classes), "unknown"),
+            "source_class": next((ds.background_classes[0] for ds in datasets if ds.background_classes), "Roadway"),
             "ratio_over_positive_images": BACKGROUND_RATIO,
             "max_images": BACKGROUND_MAX_IMAGES,
             "available_candidates": len(background_candidates),
