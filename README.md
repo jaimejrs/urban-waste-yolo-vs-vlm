@@ -1,8 +1,19 @@
 # Garbage Bag Detection: YOLO vs VLM
 
-Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para identificar a presença e a localização de sacos de lixo em vias públicas. O notebook principal é `urban-waste-yolo-vs-vlm-otimizado.ipynb`.
+Repositório do experimento comparando **YOLOv11m** e **Gemma 4 31B-QAT** para identificar a presença e a localização de sacos de lixo em vias públicas brasileiras. O notebook principal é `urban-waste-yolo-vs-vlm-otimizado.ipynb`.
 
 O projeto foi organizado para que um clone do repositório consiga renderizar as principais tabelas e figuras sem redistribuir as imagens originais, que dependem das licenças das bases e das fontes de coleta. Para isso, artefatos leves de cache foram versionados.
+
+## Resultados principais
+
+| Métrica | YOLOv11m | Gemma 4 31B-QAT |
+|---|---|---|
+| F1 classificação binária | 0,8685 | **0,9650** |
+| F1 caixas (IoU ≥ 0,5) | **0,5744** | 0,1546 |
+| Taxa de sucesso por imagem | **0,8071** | 0,3821 |
+| Latência média por imagem | **10,2 ms** | 1.278,6 ms |
+
+O Gemma supera o YOLO na identificação binária (presença/ausência); o YOLO supera o Gemma na localização precisa com caixas e é ~126× mais rápido.
 
 ## Como executar
 
@@ -28,18 +39,21 @@ O treinamento YOLO salva `last.pt` a cada época e retoma desse checkpoint após
 - `outputs/gemma-4-31b-qat/predictions_vlm_localizacao.json`
 - `outputs/varredura_limiares.csv`
 - `outputs/gemma-4-31b-qat/analises/*.csv`
-- `outputs/figures/fig_tradeoff_f1_latencia.png`
+- `outputs/figures/fig_amostras_localizacao_fp_fn.png`
 - `prompt_gemma_classificacao.txt` e `prompt_gemma_localizacao.txt`
 
 As imagens, pesos e checkpoints intermediários não são versionados. Configure o comportamento no `.env` a partir de `env.example`.
 
-## Resultados em cache
-
-Os artefatos atualmente versionados correspondem à execução anterior. Como a classe-alvo e os prompts foram restringidos a sacos de lixo e o TACO foi removido do treinamento, as métricas deverão ser regeneradas antes da versão final do artigo.
-
 ## Artigo
 
-Os arquivos LaTeX do artigo estão em `manuscript/`. Para compilar:
+Os arquivos LaTeX estão em `manuscript/`. O artigo foi submetido ao **KDMiLe 2025** com 8 páginas, 20 referências e 4 tabelas. Para compilar:
+
+```bash
+cd manuscript
+latexmk -pdf urban-waste-yolo-vs-vlm.tex
+```
+
+Ou, manualmente:
 
 ```bash
 cd manuscript
@@ -57,7 +71,7 @@ A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.p
 - `garbage-mvzg3`: classe `trash bag` (865 imagens positivas de referência);
 - `garbage-mvzg3`: imagens `Roadway` sem `trash bag`, em quantidade equivalente a 10% das positivas e limitada a 271 negativas.
 
-O teste é baixado de `jaime-teixeira/urban-waste-brazil`. Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
+O teste é baixado de `jaime-teixeira/urban-waste-brazil` (560 imagens de vias públicas brasileiras do Google Street View). Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
 
 ## Modelo VLM
 

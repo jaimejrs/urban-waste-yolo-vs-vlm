@@ -78,3 +78,7 @@ outputs/pipeline_state.json
 !outputs/gemma-4-31b-qat/analises/*.csv
 !outputs/figures/
 !outputs/figures/*.png
+
+# Figures used in the manuscript
+!manuscript/figures/
+!manuscript/figures/*.png
