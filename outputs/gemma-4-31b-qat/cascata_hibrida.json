@@ -1,0 +1,20 @@
+{
+  "arquitetura": "VLM confirma presenca -> YOLO localiza",
+  "limiar_conf_yolo": 0.25,
+  "limiar_iou": 0.5,
+  "imagens_avaliadas": 560,
+  "imagens_positivas_gt": 280,
+  "sucessos_cascata_iou_05": 219,
+  "taxa_sucesso_cascata_iou_05": 0.7821,
+  "tp_boxes_iou_05": 380,
+  "fp_boxes_iou_05": 114,
+  "fn_boxes_iou_05": 405,
+  "precisao_box_iou_05": 0.7692,
+  "recall_box_iou_05": 0.4841,
+  "f1_box_iou_05": 0.5942,
+  "comparacao_taxa_sucesso": {
+    "cascata": 0.7821,
+    "yolo_sozinho": 0.8071,
+    "gemma_sozinho": 0.3821
+  }
+}
