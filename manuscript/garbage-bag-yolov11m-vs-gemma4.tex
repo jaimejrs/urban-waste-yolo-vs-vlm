@@ -142,7 +142,7 @@ Teste brasileiro & 560 & 280 & 280 \\
 \end{tabular}
 \end{table}
 
-O teste foi construído com capturas do Google Street View de diferentes estados brasileiros, sem sobreposição com o treinamento. Cada pesquisador anotou 50\% das imagens e revisou os 50\% restantes, com divergências ajustadas por consenso; todos os sacos visíveis foram delimitados individualmente. O conjunto é balanceado (280 positivas e 280 negativas), tratando resíduos avulsos, lixeiras fechadas, vegetação e objetos utilitários como negativos.
+O teste foi construído com capturas do Google Street View de diferentes estados brasileiros, sem sobreposição com o treinamento. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50\% das imagens e revisou os 50\% restantes, com divergências ajustadas por consenso; todos os sacos visíveis foram delimitados individualmente. O conjunto é balanceado (280 positivas e 280 negativas), tratando resíduos avulsos, lixeiras fechadas, vegetação e objetos utilitários como negativos.
 
 A integridade das divisões foi verificada por deduplicação perceptual com \emph{pHash} (distância máxima de 5), agrupando variações da mesma imagem e impedindo correspondências entre treino e teste. Rostos e placas foram anonimizados ou recortados quando na margem da imagem.
 
@@ -304,7 +304,7 @@ Na classificação binária, os modelos discordaram em 79 imagens (68 acertadas 
     \fbox{\parbox{0.90\linewidth}{\centering Figura não encontrada. Execute o notebook para gerar o PNG.}}%
   }%
 }
-\caption{Exemplos qualitativos de localização no conjunto de teste. Caixas verdes indicam as anotações de referência (\emph{ground truth}); vermelhas, as previsões do YOLOv11m; azuis, as do Gemma 4 31B-QAT. O YOLO tende a alinhar-se às caixas de referência, enquanto o Gemma gera caixas em excesso e desalinhadas. Imagens originais \copyright~2026 Google, utilizadas exclusivamente para avaliação acadêmica, com anonimização e sem redistribuição não autorizada, em conformidade com os termos de uso aplicáveis.}
+\caption{Exemplos qualitativos de localização no conjunto de teste. Caixas verdes indicam as anotações de referência (\emph{ground truth}); vermelhas, as previsões do YOLOv11m; azuis, as do Gemma 4 31B-QAT. O YOLO tende a alinhar-se às caixas de referência, enquanto o Gemma gera caixas em excesso e desalinhadas. Imagens originais \copyright~2026 Google, utilizadas exclusivamente para avaliação acadêmica, com anonimização dos elementos sensíveis.}
 \label{fig:caixas-tp-fp-fn}
 \end{figure}
 
