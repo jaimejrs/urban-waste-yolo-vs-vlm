@@ -13,7 +13,9 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Copie `env.example` para `.env`, informe `ROBOFLOW_API_KEY`, carregue o modelo no LM Studio e execute **Run All** em `urban-waste-yolo-vs-vlm-otimizado.ipynb`. Por padrão, `RUN_ALL_PIPELINE=true` ativa download, preparação, treinamento, inferências e análises. O progresso é salvo em `outputs/pipeline_state.json`; etapas concluídas e caches compatíveis são reutilizados automaticamente.
+Copie `env.example` para `.env`, informe `ROBOFLOW_API_KEY`, carregue o modelo no LM Studio e execute **Run All** em `urban-waste-yolo-vs-vlm-otimizado.ipynb`. O progresso é salvo em `outputs/pipeline_state.json`; etapas concluídas e caches compatíveis são reutilizados automaticamente.
+
+O download e a preparação dos datasets de treino ocorrem antes do treinamento. O dataset `urban-waste-brazil` é baixado e preparado somente depois que o YOLO termina, imediatamente antes das inferências. Enquanto o teste não estiver pronto, use `TRAIN_ONLY_PIPELINE=true`: o Run All concluirá o download dos dados de treino e o treinamento, sem tentar baixar o teste ou executar inferências. Quando o teste estiver pronto, altere para `false`.
 
 O treinamento YOLO salva `last.pt` a cada época e retoma desse checkpoint após uma interrupção. As inferências YOLO e VLM são salvas por imagem, de modo que somente imagens pendentes são processadas novamente. Para apenas renderizar os artefatos versionados, defina `RUN_ALL_PIPELINE=false`.
 

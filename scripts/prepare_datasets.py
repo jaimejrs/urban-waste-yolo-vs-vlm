@@ -559,6 +559,8 @@ def rebuild_unified() -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--download", action="store_true", help="Baixa os datasets configurados no Roboflow.")
+    parser.add_argument("--download-train", action="store_true", help="Baixa somente os datasets de treino.")
+    parser.add_argument("--download-test", action="store_true", help="Baixa somente o dataset de teste.")
     parser.add_argument("--rebuild", action="store_true", help="Reconstrói data/unified.")
     parser.add_argument("--rebuild-test", action="store_true", help="Reconstrói data/teste a partir do Roboflow bruto.")
     parser.add_argument("--all", action="store_true", help="Executa download e rebuild.")
@@ -566,8 +568,15 @@ def main() -> None:
     args = parser.parse_args()
 
     env = read_env()
-    if args.download or args.all:
+    if args.download or args.download_train or args.download_test or args.all:
         datasets = roboflow_configs(env)
+        if not (args.download or args.all):
+            roles = set()
+            if args.download_train:
+                roles.add("train")
+            if args.download_test:
+                roles.add("test")
+            datasets = [ds for ds in datasets if ds.role in roles]
         download_roboflow(datasets, overwrite=args.overwrite)
     if args.rebuild_test or args.all:
         rebuild_test_set()
