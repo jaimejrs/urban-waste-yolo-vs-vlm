@@ -123,7 +123,7 @@ O modelo multimodal foi carregado pelo identificador \texttt{google/gemma-4-31b-
 \subsection{Tarefa e dados}
 \label{sec:tarefa-dados}
 
-A avaliação considerou duas camadas. Na primeira, cada imagem foi classificada como \textbf{com saco de lixo visível} ou \textbf{sem saco de lixo visível}. Na segunda, as caixas previstas foram comparadas às 785 caixas anotadas no teste. Para o YOLOv11m, \emph{black\_bag} e \emph{white\_bag} foram selecionadas de \emph{garbage-8uzha} (v4), e \emph{trash bag}, de \emph{garbage-mvzg3} (v1); todas foram agregadas na classe ``saco de lixo''. Como negativos, foram usadas 424 imagens da classe \emph{Roadway} sem sacos anotados, equivalentes a 10\% das positivas. A composição é apresentada na Tabela~\ref{tab:conjuntos}.
+A avaliação considerou duas camadas. Na primeira, cada imagem foi classificada como \textbf{com saco de lixo visível} ou \textbf{sem saco de lixo visível}. Na segunda, as caixas previstas foram comparadas às 785 caixas anotadas no teste. Para o YOLOv11m, \emph{black\_bag} e \emph{white\_bag} foram selecionadas de \emph{garbage-8uzha} (v4) \cite{roboflow2026a}, e \emph{trash bag}, de \emph{garbage-mvzg3} (v1) \cite{roboflow2026b}; todas foram agregadas na classe ``saco de lixo''. Como negativos, foram usadas 424 imagens da classe \emph{Roadway} da base Sidewalk \cite{sidewalk2022dataset} sem sacos anotados, equivalentes a 10\% das positivas. A composição é apresentada na Tabela~\ref{tab:conjuntos}.
 
 \begin{table}[t]
 \centering
@@ -142,7 +142,7 @@ Teste brasileiro & 560 & 280 & 280 \\
 \end{tabular}
 \end{table}
 
-O teste foi construído com capturas do Google Street View de diferentes estados brasileiros, sem sobreposição com o treinamento. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50\% das imagens e revisou os 50\% restantes, com divergências ajustadas por consenso; todos os sacos visíveis foram delimitados individualmente. O conjunto é balanceado (280 positivas e 280 negativas), tratando resíduos avulsos, vegetação e objetos utilitários como negativos.
+O teste foi construído com capturas do Google Street View \cite{google2026policy} de diferentes estados brasileiros, sem sobreposição com o treinamento. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50\% das imagens e revisou os 50\% restantes, com divergências ajustadas por consenso; todos os sacos visíveis foram delimitados individualmente. O conjunto é balanceado (280 positivas e 280 negativas), tratando resíduos avulsos, vegetação e objetos utilitários como negativos.
 
 A integridade das divisões foi verificada por deduplicação perceptual com \emph{pHash} (distância máxima de 5), agrupando variações da mesma imagem e impedindo correspondências entre treino e teste. Rostos e placas foram anonimizados ou recortados quando na margem da imagem.
 
