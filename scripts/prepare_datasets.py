@@ -206,6 +206,14 @@ def roboflow_configs(env: dict[str, str]) -> list[RoboflowDataset]:
             role="train",
             positive_classes=("bag - v4 2023-05-12 11-25pm",),
             expected_positive_images=865,
+        ),
+        # Roadway backgrounds come exclusively from sidewalk-segmentation.
+        RoboflowDataset(
+            key="SIDEWALK",
+            workspace=value("ROBOFLOW_WORKSPACE_SIDEWALK", "sidewalk"),
+            project=value("ROBOFLOW_PROJECT_SIDEWALK", "sidewalk-segmentation"),
+            version=int(value("ROBOFLOW_VERSION_SIDEWALK", "4")),
+            role="train",
             background_classes=("Roadway",),
         ),
         RoboflowDataset(

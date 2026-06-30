@@ -70,7 +70,7 @@ A construção de `data/unified` foi modularizada em `scripts/prepare_datasets.p
 
 - `garbage-8uzha` (v4): 3.370 imagens positivas, usando apenas as classes `black_bag` e `white_bag`;
 - `garbage-mvzg3` (v1): 865 imagens positivas, agregadas na classe única `saco_de_lixo`;
-- `Roadway` como fundo: 424 imagens negativas sem sacos anotados, equivalentes a 10% das positivas, limitadas pela disponibilidade elegível.
+- `sidewalk-segmentation` (classe `Roadway`): 424 imagens negativas sem sacos anotados, equivalentes a 10% das positivas, limitadas pela disponibilidade elegível.
 
 O teste é baixado de `jaime-teixeira/urban-waste-brazil` e contém 560 capturas de diferentes estados brasileiros, sendo 280 imagens positivas e 280 negativas. Dois pesquisadores anotaram o conjunto de forma independente: cada um anotou 50% das imagens e revisou os 50% restantes. As divergências foram discutidas e ajustadas por consenso, e todos os sacos de lixo visíveis foram anotados individualmente antes da subida para o Roboflow. No total, o teste contém 785 caixas anotadas. Todas as classes não selecionadas são descartadas antes da unificação, e as classes positivas são remapeadas para `saco_de_lixo`.
 
